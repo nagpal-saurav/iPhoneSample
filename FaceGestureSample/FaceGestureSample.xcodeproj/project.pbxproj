@@ -12,6 +12,8 @@
 		03C687AC1973F7F7007203F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C687A51973F7F7007203F3 /* ViewController.swift */; };
 		03C687AD1973F7F7007203F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C687A81973F7F7007203F3 /* Main.storyboard */; };
 		03C687AE1973F7F7007203F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03C687AA1973F7F7007203F3 /* Images.xcassets */; };
+		03C687B01973F941007203F3 /* FaceDetectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C687AF1973F941007203F3 /* FaceDetectionManager.swift */; };
+		03C687B21973F9B1007203F3 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C687B11973F9B1007203F3 /* CoreImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		03C687A51973F7F7007203F3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		03C687A91973F7F7007203F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03C687AA1973F7F7007203F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		03C687AF1973F941007203F3 /* FaceDetectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceDetectionManager.swift; sourceTree = "<group>"; };
+		03C687B11973F9B1007203F3 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C687B21973F9B1007203F3 /* CoreImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +118,7 @@
 				03C687A01973F7F7007203F3 /* AppBase */,
 				03C687A21973F7F7007203F3 /* Controller */,
 				03C687A61973F7F7007203F3 /* Model */,
+				03C687B31973F9D4007203F3 /* Library */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -137,6 +143,7 @@
 		03C687A31973F7F7007203F3 /* CoordinatingController */ = {
 			isa = PBXGroup;
 			children = (
+				03C687AF1973F941007203F3 /* FaceDetectionManager.swift */,
 			);
 			path = CoordinatingController;
 			sourceTree = "<group>";
@@ -163,6 +170,15 @@
 				03C687AA1973F7F7007203F3 /* Images.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		03C687B31973F9D4007203F3 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				03C687B11973F9B1007203F3 /* CoreImage.framework */,
+			);
+			name = Library;
+			path = ../Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +282,7 @@
 			files = (
 				03C687AC1973F7F7007203F3 /* ViewController.swift in Sources */,
 				03C687AB1973F7F7007203F3 /* AppDelegate.swift in Sources */,
+				03C687B01973F941007203F3 /* FaceDetectionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
