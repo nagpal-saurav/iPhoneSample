@@ -11,5 +11,11 @@ import Foundation
 import CoreImage;
 
 class FaceDetectionManager{
+    var faceDetector : CIDetector!
     
+    init(){
+        var context = CIContext();
+        var detectorOptions = NSDictionary(object: CIDetectorAccuracyHigh, forKey: CIDetectorAccuracy)
+        faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: detectorOptions)
+    }
 }

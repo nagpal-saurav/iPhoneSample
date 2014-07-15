@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03C1AEA619755065005093E1 /* VideoCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1AEA519755065005093E1 /* VideoCaptureSession.swift */; };
+		03C1AEA8197550D3005093E1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C1AEA7197550D3005093E1 /* AVFoundation.framework */; };
+		03C1AEAA1975534B005093E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C1AEA91975534B005093E1 /* UIKit.framework */; };
 		03C687961973EB1F007203F3 /* FaceGestureSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C687951973EB1F007203F3 /* FaceGestureSampleTests.swift */; };
 		03C687AB1973F7F7007203F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C687A11973F7F7007203F3 /* AppDelegate.swift */; };
 		03C687AC1973F7F7007203F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C687A51973F7F7007203F3 /* ViewController.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03C1AEA519755065005093E1 /* VideoCaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCaptureSession.swift; sourceTree = "<group>"; };
+		03C1AEA7197550D3005093E1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		03C1AEA91975534B005093E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		03C6877D1973EB1F007203F3 /* FaceGestureSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceGestureSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C687811973EB1F007203F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03C6878F1973EB1F007203F3 /* FaceGestureSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceGestureSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C1AEAA1975534B005093E1 /* UIKit.framework in Frameworks */,
+				03C1AEA8197550D3005093E1 /* AVFoundation.framework in Frameworks */,
 				03C687B21973F9B1007203F3 /* CoreImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				03C687AF1973F941007203F3 /* FaceDetectionManager.swift */,
+				03C1AEA519755065005093E1 /* VideoCaptureSession.swift */,
 			);
 			path = CoordinatingController;
 			sourceTree = "<group>";
@@ -175,6 +184,8 @@
 		03C687B31973F9D4007203F3 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				03C1AEA91975534B005093E1 /* UIKit.framework */,
+				03C1AEA7197550D3005093E1 /* AVFoundation.framework */,
 				03C687B11973F9B1007203F3 /* CoreImage.framework */,
 			);
 			name = Library;
@@ -283,6 +294,7 @@
 				03C687AC1973F7F7007203F3 /* ViewController.swift in Sources */,
 				03C687AB1973F7F7007203F3 /* AppDelegate.swift in Sources */,
 				03C687B01973F941007203F3 /* FaceDetectionManager.swift in Sources */,
+				03C1AEA619755065005093E1 /* VideoCaptureSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
