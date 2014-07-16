@@ -9,17 +9,19 @@
 import Foundation
 import UIKit
 import AVFoundation
+import CoreMedia
 
-protocol videoCapturing{
+protocol VideoCapturing{
     func videoCaptureSession(session:VideoCaptureSession, failWithError:NSError?)
 }
 
-class VideoCaptureSession{
-    var delegate       :videoCapturing?
-    var captureSession :AVCaptureSession!
+class VideoCaptureSession : NSObject, AVCaptureVideoDataOutputSampleBufferDelegate{
+    var delegate                :VideoCapturing?
+    var captureSession          :AVCaptureSession!
+    var captureVideoOutput      :AVCaptureVideoDataOutput!
     init(){
-     
-        self.setUpCaptureSession();
+        super.init()
+        self.setUpCaptureSession()
     }
     
     func setUpCaptureSession(){
@@ -42,7 +44,16 @@ class VideoCaptureSession{
         if isDeviceFound == false{
             self.delegate?.videoCaptureSession(self, failWithError: nil);
         }
+        self.captureVideoOutput = AVCaptureVideoDataOutput();
+        var videoOptions = NSDictionary(object: kCMPixelFormat_32BGRA, forKey: kCVPixelBufferPixelFormatTypeKey)
+        self.captureVideoOutput.videoSettings(videoOptions)
+        
     }
+    
+    func startSession(){
+        self.captureSession.startRunning()
+    }
+    
     
     func addInputDevice(device:AVCaptureDevice){
         var error : NSErrorPointer!
