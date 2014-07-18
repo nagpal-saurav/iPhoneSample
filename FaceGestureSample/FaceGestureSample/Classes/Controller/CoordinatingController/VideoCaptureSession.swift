@@ -13,16 +13,22 @@ import CoreMedia
 
 protocol VideoCapturing{
     func videoCaptureSession(session:VideoCaptureSession, failWithError:NSError?)
+    func videoCaptureSession(session:VideoCaptureSession, didCaptureImage:CIImage!)
 }
 
 class VideoCaptureSession : NSObject, AVCaptureVideoDataOutputSampleBufferDelegate{
     var delegate                :VideoCapturing?
     var captureSession          :AVCaptureSession!
     var captureVideoOutput      :AVCaptureVideoDataOutput!
-    init(){
+    var captureVideoOutputQueue :dispatch_queue_t!
+    
+    init(delegate:VideoCapturing){
         super.init()
+        self.delegate = delegate;
         self.setUpCaptureSession()
     }
+    
+    
     
     func setUpCaptureSession(){
         captureSession = AVCaptureSession();
@@ -41,19 +47,30 @@ class VideoCaptureSession : NSObject, AVCaptureVideoDataOutputSampleBufferDelega
                 break;
             }
         }
-        if isDeviceFound == false{
+        if isDeviceFound {
+            self.captureVideoOutput = AVCaptureVideoDataOutput();
+            var videoOptions : NSDictionary = NSDictionary(object: NSNumber(integer:  kCMPixelFormat_32BGRA), forKey: kCVPixelBufferPixelFormatTypeKey)
+            self.captureVideoOutput.videoSettings = videoOptions
+            self.captureVideoOutput.alwaysDiscardsLateVideoFrames = true;
+            self.captureVideoOutputQueue = dispatch_queue_create(FaceDetectionConstant.queueCreate, DISPATCH_QUEUE_SERIAL)
+            self.captureVideoOutput.setSampleBufferDelegate(self, queue: self.captureVideoOutputQueue);
+            if  self.captureSession.canAddOutput(self.captureVideoOutput) {
+                self.captureSession.addOutput(self.captureVideoOutput);
+            }else{
+                self.delegate?.videoCaptureSession(self, failWithError: nil);
+                self.captureSession = nil;
+            }
+            // get the output for doing face detection.
+            self.captureVideoOutput.connectionWithMediaType(AVMediaTypeVideo).enabled = true
+        }else{
             self.delegate?.videoCaptureSession(self, failWithError: nil);
         }
-        self.captureVideoOutput = AVCaptureVideoDataOutput();
-        var videoOptions = NSDictionary(object: kCMPixelFormat_32BGRA, forKey: kCVPixelBufferPixelFormatTypeKey)
-        self.captureVideoOutput.videoSettings(videoOptions)
         
     }
     
     func startSession(){
         self.captureSession.startRunning()
     }
-    
     
     func addInputDevice(device:AVCaptureDevice){
         var error : NSErrorPointer!
@@ -63,6 +80,19 @@ class VideoCaptureSession : NSObject, AVCaptureVideoDataOutputSampleBufferDelega
         }else{
             self.delegate?.videoCaptureSession(self, failWithError: nil);
         }
+    }
+    
+    /*************************
+    * DELEGATE
+    *************************/
+    func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!){
+        var pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer).takeRetainedValue() as CVImageBufferRef
+        var imageAttachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, CMAttachmentMode(kCMAttachmentMode_ShouldPropagate))
+        var image = CIImage(CVImageBuffer: pixelBuffer, options: imageAttachments.takeRetainedValue())
+        if imageAttachments != nil {
+            CFRelease(imageAttachments);
+        }
+        self.delegate?.videoCaptureSession(self, didCaptureImage: image);
     }
     
 }
