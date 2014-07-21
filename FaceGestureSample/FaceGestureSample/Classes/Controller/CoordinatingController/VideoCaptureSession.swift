@@ -13,7 +13,7 @@ import CoreMedia
 
 protocol VideoCapturing{
     func videoCaptureSession(session:VideoCaptureSession, failWithError:NSError?)
-    func videoCaptureSession(session:VideoCaptureSession, didCaptureImage:CIImage!)
+    func videoCaptureSession(session:VideoCaptureSession, didCaptureImage image:CIImage!)
 }
 
 class VideoCaptureSession : NSObject, AVCaptureVideoDataOutputSampleBufferDelegate{

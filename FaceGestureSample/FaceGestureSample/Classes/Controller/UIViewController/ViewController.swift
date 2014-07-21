@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, VideoCapturing {
-    var videoCaptureSession : VideoCaptureSession!
+class ViewController: UIViewController, VideoCapturing, FaceDetecting {
+    var videoCaptureSession     : VideoCaptureSession!
+    var faceDetectionManager    :FaceDetectionManager!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -17,8 +18,15 @@ class ViewController: UIViewController, VideoCapturing {
     
     override func viewWillAppear(animated: Bool){
         super.viewWillAppear(animated);
-        videoCaptureSession = VideoCaptureSession(delegate:self);
-        videoCaptureSession.startSession();
+        if videoCaptureSession != nil {
+            videoCaptureSession = VideoCaptureSession(delegate:self);
+            videoCaptureSession.startSession();
+        }
+        
+        if faceDetectionManager != nil {
+            faceDetectionManager = FaceDetectionManager(delegate: self)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,7 +38,11 @@ class ViewController: UIViewController, VideoCapturing {
     
     }
     
-    func videoCaptureSession(session:VideoCaptureSession, didCaptureImage:CIImage!){
+    func videoCaptureSession(session:VideoCaptureSession, didCaptureImage image:CIImage!){
+        self.faceDetectionManager.detectFeatureFromImage(image)
+    }
+    
+    func faceDetector(detetor:FaceDetectionManager, didDetectMovment:faceMovementTypeEnum){
         
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0344D1811976B09B0035FED3 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0344D1801976B09B0035FED3 /* CoreMedia.framework */; };
+		0367E58D197D256D000C3F66 /* FaceDetectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0367E58C197D256D000C3F66 /* FaceDetectionEnum.swift */; };
 		03ACF19F1979018A00923E08 /* FaceDetectionConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ACF19E1979018A00923E08 /* FaceDetectionConstant.swift */; };
 		03C1AEA619755065005093E1 /* VideoCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1AEA519755065005093E1 /* VideoCaptureSession.swift */; };
 		03C1AEA8197550D3005093E1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C1AEA7197550D3005093E1 /* AVFoundation.framework */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		0344D1801976B09B0035FED3 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		0367E58C197D256D000C3F66 /* FaceDetectionEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceDetectionEnum.swift; sourceTree = "<group>"; };
 		03ACF19E1979018A00923E08 /* FaceDetectionConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceDetectionConstant.swift; sourceTree = "<group>"; };
 		03C1AEA519755065005093E1 /* VideoCaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCaptureSession.swift; sourceTree = "<group>"; };
 		03C1AEA7197550D3005093E1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -141,6 +143,7 @@
 			children = (
 				03C687A11973F7F7007203F3 /* AppDelegate.swift */,
 				03ACF19E1979018A00923E08 /* FaceDetectionConstant.swift */,
+				0367E58C197D256D000C3F66 /* FaceDetectionEnum.swift */,
 			);
 			path = AppBase;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				03C687AC1973F7F7007203F3 /* ViewController.swift in Sources */,
 				03C687AB1973F7F7007203F3 /* AppDelegate.swift in Sources */,
 				03C687B01973F941007203F3 /* FaceDetectionManager.swift in Sources */,
+				0367E58D197D256D000C3F66 /* FaceDetectionEnum.swift in Sources */,
 				03C1AEA619755065005093E1 /* VideoCaptureSession.swift in Sources */,
 				03ACF19F1979018A00923E08 /* FaceDetectionConstant.swift in Sources */,
 			);
