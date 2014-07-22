@@ -8,7 +8,8 @@
 
 
 import Foundation
-import CoreImage;
+import UIKit
+import CoreImage
 
 protocol FaceDetecting{
     func faceDetector(detetor:FaceDetectionManager, didDetectMovment movment:faceMovementTypeEnum)
@@ -27,5 +28,11 @@ class FaceDetectionManager{
     
     func detectFeatureFromImage(image:CIImage){
         
+        // make sure your device orientation is not locked.
+        //var currentOrienatation = UIDevice.currentDevice().orientation
+        var features = self.faceDetector.featuresInImage(image) as CIFaceFeature[];
+        for faceFeature :CIFaceFeature  in features {
+            var faceFrame = faceFeature.bounds;
+        }
     }
 }
