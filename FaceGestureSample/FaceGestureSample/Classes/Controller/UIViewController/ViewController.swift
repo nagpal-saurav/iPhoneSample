@@ -18,12 +18,12 @@ class ViewController: UIViewController, VideoCapturing, FaceDetecting {
     
     override func viewWillAppear(animated: Bool){
         super.viewWillAppear(animated);
-        if videoCaptureSession != nil {
+        if videoCaptureSession == nil {
             videoCaptureSession = VideoCaptureSession(delegate:self);
             videoCaptureSession.startSession();
         }
         
-        if faceDetectionManager != nil {
+        if faceDetectionManager == nil {
             faceDetectionManager = FaceDetectionManager(delegate: self)
         }
         
@@ -35,7 +35,7 @@ class ViewController: UIViewController, VideoCapturing, FaceDetecting {
     }
     
     func videoCaptureSession(session:VideoCaptureSession, failWithError:NSError?){
-    
+        UIAlertView(title: "good", message: "Has Mouse", delegate: nil, cancelButtonTitle: "Ok").show()
     }
     
     func videoCaptureSession(session:VideoCaptureSession, didCaptureImage image:CIImage!){

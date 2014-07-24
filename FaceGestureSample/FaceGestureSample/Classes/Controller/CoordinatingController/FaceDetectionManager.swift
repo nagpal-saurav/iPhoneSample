@@ -31,8 +31,27 @@ class FaceDetectionManager{
         // make sure your device orientation is not locked.
         //var currentOrienatation = UIDevice.currentDevice().orientation
         var features = self.faceDetector.featuresInImage(image) as CIFaceFeature[];
-        for faceFeature :CIFaceFeature  in features {
+        for faceFeature:CIFaceFeature in features {
             var faceFrame = faceFeature.bounds;
+            NSLog(NSStringFromCGRect(faceFrame))
+            
+            if faceFeature.hasLeftEyePosition {
+                UIAlertView(title: "good", message: "Has Mouse", delegate: nil, cancelButtonTitle: "Ok").show()
+                 NSLog("Left eye %g %g", faceFeature.leftEyePosition.x, faceFeature.leftEyePosition.y);
+            }
+           
+            
+            if faceFeature.hasRightEyePosition {
+                UIAlertView(title: "good", message: "Has Mouse", delegate: nil, cancelButtonTitle: "Ok").show()
+                 NSLog("Right eye %g %g", faceFeature.rightEyePosition.x, faceFeature.rightEyePosition.y);
+            }
+           
+            
+            if faceFeature.hasMouthPosition {
+                UIAlertView(title: "good", message: "Has Mouse", delegate: nil, cancelButtonTitle: "Ok").show()
+                NSLog("Mouth %g %g", faceFeature.mouthPosition.x, faceFeature.mouthPosition.y);
+            }
+            
         }
     }
 }
