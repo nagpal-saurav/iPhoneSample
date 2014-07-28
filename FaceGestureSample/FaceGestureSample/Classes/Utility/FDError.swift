@@ -10,9 +10,10 @@ import Foundation
 
 class FDError: NSError {
     let  fddomain = "com.facedetection.errordomain"
-    let  localizedDescription :NSDictionary = {
-        
-    };
+    let  localizedDescription : NSDictionary  {
+        cameraDoesNotExist : "Please run the application on iPhone"
+    }
+    
     init(code: appErrorCodeEnum.RawType) {
         
         super.init(domain: fddomain, code: code, userInfo: nil);
