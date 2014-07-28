@@ -9,7 +9,11 @@
 import Foundation
 
 class FaceDetectionConstant{
+    class var defaultCancelTitle : NSString {
+        return "Ok"
+    }
+    
     class var queueCreate : CString {
-            return "com.video.output.queue"
+        return "com.video.output.queue"
     }
 }

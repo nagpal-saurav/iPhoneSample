@@ -11,3 +11,7 @@ import Foundation
 enum faceMovementTypeEnum{
     case faceMoveRight, faceMoveLeft
 }
+
+enum appErrorCodeEnum: Int{
+    case cameraDoesNotExist = 100,frontCameraNotFound, outputDeviceNotFound, inputDeviceNotFound
+}

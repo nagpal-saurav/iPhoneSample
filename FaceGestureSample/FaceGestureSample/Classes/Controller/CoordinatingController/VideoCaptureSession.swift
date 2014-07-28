@@ -42,8 +42,9 @@ class VideoCaptureSession : NSObject, AVCaptureVideoDataOutputSampleBufferDelega
         var isDeviceFound : Bool = false;
         for device : AnyObject in devices{
             if device.position == AVCaptureDevicePosition.Front{
-                isDeviceFound = true;
-                addInputDevice(device as AVCaptureDevice);
+                if(addInputDevice(device as AVCaptureDevice)){
+                    isDeviceFound = true;
+                }
                 break;
             }
         }
@@ -72,14 +73,16 @@ class VideoCaptureSession : NSObject, AVCaptureVideoDataOutputSampleBufferDelega
         self.captureSession.startRunning()
     }
     
-    func addInputDevice(device:AVCaptureDevice){
+    func addInputDevice(device:AVCaptureDevice) -> Bool{
         var error : NSErrorPointer!
         var deviceInput:AVCaptureDeviceInput = AVCaptureDeviceInput.deviceInputWithDevice(device, error:error) as AVCaptureDeviceInput
         if error == nil && captureSession.canAddInput(deviceInput) {
             self.captureSession.addInput(deviceInput)
         }else{
             self.delegate?.videoCaptureSession(self, failWithError: nil);
+            return false
         }
+        return true
     }
     
     /*************************
