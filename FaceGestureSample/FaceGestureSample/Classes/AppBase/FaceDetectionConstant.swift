@@ -13,6 +13,11 @@ class FaceDetectionConstant{
         return "Ok"
     }
     
+    class var errorTitle : NSString {
+    return "Error!!!"
+    }
+
+    
     class var queueCreate : CString {
         return "com.video.output.queue"
     }

@@ -18,15 +18,20 @@ class ViewController: UIViewController, VideoCapturing, FaceDetecting {
     
     override func viewWillAppear(animated: Bool){
         super.viewWillAppear(animated);
+        
+        
+    }
+    
+    override func viewDidAppear(animated: Bool){
+        super.viewDidAppear(animated);
         if videoCaptureSession == nil {
             videoCaptureSession = VideoCaptureSession(delegate:self);
-            videoCaptureSession.startSession();
         }
-        
         if faceDetectionManager == nil {
             faceDetectionManager = FaceDetectionManager(delegate: self)
         }
         
+        videoCaptureSession.startSession();
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,8 +39,12 @@ class ViewController: UIViewController, VideoCapturing, FaceDetecting {
         // Dispose of any resources that can be recreated.
     }
     
-    func videoCaptureSession(session:VideoCaptureSession, failWithError:NSError?){
-        UIAlertView(title: "good", message: "Has Mouse", delegate: nil, cancelButtonTitle: "Ok").show()
+    func videoCaptureSession(session:VideoCaptureSession, failWithError error:NSError?){
+        if let actualError = error{
+            Utility.showAlert(title: FaceDetectionConstant.errorTitle, withMessage: actualError.localizedDescription, viewCtrl: self, handler: nil);
+            NSLog(actualError.localizedDescription)
+        }
+       
     }
     
     func videoCaptureSession(session:VideoCaptureSession, didCaptureImage image:CIImage!){

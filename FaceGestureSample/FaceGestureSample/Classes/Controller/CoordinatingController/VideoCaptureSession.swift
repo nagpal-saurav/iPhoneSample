@@ -12,7 +12,7 @@ import AVFoundation
 import CoreMedia
 
 protocol VideoCapturing{
-    func videoCaptureSession(session:VideoCaptureSession, failWithError:NSError?)
+    func videoCaptureSession(session:VideoCaptureSession, failWithError error:NSError?)
     func videoCaptureSession(session:VideoCaptureSession, didCaptureImage image:CIImage!)
 }
 
@@ -35,7 +35,8 @@ class VideoCaptureSession : NSObject, AVCaptureVideoDataOutputSampleBufferDelega
         if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone{
             captureSession.sessionPreset = AVCaptureSessionPreset640x480
         }else{
-            self.delegate?.videoCaptureSession(self, failWithError: nil);
+            var error = FDError(code: appErrorCodeEnum.cameraDoesNotExist.toRaw());
+            self.delegate?.videoCaptureSession(self, failWithError: error);
         }
         
         var devices = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo)
@@ -58,13 +59,15 @@ class VideoCaptureSession : NSObject, AVCaptureVideoDataOutputSampleBufferDelega
             if  self.captureSession.canAddOutput(self.captureVideoOutput) {
                 self.captureSession.addOutput(self.captureVideoOutput);
             }else{
-                self.delegate?.videoCaptureSession(self, failWithError: nil);
+                var error = FDError(code: appErrorCodeEnum.outputDeviceNotFound.toRaw());
+                self.delegate?.videoCaptureSession(self, failWithError: error);
                 self.captureSession = nil;
             }
             // get the output for doing face detection.
             self.captureVideoOutput.connectionWithMediaType(AVMediaTypeVideo).enabled = true
         }else{
-            self.delegate?.videoCaptureSession(self, failWithError: nil);
+            var error = FDError(code: appErrorCodeEnum.frontCameraNotFound.toRaw());
+            self.delegate?.videoCaptureSession(self, failWithError: error);
         }
         
     }
@@ -79,7 +82,8 @@ class VideoCaptureSession : NSObject, AVCaptureVideoDataOutputSampleBufferDelega
         if error == nil && captureSession.canAddInput(deviceInput) {
             self.captureSession.addInput(deviceInput)
         }else{
-            self.delegate?.videoCaptureSession(self, failWithError: nil);
+            var error = FDError(code: appErrorCodeEnum.inputDeviceNotFound.toRaw());
+            self.delegate?.videoCaptureSession(self, failWithError: error);
             return false
         }
         return true
