@@ -48,7 +48,7 @@ class ViewController: UIViewController, VideoCapturing, FaceDetecting {
     }
     
     func videoCaptureSession(session:VideoCaptureSession, didCaptureImage image:CIImage!){
-        self.faceDetectionManager.detectFeatureFromImage(image)
+        //self.faceDetectionManager.detectFeatureFromImage(image)
     }
     
     func faceDetector(detetor:FaceDetectionManager, didDetectMovment:faceMovementTypeEnum){

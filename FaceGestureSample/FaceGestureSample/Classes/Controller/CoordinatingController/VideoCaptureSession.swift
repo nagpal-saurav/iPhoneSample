@@ -77,8 +77,8 @@ class VideoCaptureSession : NSObject, AVCaptureVideoDataOutputSampleBufferDelega
     }
     
     func addInputDevice(device:AVCaptureDevice) -> Bool{
-        var error : NSErrorPointer!
-        var deviceInput:AVCaptureDeviceInput = AVCaptureDeviceInput.deviceInputWithDevice(device, error:error) as AVCaptureDeviceInput
+        var error : NSError? = nil
+        var deviceInput:AVCaptureDeviceInput = AVCaptureDeviceInput.deviceInputWithDevice(device, error:&error) as AVCaptureDeviceInput
         if error == nil && captureSession.canAddInput(deviceInput) {
             self.captureSession.addInput(deviceInput)
         }else{
@@ -93,13 +93,14 @@ class VideoCaptureSession : NSObject, AVCaptureVideoDataOutputSampleBufferDelega
     * DELEGATE
     *************************/
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!){
-        var pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer).takeRetainedValue() as CVImageBufferRef
-        var imageAttachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, CMAttachmentMode(kCMAttachmentMode_ShouldPropagate))
-        var image = CIImage(CVImageBuffer: pixelBuffer, options: imageAttachments.takeRetainedValue())
-        if imageAttachments != nil {
-            CFRelease(imageAttachments);
-        }
-        self.delegate?.videoCaptureSession(self, didCaptureImage: image);
+        var pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer).takeUnretainedValue()
+        var imageAttachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, CMAttachmentMode(kCMAttachmentMode_ShouldPropagate)).takeUnretainedValue()
+        var image = CIImage(CVImageBuffer: pixelBuffer, options: imageAttachments)
+       
+        //if imageAttachments != nil {
+           // CFRelease(imageAttachments);
+        //}
+        self.delegate?.videoCaptureSession(self, didCaptureImage: nil);
     }
     
 }
