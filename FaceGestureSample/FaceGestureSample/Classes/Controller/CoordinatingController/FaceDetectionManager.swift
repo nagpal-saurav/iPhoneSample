@@ -30,7 +30,7 @@ class FaceDetectionManager{
         
         // make sure your device orientation is not locked.
         //var currentOrienatation = UIDevice.currentDevice().orientation
-        var features = self.faceDetector.featuresInImage(image) as CIFaceFeature[];
+        var features = self.faceDetector.featuresInImage(image) as [CIFaceFeature];
         for faceFeature:CIFaceFeature in features {
             var faceFrame = faceFeature.bounds;
             NSLog(NSStringFromCGRect(faceFrame))

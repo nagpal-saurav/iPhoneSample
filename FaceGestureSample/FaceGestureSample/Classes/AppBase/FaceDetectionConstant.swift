@@ -18,7 +18,7 @@ class FaceDetectionConstant{
     }
 
     
-    class var queueCreate : CString {
+    class var queueCreate : String {
         return "com.video.output.queue"
     }
 }

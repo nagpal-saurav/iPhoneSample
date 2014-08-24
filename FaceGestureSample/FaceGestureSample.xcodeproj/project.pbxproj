@@ -22,6 +22,7 @@
 		03C687AE1973F7F7007203F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03C687AA1973F7F7007203F3 /* Images.xcassets */; };
 		03C687B01973F941007203F3 /* FaceDetectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C687AF1973F941007203F3 /* FaceDetectionManager.swift */; };
 		03C687B21973F9B1007203F3 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C687B11973F9B1007203F3 /* CoreImage.framework */; };
+		C10850A119A9E8A00077A3C9 /* AvFoundationEdition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10850A019A9E8A00077A3C9 /* AvFoundationEdition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		03C687AA1973F7F7007203F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		03C687AF1973F941007203F3 /* FaceDetectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceDetectionManager.swift; sourceTree = "<group>"; };
 		03C687B11973F9B1007203F3 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		C10850A019A9E8A00077A3C9 /* AvFoundationEdition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvFoundationEdition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		03C6879F1973F7F7007203F3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C108509F19A9E8760077A3C9 /* DeviceCapability */,
 				037A00E519862F80007362AB /* Utility */,
 				03C687A01973F7F7007203F3 /* AppBase */,
 				03C687A21973F7F7007203F3 /* Controller */,
@@ -214,6 +217,14 @@
 			);
 			name = Library;
 			path = ../Library;
+			sourceTree = "<group>";
+		};
+		C108509F19A9E8760077A3C9 /* DeviceCapability */ = {
+			isa = PBXGroup;
+			children = (
+				C10850A019A9E8A00077A3C9 /* AvFoundationEdition.swift */,
+			);
+			path = DeviceCapability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +334,7 @@
 				0367E58D197D256D000C3F66 /* FaceDetectionEnum.swift in Sources */,
 				03C1AEA619755065005093E1 /* VideoCaptureSession.swift in Sources */,
 				03ACF19F1979018A00923E08 /* FaceDetectionConstant.swift in Sources */,
+				C10850A119A9E8A00077A3C9 /* AvFoundationEdition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

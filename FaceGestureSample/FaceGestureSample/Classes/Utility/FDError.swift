@@ -17,7 +17,7 @@ class FDError: NSError {
         appErrorCodeEnum.outputDeviceNotFound : "Application is unable to find input device"
     ]
     
-    init(code: appErrorCodeEnum.RawType) {
+    init(code: appErrorCodeEnum.Raw) {
         if let validErrorCode = appErrorCodeEnum.fromRaw(code){
             var info:NSDictionary?;
             var value = errorDescription[validErrorCode];
@@ -27,5 +27,9 @@ class FDError: NSError {
         }else{
             super.init(domain: fddomain, code: code, userInfo: nil);
         }
+    }
+
+    required init(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
     }
 }

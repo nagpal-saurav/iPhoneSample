@@ -16,91 +16,81 @@ protocol VideoCapturing{
     func videoCaptureSession(session:VideoCaptureSession, didCaptureImage image:CIImage!)
 }
 
-class VideoCaptureSession : NSObject, AVCaptureVideoDataOutputSampleBufferDelegate{
+class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate{
     var delegate                :VideoCapturing?
     var captureSession          :AVCaptureSession!
-    var captureVideoOutput      :AVCaptureVideoDataOutput!
-    var captureVideoOutputQueue :dispatch_queue_t!
-    
+    var faceDetectionFeature    :AvFoundationEdition!
+    /*************************
+    * Session Initlization
+    *************************/
     init(delegate:VideoCapturing){
         super.init()
         self.delegate = delegate;
         self.setUpCaptureSession()
     }
     
-    
-    
     func setUpCaptureSession(){
         captureSession = AVCaptureSession();
         if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone{
-            captureSession.sessionPreset = AVCaptureSessionPreset640x480
+            captureSession.sessionPreset = AVCaptureSessionPresetPhoto
         }else{
             var error = FDError(code: appErrorCodeEnum.cameraDoesNotExist.toRaw());
             self.delegate?.videoCaptureSession(self, failWithError: error);
         }
-        
-        var devices = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo)
-        var isDeviceFound : Bool = false;
-        for device : AnyObject in devices{
-            if device.position == AVCaptureDevicePosition.Front{
-                if(addInputDevice(device as AVCaptureDevice)){
-                    isDeviceFound = true;
-                }
-                break;
-            }
-        }
-        if isDeviceFound {
-            self.captureVideoOutput = AVCaptureVideoDataOutput();
-            var videoOptions : NSDictionary = NSDictionary(object: NSNumber(integer:  kCMPixelFormat_32BGRA), forKey: kCVPixelBufferPixelFormatTypeKey)
-            self.captureVideoOutput.videoSettings = videoOptions
-            self.captureVideoOutput.alwaysDiscardsLateVideoFrames = true;
-            self.captureVideoOutputQueue = dispatch_queue_create(FaceDetectionConstant.queueCreate, DISPATCH_QUEUE_SERIAL)
-            self.captureVideoOutput.setSampleBufferDelegate(self, queue: self.captureVideoOutputQueue);
-            if  self.captureSession.canAddOutput(self.captureVideoOutput) {
-                self.captureSession.addOutput(self.captureVideoOutput);
-            }else{
-                var error = FDError(code: appErrorCodeEnum.outputDeviceNotFound.toRaw());
-                self.delegate?.videoCaptureSession(self, failWithError: error);
-                self.captureSession = nil;
-            }
-            // get the output for doing face detection.
-            self.captureVideoOutput.connectionWithMediaType(AVMediaTypeVideo).enabled = true
-        }else{
-            var error = FDError(code: appErrorCodeEnum.frontCameraNotFound.toRaw());
-            self.delegate?.videoCaptureSession(self, failWithError: error);
-        }
+        self.updateCameraSelection()
+        faceDetectionFeature = AvFoundationEdition(session: captureSession)
+        faceDetectionFeature.addFaceDetectionFeatureWithDelegate(delegate: self)
         
     }
     
     func startSession(){
         self.captureSession.startRunning()
     }
-    
-    func addInputDevice(device:AVCaptureDevice) -> Bool{
-        var error : NSError? = nil
-        var deviceInput:AVCaptureDeviceInput = AVCaptureDeviceInput.deviceInputWithDevice(device, error:&error) as AVCaptureDeviceInput
-        if error == nil && captureSession.canAddInput(deviceInput) {
-            self.captureSession.addInput(deviceInput)
-        }else{
-            var error = FDError(code: appErrorCodeEnum.inputDeviceNotFound.toRaw());
-            self.delegate?.videoCaptureSession(self, failWithError: error);
-            return false
+    /*************************
+    * Session Setup Prerequiste
+    *************************/
+    func updateCameraSelection(){
+        self.captureSession.beginConfiguration()
+        //remove Old Input
+        var inputs = self.captureSession.inputs as [AVCaptureInput]
+        for input in inputs{
+            self.captureSession.removeInput(input)
         }
-        return true
+        var newInput = self.pickCamera()
+        if let inputDevice = newInput{
+            self.captureSession.addInput(inputDevice)
+        }
+        self.captureSession.commitConfiguration()
+    }
+
+    func pickCamera()->AVCaptureDeviceInput?{
+        var inputDevice:AVCaptureDeviceInput?
+        var devices = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo)
+        var isDeviceFound : Bool = false;
+        for device : AnyObject in devices{
+            if device.position == AVCaptureDevicePosition.Front{
+                var error : NSError? = nil
+                var deviceInput:AVCaptureDeviceInput = AVCaptureDeviceInput.deviceInputWithDevice(device as AVCaptureDevice, error:&error) as AVCaptureDeviceInput
+                if error == nil && captureSession.canAddInput(deviceInput) {
+                    inputDevice = deviceInput
+                }else{
+                    var error = FDError(code: appErrorCodeEnum.inputDeviceNotFound.toRaw());
+                    self.delegate?.videoCaptureSession(self, failWithError: error);
+                }
+                break;
+            }
+        }
+        return inputDevice
     }
     
     /*************************
     * DELEGATE
     *************************/
-    func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!){
-        var pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer).takeUnretainedValue()
-        var imageAttachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, CMAttachmentMode(kCMAttachmentMode_ShouldPropagate)).takeUnretainedValue()
-        var image = CIImage(CVImageBuffer: pixelBuffer, options: imageAttachments)
-       
-        //if imageAttachments != nil {
-           // CFRelease(imageAttachments);
-        //}
-        self.delegate?.videoCaptureSession(self, didCaptureImage: nil);
+    func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
+        var faceObjects = metadataObjects as [AVMetadataFaceObject]
+        for  faceObject:AVMetadataFaceObject in faceObjects{
+            NSLog("%d", faceObject.faceID)
+        }
     }
     
 }
