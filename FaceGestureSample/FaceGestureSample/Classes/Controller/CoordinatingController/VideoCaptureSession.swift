@@ -20,6 +20,7 @@ class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate{
     var delegate                :VideoCapturing?
     var captureSession          :AVCaptureSession!
     var faceDetectionFeature    :AvFoundationEdition!
+    var videoPreviewViewLayer   :AVCaptureVideoPreviewLayer!
     /*************************
     * Session Initlization
     *************************/
@@ -27,6 +28,7 @@ class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate{
         super.init()
         self.delegate = delegate;
         self.setUpCaptureSession()
+        self.initVideoPreviewLayer()
     }
     
     func setUpCaptureSession(){
@@ -83,13 +85,25 @@ class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate{
         return inputDevice
     }
     
+    func initVideoPreviewLayer(){
+        videoPreviewViewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        videoPreviewViewLayer.backgroundColor = UIColor.blackColor().CGColor
+        videoPreviewViewLayer.videoGravity = AVLayerVideoGravityResizeAspect
+        videoPreviewViewLayer.opacity = 0.0;
+        
+    }
+    
     /*************************
     * DELEGATE
     *************************/
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         var faceObjects = metadataObjects as [AVMetadataFaceObject]
         for  faceObject:AVMetadataFaceObject in faceObjects{
-            NSLog("%d", faceObject.faceID)
+            var adjustedFaceObject = self.videoPreviewViewLayer.transformedMetadataObjectForMetadataObject(faceObject) as AVMetadataFaceObject
+            if(adjustedFaceObject.hasYawAngle){
+                
+            }
+            
         }
     }
     

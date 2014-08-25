@@ -9,6 +9,10 @@
 import Foundation
 
 class FaceDetectionConstant{
+    
+    /*******************************
+    *   App Constant
+    ********************************/
     class var defaultCancelTitle : NSString {
         return "Ok"
     }
@@ -16,9 +20,25 @@ class FaceDetectionConstant{
     class var errorTitle : NSString {
     return "Error!!!"
     }
-
     
-    class var queueCreate : String {
-        return "com.video.output.queue"
+    class var alertCancelBtnTitle : String{
+    return "Cancel";
     }
+    
+    class var alertInfoBtnTitle : String{
+    return "OK";
+    }
+    
+    class var plistType : String{
+    return "plist";
+    }
+    
+    class var appFeatureFile : String{
+    return "faceGestureFeature"
+    }
+    
+    class var featureCell : String{
+    return "appFeatureCell"
+    }
+
 }

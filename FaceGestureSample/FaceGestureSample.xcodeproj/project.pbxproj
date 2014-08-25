@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032EE46F19AB56EC006D4852 /* FeatureListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032EE46E19AB56EC006D4852 /* FeatureListViewController.swift */; };
+		032EE47219AB5BEA006D4852 /* faceGestureFeature.plist in Resources */ = {isa = PBXBuildFile; fileRef = 032EE47119AB5BEA006D4852 /* faceGestureFeature.plist */; };
 		0344D1811976B09B0035FED3 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0344D1801976B09B0035FED3 /* CoreMedia.framework */; };
 		0367E58D197D256D000C3F66 /* FaceDetectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0367E58C197D256D000C3F66 /* FaceDetectionEnum.swift */; };
 		037A00E719862F93007362AB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037A00E619862F93007362AB /* Utility.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		032EE46E19AB56EC006D4852 /* FeatureListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureListViewController.swift; sourceTree = "<group>"; };
+		032EE47119AB5BEA006D4852 /* faceGestureFeature.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = faceGestureFeature.plist; sourceTree = "<group>"; };
 		0344D1801976B09B0035FED3 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		0367E58C197D256D000C3F66 /* FaceDetectionEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceDetectionEnum.swift; sourceTree = "<group>"; };
 		037A00E619862F93007362AB /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -80,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		032EE47019AB5B67006D4852 /* AppDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				032EE47119AB5BEA006D4852 /* faceGestureFeature.plist */,
+			);
+			path = AppDataStorage;
+			sourceTree = "<group>";
+		};
 		037A00E519862F80007362AB /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				03C687A51973F7F7007203F3 /* ViewController.swift */,
+				032EE46E19AB56EC006D4852 /* FeatureListViewController.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -194,6 +207,7 @@
 		03C687A61973F7F7007203F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				032EE47019AB5B67006D4852 /* AppDataStorage */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +323,7 @@
 			files = (
 				03C687AD1973F7F7007203F3 /* Main.storyboard in Resources */,
 				03C687AE1973F7F7007203F3 /* Images.xcassets in Resources */,
+				032EE47219AB5BEA006D4852 /* faceGestureFeature.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				037A00E719862F93007362AB /* Utility.swift in Sources */,
+				032EE46F19AB56EC006D4852 /* FeatureListViewController.swift in Sources */,
 				03C687AC1973F7F7007203F3 /* ViewController.swift in Sources */,
 				03C687AB1973F7F7007203F3 /* AppDelegate.swift in Sources */,
 				03C687B01973F941007203F3 /* FaceDetectionManager.swift in Sources */,
@@ -385,7 +401,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Praveen Jha (L4CKQNLR55)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -405,6 +421,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "E81ACCCD-5615-40BE-AADB-23217740CC5F";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -427,7 +444,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: GlobalLogic Inc";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Praveen Jha (L4CKQNLR55)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: GlobalLogic Inc";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -441,6 +458,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "E81ACCCD-5615-40BE-AADB-23217740CC5F";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -454,6 +472,7 @@
 				INFOPLIST_FILE = FaceGestureSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "E81ACCCD-5615-40BE-AADB-23217740CC5F";
 			};
 			name = Debug;
 		};
@@ -465,6 +484,7 @@
 				INFOPLIST_FILE = FaceGestureSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "E81ACCCD-5615-40BE-AADB-23217740CC5F";
 			};
 			name = Release;
 		};

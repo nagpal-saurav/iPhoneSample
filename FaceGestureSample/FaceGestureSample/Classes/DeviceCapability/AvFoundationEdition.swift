@@ -28,7 +28,7 @@ class AvFoundationEdition{
                 return
             }
             self.metaDataOutput.metadataObjectTypes = [AVMetadataObjectTypeFace]
-            
+            self.metaDataOutput.connectionWithMediaType(AVMediaTypeMetadata).enabled = true
         }else{
             self.tearDownAVFaceDetection()
         }
