@@ -18,6 +18,7 @@ class FeatureListViewController: UIViewController {
         super.init(coder: aDecoder)
         self.appFeatures = Utility.listFromPlistFileLocal(fileName: FaceDetectionConstant.appFeatureFile)
     }
+    
     override func viewDidLoad(){
        super.viewDidLoad()
     }
@@ -42,5 +43,15 @@ class FeatureListViewController: UIViewController {
         
         cell!.textLabel.text = self.appFeatures.objectAtIndex(indexPath.row) as String
         return cell;
+    }
+    /*******************************
+    *   UITable View Delegate
+    ********************************/
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
+        var storyboard = UIStoryboard(name: FaceDetectionConstant.storyBoardName, bundle: nil)
+        if(indexPath.row == 0){
+            var featureViewController = storyboard.instantiateViewControllerWithIdentifier(FaceDetectionConstant.galleryViewIdentifier) as UIViewController
+            self.navigationController.pushViewController(featureViewController , animated: true)
+        }
     }
 }

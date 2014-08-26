@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, VideoCapturing, FaceDetecting {
+class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
     var videoCaptureSession     : VideoCaptureSession!
     var faceDetectionManager    :FaceDetectionManager!
     
@@ -61,7 +61,7 @@ class ViewController: UIViewController, VideoCapturing, FaceDetecting {
        
     }
     
-    func videoCaptureSession(session:VideoCaptureSession, didCaptureImage image:CIImage!){
+    func videoCaptureSession(session:VideoCaptureSession, didCaptureFaceObject faceObject:AnyObject!){
         //self.faceDetectionManager.detectFeatureFromImage(image)
     }
     

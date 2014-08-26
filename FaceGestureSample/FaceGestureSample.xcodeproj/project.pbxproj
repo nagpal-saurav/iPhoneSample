@@ -19,7 +19,7 @@
 		03C1AEAA1975534B005093E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C1AEA91975534B005093E1 /* UIKit.framework */; };
 		03C687961973EB1F007203F3 /* FaceGestureSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C687951973EB1F007203F3 /* FaceGestureSampleTests.swift */; };
 		03C687AB1973F7F7007203F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C687A11973F7F7007203F3 /* AppDelegate.swift */; };
-		03C687AC1973F7F7007203F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C687A51973F7F7007203F3 /* ViewController.swift */; };
+		03C687AC1973F7F7007203F3 /* FDGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C687A51973F7F7007203F3 /* FDGalleryViewController.swift */; };
 		03C687AD1973F7F7007203F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C687A81973F7F7007203F3 /* Main.storyboard */; };
 		03C687AE1973F7F7007203F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03C687AA1973F7F7007203F3 /* Images.xcassets */; };
 		03C687B01973F941007203F3 /* FaceDetectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C687AF1973F941007203F3 /* FaceDetectionManager.swift */; };
@@ -54,7 +54,7 @@
 		03C687941973EB1F007203F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03C687951973EB1F007203F3 /* FaceGestureSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceGestureSampleTests.swift; sourceTree = "<group>"; };
 		03C687A11973F7F7007203F3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03C687A51973F7F7007203F3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		03C687A51973F7F7007203F3 /* FDGalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDGalleryViewController.swift; sourceTree = "<group>"; };
 		03C687A91973F7F7007203F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03C687AA1973F7F7007203F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		03C687AF1973F941007203F3 /* FaceDetectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceDetectionManager.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 		03C687A41973F7F7007203F3 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
-				03C687A51973F7F7007203F3 /* ViewController.swift */,
+				03C687A51973F7F7007203F3 /* FDGalleryViewController.swift */,
 				032EE46E19AB56EC006D4852 /* FeatureListViewController.swift */,
 			);
 			path = UIViewController;
@@ -343,7 +343,7 @@
 			files = (
 				037A00E719862F93007362AB /* Utility.swift in Sources */,
 				032EE46F19AB56EC006D4852 /* FeatureListViewController.swift in Sources */,
-				03C687AC1973F7F7007203F3 /* ViewController.swift in Sources */,
+				03C687AC1973F7F7007203F3 /* FDGalleryViewController.swift in Sources */,
 				03C687AB1973F7F7007203F3 /* AppDelegate.swift in Sources */,
 				03C687B01973F941007203F3 /* FaceDetectionManager.swift in Sources */,
 				037A00E919865163007362AB /* FDError.swift in Sources */,

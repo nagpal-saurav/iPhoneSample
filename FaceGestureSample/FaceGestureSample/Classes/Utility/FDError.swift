@@ -10,20 +10,17 @@ import Foundation
 
 class FDError: NSError {
     let  fddomain = "com.facedetection.errordomain"
-    var  errorDescription:Dictionary<appErrorCodeEnum, String> =
-    [   appErrorCodeEnum.cameraDoesNotExist  :"Application is unable to find camera on device",
-        appErrorCodeEnum.frontCameraNotFound  : "Application require front camera to recognize gesture",
-        appErrorCodeEnum.inputDeviceNotFound  : "Application is unable to find input device",
-        appErrorCodeEnum.outputDeviceNotFound : "Application is unable to find input device"
+    var  errorDescription:Dictionary<Int, String> =
+    [   appErrorCodeEnum.cameraDoesNotExist.toRaw()  :  "Application is unable to find camera on device",
+        appErrorCodeEnum.frontCameraNotFound.toRaw()  : "Application require front camera to recognize gesture",
+        appErrorCodeEnum.inputDeviceNotFound.toRaw()  : "Application is unable to find input device",
+        appErrorCodeEnum.outputDeviceNotFound.toRaw() : "Application is unable to find input device"
     ]
     
     init(code: appErrorCodeEnum.Raw) {
-        if let validErrorCode = appErrorCodeEnum.fromRaw(code){
-            var info:NSDictionary?;
-            var value = errorDescription[validErrorCode];
-            info = NSDictionary(object: value!, forKey: NSLocalizedDescriptionKey);
+        if let value = errorDescription[code]{
+            var info:NSDictionary = NSDictionary(object: value, forKey: NSLocalizedDescriptionKey)
             super.init(domain: fddomain, code: code, userInfo: info);
-            NSLog(self.domain);
         }else{
             super.init(domain: fddomain, code: code, userInfo: nil);
         }

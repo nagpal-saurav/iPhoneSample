@@ -13,7 +13,7 @@ import CoreMedia
 
 protocol VideoCapturing{
     func videoCaptureSession(session:VideoCaptureSession, failWithError error:NSError?)
-    func videoCaptureSession(session:VideoCaptureSession, didCaptureImage image:CIImage!)
+    func videoCaptureSession(session:VideoCaptureSession, didCaptureFaceObject faceObject:AnyObject!)
 }
 
 class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate{
@@ -61,6 +61,9 @@ class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate{
         var newInput = self.pickCamera()
         if let inputDevice = newInput{
             self.captureSession.addInput(inputDevice)
+        }else{
+            var error = FDError(code: appErrorCodeEnum.frontCameraNotFound.toRaw());
+            self.delegate?.videoCaptureSession(self, failWithError: error);
         }
         self.captureSession.commitConfiguration()
     }
@@ -101,7 +104,7 @@ class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate{
         for  faceObject:AVMetadataFaceObject in faceObjects{
             var adjustedFaceObject = self.videoPreviewViewLayer.transformedMetadataObjectForMetadataObject(faceObject) as AVMetadataFaceObject
             if(adjustedFaceObject.hasYawAngle){
-                
+                self.delegate?.videoCaptureSession(self, didCaptureFaceObject: adjustedFaceObject)
             }
             
         }

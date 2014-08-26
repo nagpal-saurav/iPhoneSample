@@ -13,11 +13,11 @@ class FaceDetectionConstant{
     /*******************************
     *   App Constant
     ********************************/
-    class var defaultCancelTitle : NSString {
+    class var defaultCancelTitle : String {
         return "Ok"
     }
     
-    class var errorTitle : NSString {
+    class var errorTitle : String {
     return "Error!!!"
     }
     
@@ -39,6 +39,14 @@ class FaceDetectionConstant{
     
     class var featureCell : String{
     return "appFeatureCell"
+    }
+    
+    class var storyBoardName : String{
+    return "Main"
+    }
+    
+    class var galleryViewIdentifier :  String{
+       return "GalleryViewController"
     }
 
 }
