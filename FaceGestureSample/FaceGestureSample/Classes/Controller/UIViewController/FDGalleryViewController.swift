@@ -62,7 +62,7 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
     }
     
     func videoCaptureSession(session:VideoCaptureSession, didCaptureFaceObject faceObject:AnyObject!){
-        //self.faceDetectionManager.detectFeatureFromImage(image)
+        self.faceDetectionManager.detectFeatureFromImage(image)
     }
     
     /*************************
