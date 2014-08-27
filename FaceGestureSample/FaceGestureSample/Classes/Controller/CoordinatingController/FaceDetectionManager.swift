@@ -17,6 +17,7 @@ protocol FaceDetecting{
 
 class FaceDetectionManager{
     var delegate     : FaceDetecting?
+    var minYawAngleSwipeRight : CGFloat = 45
     
     init(delegate:FaceDetecting){
         self.delegate = delegate;
@@ -25,7 +26,9 @@ class FaceDetectionManager{
     func detectFeatureFromFaceObject(faceObject:AnyObject){
         var adjustedFaceObject = faceObject as AVMetadataFaceObject
         if(adjustedFaceObject.hasYawAngle){
-             println("The angle is \(adjustedFaceObject.yawAngle)")
+            if(adjustedFaceObject.yawAngle > self.minYawAngleSwipeRight){
+                self.delegate?.faceDetector(self, didDetectMovment: faceMovementTypeEnum.faceMoveRight)
+            }
         }
     }
 }

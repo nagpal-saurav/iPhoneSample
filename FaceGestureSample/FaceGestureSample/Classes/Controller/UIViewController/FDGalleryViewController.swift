@@ -9,15 +9,19 @@
 import UIKit
 
 class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
-    var videoCaptureSession     : VideoCaptureSession!
-    var faceDetectionManager    :FaceDetectionManager!
+    @IBOutlet weak var galleyScrollView: UIScrollView!
     
+    var videoCaptureSession     : VideoCaptureSession!
+    var faceDetectionManager    : FaceDetectionManager!
+    var imageList               : NSArray!
+    var currentPageIndex        = 0
     /*************************
     * View Ctrl Life Cycle
     *************************/
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.imageList = Utility.listFromPlistFileLocal(fileName: FaceDetectionConstant.galleryImageName)
     }
     
     override func viewWillAppear(animated: Bool){
@@ -26,6 +30,7 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
     
     override func viewDidAppear(animated: Bool){
         super.viewDidAppear(animated);
+        loadScrollViewWithDefault()
         if videoCaptureSession == nil {
             videoCaptureSession = VideoCaptureSession(delegate:self);
             self.addVideoPreviewLayer()
@@ -40,6 +45,45 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    /*************************
+    * View Update Method
+    *************************/
+    func loadScrollViewWithDefault(){
+        //We need to load 2 images initally
+        var scrollViewFrame = self.galleyScrollView.frame
+        galleyScrollView.contentSize = CGSizeMake(scrollViewFrame.size.width * self.imageList.count, scrollViewFrame.size.height)
+        NSLog("%@", NSStringFromCGRect(scrollViewFrame))
+        for index:Int in 0...1 {
+            var postionX  = CGFloat.convertFromIntegerLiteral(index)  * scrollViewFrame.size.width
+            var imageViewRect = CGRectMake(postionX , 0, scrollViewFrame.size.width, scrollViewFrame.size.height)
+            var imageView = FDImageView(frame: imageViewRect)
+            var imageName = self.imageList.objectAtIndex(index) as String
+            imageView.image = UIImage(named: imageName)
+            galleyScrollView.addSubview(imageView)
+        }
+        self.currentPageIndex = 0
+    }
+    func swipeScrollViewToDirection(movement:faceMovementTypeEnum){
+        switch movement{
+        case .faceMoveLeft:
+            NSLog("Move right")
+            self.currentPageIndex -= 1
+            if(self.currentPageIndex <= 0){
+                return
+            }
+        case .faceMoveRight:
+            self.currentPageIndex += 1
+            if(self.currentPageIndex >= imageList.count){
+                return
+            }
+            
+        }
+         NSLog("Move left\(self.currentPageIndex)")
+        var scrollViewFrame = self.galleyScrollView.frame
+        var postionX  = CGFloat.convertFromIntegerLiteral(self.currentPageIndex)  * scrollViewFrame.size.width
+        var newScrollRect = CGRectMake(postionX , 0, scrollViewFrame.size.width, scrollViewFrame.size.height)
+        self.galleyScrollView.scrollRectToVisible(newScrollRect, animated: true)
     }
     /*************************
     * Utility Method
@@ -62,14 +106,14 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
     }
     
     func videoCaptureSession(session:VideoCaptureSession, didCaptureFaceObject faceObject:AnyObject!){
-        self.faceDetectionManager.detectFeatureFromImage(image)
+        self.faceDetectionManager.detectFeatureFromFaceObject(faceObject)
     }
     
     /*************************
     * FaceDetection Delegate
     *************************/
-    func faceDetector(detetor:FaceDetectionManager, didDetectMovment:faceMovementTypeEnum){
-        
+    func faceDetector(detetor:FaceDetectionManager, didDetectMovment movement:faceMovementTypeEnum){
+        swipeScrollViewToDirection(movement)
     }
 }
 
