@@ -54,7 +54,6 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
         var scrollViewFrame = self.galleyScrollView.frame
         var positionX = scrollViewFrame.size.width * CGFloat.convertFromIntegerLiteral(self.imageList.count)
         galleyScrollView.contentSize = CGSizeMake(positionX, scrollViewFrame.size.height)
-        NSLog("%@", NSStringFromCGRect(scrollViewFrame))
         for index:Int in 0...1 {
             var postionX  = CGFloat.convertFromIntegerLiteral(index)  * scrollViewFrame.size.width
             var imageViewRect = CGRectMake(postionX , 0, scrollViewFrame.size.width, scrollViewFrame.size.height)
@@ -79,13 +78,16 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
             if(self.currentPageIndex >= imageList.count){
                 return
             }
-            
+        default:
+            return
         }
-         NSLog("Move left\(self.currentPageIndex)")
+        
         var scrollViewFrame = self.galleyScrollView.frame
+         NSLog("Move left\(scrollViewFrame.size.width)")
         var postionX  = CGFloat.convertFromIntegerLiteral(self.currentPageIndex)  * scrollViewFrame.size.width
-        var newScrollRect = CGRectMake(postionX , 0, scrollViewFrame.size.width, scrollViewFrame.size.height)
-        self.galleyScrollView.scrollRectToVisible(newScrollRect, animated: true)
+        var newPoint = CGPointMake(postionX, 0);
+        NSLog("%@", NSStringFromCGPoint(newPoint))
+        self.galleyScrollView.setContentOffset(newPoint, animated: true)
     }
     /*************************
     * Utility Method

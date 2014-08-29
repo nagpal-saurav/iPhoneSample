@@ -9,7 +9,7 @@
 import Foundation
 
 enum faceMovementTypeEnum{
-    case faceMoveRight, faceMoveLeft
+    case faceMoveRight, faceMoveLeft, faceMoveTypeNone
 }
 
 enum appErrorCodeEnum: Int{
