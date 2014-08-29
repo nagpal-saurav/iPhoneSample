@@ -52,7 +52,8 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
     func loadScrollViewWithDefault(){
         //We need to load 2 images initally
         var scrollViewFrame = self.galleyScrollView.frame
-        galleyScrollView.contentSize = CGSizeMake(scrollViewFrame.size.width * self.imageList.count, scrollViewFrame.size.height)
+        var positionX = scrollViewFrame.size.width * CGFloat.convertFromIntegerLiteral(self.imageList.count)
+        galleyScrollView.contentSize = CGSizeMake(positionX, scrollViewFrame.size.height)
         NSLog("%@", NSStringFromCGRect(scrollViewFrame))
         for index:Int in 0...1 {
             var postionX  = CGFloat.convertFromIntegerLiteral(index)  * scrollViewFrame.size.width
@@ -64,6 +65,7 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
         }
         self.currentPageIndex = 0
     }
+    
     func swipeScrollViewToDirection(movement:faceMovementTypeEnum){
         switch movement{
         case .faceMoveLeft:
