@@ -46,6 +46,12 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        videoCaptureSession.stopSession()
+    }
+    
     /*************************
     * View Update Method
     *************************/
@@ -63,6 +69,11 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
             galleyScrollView.addSubview(imageView)
         }
         self.currentPageIndex = 0
+    }
+    
+    func loadScrollViewForIndex(index:Int){
+        var scrollViewFrame = self.galleyScrollView.frame
+        
     }
     
     func swipeScrollViewToDirection(movement:faceMovementTypeEnum){
@@ -83,10 +94,8 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
         }
         
         var scrollViewFrame = self.galleyScrollView.frame
-         NSLog("Move left\(scrollViewFrame.size.width)")
         var postionX  = CGFloat.convertFromIntegerLiteral(self.currentPageIndex)  * scrollViewFrame.size.width
         var newPoint = CGPointMake(postionX, 0);
-        NSLog("%@", NSStringFromCGPoint(newPoint))
         self.galleyScrollView.setContentOffset(newPoint, animated: true)
     }
     /*************************
@@ -116,8 +125,10 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
     /*************************
     * FaceDetection Delegate
     *************************/
-    func faceDetector(detetor:FaceDetectionManager, didDetectMovment movement:faceMovementTypeEnum){
-        swipeScrollViewToDirection(movement)
+    func faceDetector(detetor:FaceDetectionManager, didDetectMovment movement:UInt32){
+        if let faceMovement = faceMovementTypeEnum.fromRaw(movement){
+            swipeScrollViewToDirection(faceMovement)
+        }
     }
 }
 

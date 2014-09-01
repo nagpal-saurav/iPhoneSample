@@ -48,6 +48,10 @@ class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate{
     func startSession(){
         self.captureSession.startRunning()
     }
+    
+    func stopSession(){
+        self.captureSession.stopRunning()
+    }
     /*************************
     * Session Setup Prerequiste
     *************************/

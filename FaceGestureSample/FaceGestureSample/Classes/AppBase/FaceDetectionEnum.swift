@@ -8,8 +8,12 @@
 
 import Foundation
 
-enum faceMovementTypeEnum{
-    case faceMoveRight, faceMoveLeft, faceMoveTypeNone
+enum faceMovementTypeEnum : UInt32{
+    case faceMoveRight = 1, faceMoveLeft, faceMoveTypeNone
+}
+
+enum FGdetectionTypeEnum : UInt32{
+    case FGdetectionTypeFace = 1, FGdetectionTypeEyesBlink = 2, FGdetectionTypeSmile = 4
 }
 
 enum appErrorCodeEnum: Int{
