@@ -36,8 +36,8 @@
 		03C687AC1973F7F7007203F3 /* FDGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C687A51973F7F7007203F3 /* FDGalleryViewController.swift */; };
 		03C687B01973F941007203F3 /* FaceDetectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C687AF1973F941007203F3 /* FaceDetectionManager.swift */; };
 		03C687B21973F9B1007203F3 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C687B11973F9B1007203F3 /* CoreImage.framework */; };
-		C10850A119A9E8A00077A3C9 /* AvFoundationEdition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10850A019A9E8A00077A3C9 /* AvFoundationEdition.swift */; };
-		C116C69819B24FDF008439E2 /* CoreImageDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C116C69719B24FDF008439E2 /* CoreImageDetection.swift */; };
+		C10850A119A9E8A00077A3C9 /* FaceDetectionManager+AvFoundationEdition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10850A019A9E8A00077A3C9 /* FaceDetectionManager+AvFoundationEdition.swift */; };
+		C116C69819B24FDF008439E2 /* FaceDetectionManager+CoreImageDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C116C69719B24FDF008439E2 /* FaceDetectionManager+CoreImageDetection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,8 +84,8 @@
 		03C687A51973F7F7007203F3 /* FDGalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDGalleryViewController.swift; sourceTree = "<group>"; };
 		03C687AF1973F941007203F3 /* FaceDetectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceDetectionManager.swift; sourceTree = "<group>"; };
 		03C687B11973F9B1007203F3 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		C10850A019A9E8A00077A3C9 /* AvFoundationEdition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvFoundationEdition.swift; sourceTree = "<group>"; };
-		C116C69719B24FDF008439E2 /* CoreImageDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreImageDetection.swift; sourceTree = "<group>"; };
+		C10850A019A9E8A00077A3C9 /* FaceDetectionManager+AvFoundationEdition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FaceDetectionManager+AvFoundationEdition.swift"; sourceTree = "<group>"; };
+		C116C69719B24FDF008439E2 /* FaceDetectionManager+CoreImageDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FaceDetectionManager+CoreImageDetection.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,8 +299,8 @@
 		C108509F19A9E8760077A3C9 /* DeviceCapability */ = {
 			isa = PBXGroup;
 			children = (
-				C10850A019A9E8A00077A3C9 /* AvFoundationEdition.swift */,
-				C116C69719B24FDF008439E2 /* CoreImageDetection.swift */,
+				C10850A019A9E8A00077A3C9 /* FaceDetectionManager+AvFoundationEdition.swift */,
+				C116C69719B24FDF008439E2 /* FaceDetectionManager+CoreImageDetection.swift */,
 			);
 			path = DeviceCapability;
 			sourceTree = "<group>";
@@ -426,8 +426,8 @@
 				0367E58D197D256D000C3F66 /* FaceDetectionEnum.swift in Sources */,
 				03C1AEA619755065005093E1 /* VideoCaptureSession.swift in Sources */,
 				03ACF19F1979018A00923E08 /* FaceDetectionConstant.swift in Sources */,
-				C116C69819B24FDF008439E2 /* CoreImageDetection.swift in Sources */,
-				C10850A119A9E8A00077A3C9 /* AvFoundationEdition.swift in Sources */,
+				C116C69819B24FDF008439E2 /* FaceDetectionManager+CoreImageDetection.swift in Sources */,
+				C10850A119A9E8A00077A3C9 /* FaceDetectionManager+AvFoundationEdition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

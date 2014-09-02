@@ -18,21 +18,31 @@ import AVFoundation
 
 class FaceDetectionManager : NSObject{
     var delegate              : FaceDetecting?
-    var faceDetector          : CoreImageDetection!
     var minYawAngleSwipeRight : CGFloat = 45
     var stillYawAngle         : CGFloat = 0
     var maxYawAngleSwipeLeft  : CGFloat = 315
     var lastMovement          : faceMovementTypeEnum = faceMovementTypeEnum.faceMoveTypeNone
+    var FGDetectionType       :FGdetectionTypeEnum!
+    var faceDetector          :CIDetector!
+    var  metaDataOutput       :AVCaptureMetadataOutput!
+    var  captureSession       :AVCaptureSession!
     
+    init(session:AVCaptureSession){
+        self.captureSession = session
+    }
+    
+    init(directorWithType detectionType:FGdetectionTypeEnum){
+        var context = CIContext(options: nil)
+        var detectorOpts = [CIDetectorAccuracy : CIDetectorAccuracyHigh]
+        faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: detectorOpts)
+        FGDetectionType = detectionType
+    }
     init(delegate:FaceDetecting){
         self.delegate = delegate;
     }
     
     func detectFeatureFromImage(faceImage:CIImage, detectionType:FGdetectionTypeEnum){
-        if faceDetector == nil{
-            faceDetector = CoreImageDetection(directorWithType: detectionType)
-        }
-        faceDetector.detectFeatureFromImage(self, featureHandler: <#((feature: CIFaceFeature) -> Void)?##(feature: CIFaceFeature) -> Void#>)
+        self.detectFeatureFromImage(faceImage, featureHandler: nil)
     }
     
     func detectFeatureFromFaceObject(faceObject:AnyObject){
@@ -58,4 +68,5 @@ class FaceDetectionManager : NSObject{
             }
         }
     }
+    
 }

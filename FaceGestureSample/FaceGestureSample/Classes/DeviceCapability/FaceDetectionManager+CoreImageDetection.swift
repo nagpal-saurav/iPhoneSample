@@ -9,16 +9,7 @@
 import Foundation
 import coreImage
 
-class CoreImageDetection{
-    
-    var FGDetectionType:FGdetectionTypeEnum!
-    var faceDetector   :CIDetector!
-    init(directorWithType detectionType:FGdetectionTypeEnum){
-        var context = CIContext(options: nil)
-        var detectorOpts = [CIDetectorAccuracy : CIDetectorAccuracyHigh]
-        faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: detectorOpts)
-        FGDetectionType = detectionType
-    }
+extension FaceDetectionManager{
     
     func detectFeatureFromImage(faceImage:CIImage, featureHandler:((feature:CIFaceFeature)->Void)?){
         var options = NSDictionary()

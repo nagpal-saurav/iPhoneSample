@@ -9,13 +9,7 @@
 import AVFoundation
 import Foundation
 
-class AvFoundationEdition{
-    var  metaDataOutput:AVCaptureMetadataOutput!
-    var  captureSession:AVCaptureSession!
-    
-    init(session:AVCaptureSession){
-       self.captureSession = session
-    }
+extension FaceDetectionManager{
     
     func addFaceDetectionFeatureWithDelegate(#delegate:AVCaptureMetadataOutputObjectsDelegate){
         self.metaDataOutput = AVCaptureMetadataOutput()
