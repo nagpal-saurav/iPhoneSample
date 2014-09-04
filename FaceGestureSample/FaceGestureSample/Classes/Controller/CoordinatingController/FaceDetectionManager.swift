@@ -24,12 +24,8 @@ class FaceDetectionManager : NSObject{
     var lastMovement          : faceMovementTypeEnum = faceMovementTypeEnum.faceMoveTypeNone
     var FGDetectionType       :FGdetectionTypeEnum!
     var faceDetector          :CIDetector!
-    var  metaDataOutput       :AVCaptureMetadataOutput!
-    var  captureSession       :AVCaptureSession!
     
-    init(session:AVCaptureSession){
-        self.captureSession = session
-    }
+
     
     init(directorWithType detectionType:FGdetectionTypeEnum){
         var context = CIContext(options: nil)
@@ -39,34 +35,6 @@ class FaceDetectionManager : NSObject{
     }
     init(delegate:FaceDetecting){
         self.delegate = delegate;
-    }
-    
-    func detectFeatureFromImage(faceImage:CIImage, detectionType:FGdetectionTypeEnum){
-        self.detectFeatureFromImage(faceImage, featureHandler: nil)
-    }
-    
-    func detectFeatureFromFaceObject(faceObject:AnyObject){
-        var adjustedFaceObject = faceObject as AVMetadataFaceObject
-        if(adjustedFaceObject.hasYawAngle){
-            if(adjustedFaceObject.yawAngle > self.minYawAngleSwipeRight){
-                if(lastMovement != faceMovementTypeEnum.faceMoveTypeNone){
-                    return
-                    
-                }
-                NSLog("adjusted Face Angle\(adjustedFaceObject.yawAngle)")
-                lastMovement = faceMovementTypeEnum.faceMoveRight
-                self.delegate?.faceDetector!(self, didDetectMovment: faceMovementTypeEnum.faceMoveRight.toRaw())
-            }else if(adjustedFaceObject.yawAngle > self.maxYawAngleSwipeLeft){
-                if(lastMovement != faceMovementTypeEnum.faceMoveTypeNone){
-                    return
-                }
-                NSLog("adjusted Face Angle\(adjustedFaceObject.yawAngle)")
-                lastMovement = faceMovementTypeEnum.faceMoveLeft
-                self.delegate?.faceDetector!(self, didDetectMovment: faceMovementTypeEnum.faceMoveLeft.toRaw())
-            }else if(adjustedFaceObject.yawAngle == self.stillYawAngle){
-                lastMovement = faceMovementTypeEnum.faceMoveTypeNone
-            }
-        }
     }
     
 }

@@ -11,7 +11,7 @@ import coreImage
 
 extension FaceDetectionManager{
     
-    func detectFeatureFromImage(faceImage:CIImage, featureHandler:((feature:CIFaceFeature)->Void)?){
+    func detectFeatureFromImage(faceImage:CIImage){
         var options = NSDictionary()
         if FGDetectionType.toRaw() & FGdetectionTypeEnum.FGdetectionTypeEyesBlink.toRaw() > 0{
             options.setValue("YES", forKey: CIDetectorEyeBlink)
@@ -20,9 +20,9 @@ extension FaceDetectionManager{
             options.setValue("YES", forKey: CIDetectorSmile)
         }
         var features  = faceDetector.featuresInImage(faceImage, options: options)
-        var faceFeature = features[0] as CIFaceFeature
-        if(featureHandler != nil){
-            featureHandler!(feature: faceFeature)
+        if(features.count > 0){
+            var faceFeature = features[0] as CIFaceFeature
+            self.delegate?.faceDetector!(self, didDetectfeature: faceFeature)
         }
         
     }

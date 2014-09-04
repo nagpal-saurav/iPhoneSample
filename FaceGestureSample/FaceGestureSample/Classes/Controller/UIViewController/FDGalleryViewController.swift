@@ -118,13 +118,14 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
        
     }
     
-    func videoCaptureSession(session:VideoCaptureSession, didCaptureFaceObject faceObject:AnyObject!){
+    func videoCaptureSession(session:VideoCaptureSession, canStartSession:Bool){
         self.faceDetectionManager.detectFeatureFromFaceObject(faceObject)
     }
     
     /*************************
     * FaceDetection Delegate
     *************************/
+    
     func faceDetector(detetor:FaceDetectionManager, didDetectMovment movement:UInt32){
         if let faceMovement = faceMovementTypeEnum.fromRaw(movement){
             swipeScrollViewToDirection(faceMovement)
