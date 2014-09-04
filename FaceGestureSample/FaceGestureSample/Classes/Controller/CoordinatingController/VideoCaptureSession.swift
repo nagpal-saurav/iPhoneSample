@@ -13,14 +13,16 @@ import CoreMedia
 
 protocol VideoCapturing{
     func videoCaptureSession(session:VideoCaptureSession, failWithError error:NSError?)
-    func videoCaptureSession(session:VideoCaptureSession, canStartSession:Bool)
+    func videoCaptureSession(session:VideoCaptureSession, didDetectFaceObject metaObejct:AnyObject!)
+    func videoCaptureSession(session:VideoCaptureSession, captureOutputFromSession image:CIImage!)
 }
 
-class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate{
+class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate, AVCaptureVideoDataOutputSampleBufferDelegate{
     var delegate                :VideoCapturing?
     var captureSession          :AVCaptureSession!
     var videoPreviewViewLayer   :AVCaptureVideoPreviewLayer!
-    var metaDataOutput         :AVCaptureMetadataOutput!
+    var metaDataOutput          :AVCaptureMetadataOutput!
+    var videoOutput             :AVCaptureVideoDataOutput!
     /*************************
     * Session Initlization
     *************************/
@@ -40,10 +42,6 @@ class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate{
             self.delegate?.videoCaptureSession(self, failWithError: error);
         }
         self.updateCameraSelection()
-    }
-    
-    func addSessionOutput(output:AVCaptureOutput){
-        self.captureSession.addOutput(output);
     }
     
     func startSession(){

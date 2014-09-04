@@ -17,5 +17,5 @@ enum FGdetectionTypeEnum : UInt32{
 }
 
 enum appErrorCodeEnum: Int{
-    case cameraDoesNotExist = 100,frontCameraNotFound, outputDeviceNotFound, inputDeviceNotFound
+    case cameraDoesNotExist = 100,frontCameraNotFound, outputDeviceNotFound, inputDeviceNotFound, coreVideooutputNotAdded, AvVideooutputNotAdded
 }

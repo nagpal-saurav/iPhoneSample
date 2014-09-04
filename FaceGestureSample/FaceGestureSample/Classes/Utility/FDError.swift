@@ -14,7 +14,9 @@ class FDError: NSError {
     [   appErrorCodeEnum.cameraDoesNotExist.toRaw()  :  "Application is unable to find camera on device",
         appErrorCodeEnum.frontCameraNotFound.toRaw()  : "Application require front camera to recognize gesture",
         appErrorCodeEnum.inputDeviceNotFound.toRaw()  : "Application is unable to find input device",
-        appErrorCodeEnum.outputDeviceNotFound.toRaw() : "Application is unable to find input device"
+        appErrorCodeEnum.outputDeviceNotFound.toRaw() : "Application is unable to find input device",
+        appErrorCodeEnum.coreVideooutputNotAdded.toRaw() : "Application is unable to add output for Smile Detetcion",
+        appErrorCodeEnum.AvVideooutputNotAdded.toRaw()  : "Application is unable to add output for Face Detection"
     ]
     
     init(code: appErrorCodeEnum.Raw) {

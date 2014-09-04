@@ -10,6 +10,7 @@ import AVFoundation
 import Foundation
 
 extension FaceDetectionManager{
+
     func detectFeatureFromFaceObject(faceObject:AnyObject){
         var adjustedFaceObject = faceObject as AVMetadataFaceObject
         if(adjustedFaceObject.hasYawAngle){

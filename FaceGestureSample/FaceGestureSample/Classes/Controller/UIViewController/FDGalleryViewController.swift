@@ -33,6 +33,7 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
         loadScrollViewWithDefault()
         if videoCaptureSession == nil {
             videoCaptureSession = VideoCaptureSession(delegate:self);
+            videoCaptureSession.addFaceDetectionFeatureWithAvFoundation();
             self.addVideoPreviewLayer()
         }
         if faceDetectionManager == nil {
@@ -118,8 +119,12 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
        
     }
     
-    func videoCaptureSession(session:VideoCaptureSession, canStartSession:Bool){
-        self.faceDetectionManager.detectFeatureFromFaceObject(faceObject)
+    func videoCaptureSession(session:VideoCaptureSession, didDetectFaceObject metaObejct:AnyObject!){
+        self.faceDetectionManager.detectFeatureFromFaceObject(metaObejct)
+    }
+    
+    func videoCaptureSession(session:VideoCaptureSession, captureOutputFromSession image:CIImage!){
+        
     }
     
     /*************************

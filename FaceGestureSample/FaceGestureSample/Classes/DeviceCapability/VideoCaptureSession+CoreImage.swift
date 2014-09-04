@@ -6,8 +6,31 @@
 //  Copyright (c) 2014 Saurav Nagpal. All rights reserved.
 //
 
-import UIKit
+import AVFoundation
 
 extension VideoCaptureSession {
-   
+
+    func addFaceDetectionFeatureWithCoreImage(){
+        var rgbOutputSettings = [ kCVPixelBufferPixelFormatTypeKey : kCMPixelFormat_32BGRA ]
+        self.videoOutput = AVCaptureVideoDataOutput()
+        self.videoOutput.videoSettings = rgbOutputSettings
+        
+        if self.captureSession.canAddOutput(self.videoOutput) == false{
+            tearDownCoreImageFaceDetection();
+            var error = FDError(code: appErrorCodeEnum.coreVideooutputNotAdded.toRaw());
+            self.delegate?.videoCaptureSession(self, failWithError: error)
+            return
+        }
+        self.videoOutput.alwaysDiscardsLateVideoFrames = true
+        var videoDataOutputQueue = dispatch_queue_create("VideoDataOutputQueue", DISPATCH_QUEUE_SERIAL);
+        self.videoOutput.setSampleBufferDelegate(self, queue: videoDataOutputQueue)
+        self.captureSession.addOutput(self.videoOutput)
+    }
+    
+    func tearDownCoreImageFaceDetection(){
+        if (self.videoOutput != nil){
+            self.captureSession.removeOutput(self.videoOutput)
+        }
+        self.videoOutput = nil
+    }
 }

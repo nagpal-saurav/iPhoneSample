@@ -11,7 +11,7 @@ import AVFoundation
 
 extension VideoCaptureSession{
 
-    func addFaceDetectionFeatureWithDelegate(){
+    func addFaceDetectionFeatureWithAvFoundation(){
         self.metaDataOutput = AVCaptureMetadataOutput()
         if(captureSession.canAddOutput(self.metaDataOutput)){
             self.metaDataOutput.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
@@ -19,6 +19,8 @@ extension VideoCaptureSession{
             var supportedMetaData:NSArray = self.metaDataOutput.availableMetadataObjectTypes
             if supportedMetaData.containsObject(AVMetadataObjectTypeFace) == false{
                 self.tearDownAVFaceDetection()
+                 var error = FDError(code: appErrorCodeEnum.coreVideooutputNotAdded.toRaw());
+                 self.delegate?.videoCaptureSession(self, failWithError: error)
                 return
             }
             self.metaDataOutput.metadataObjectTypes = [AVMetadataObjectTypeFace]
@@ -40,6 +42,7 @@ extension VideoCaptureSession{
         for  faceObject:AVMetadataFaceObject in faceObjects{
             var adjustedFaceObject = self.videoPreviewViewLayer.transformedMetadataObjectForMetadataObject(faceObject) as AVMetadataFaceObject
             if(adjustedFaceObject.hasYawAngle){
+                self.delegate?.videoCaptureSession(self, didDetectFaceObject: adjustedFaceObject)
             }
             
         }
