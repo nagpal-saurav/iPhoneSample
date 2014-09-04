@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Saurav Nagpal. All rights reserved.
 //
 
+import CoreImage
 import AVFoundation
 
 extension VideoCaptureSession {
@@ -25,6 +26,7 @@ extension VideoCaptureSession {
         var videoDataOutputQueue = dispatch_queue_create("VideoDataOutputQueue", DISPATCH_QUEUE_SERIAL);
         self.videoOutput.setSampleBufferDelegate(self, queue: videoDataOutputQueue)
         self.captureSession.addOutput(self.videoOutput)
+        self.videoOutput.connectionWithMediaType(AVMediaTypeVideo).enabled = true
     }
     
     func tearDownCoreImageFaceDetection(){
@@ -33,4 +35,12 @@ extension VideoCaptureSession {
         }
         self.videoOutput = nil
     }
+
+    func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+        var imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
+        var attachmentMode : UInt32 = UInt32(kCMAttachmentMode_ShouldPropagate)
+        var attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, attachmentMode)
+        var image = CIImage(CVPixelBuffer: imageBuffer, options: attachments)
+   
+  }
 }
