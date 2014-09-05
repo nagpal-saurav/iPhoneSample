@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
+class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting, UIScrollViewDelegate {
     @IBOutlet weak var galleyScrollView: UIScrollView!
     
     var videoCaptureSession     : VideoCaptureSession!
@@ -22,6 +22,7 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.imageList = Utility.listFromPlistFileLocal(fileName: FaceDetectionConstant.galleryImageName)
+        self.galleyScrollView.delegate = self
         self.galleyScrollView.minimumZoomScale = 1.0;
         self.galleyScrollView.maximumZoomScale = 15.0;
         self.galleyScrollView.zoomScale = 1.0;
@@ -60,7 +61,11 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
     * Scroll View Delegate
     *************************/
     func viewForZoomingInScrollView(scrollView: UIScrollView!) -> UIView!{
-        
+        var currentImageViewIndex = tagForIndex(self.currentPageIndex)
+        if let currentImageView = scrollView.viewWithTag(currentImageViewIndex){
+            return currentImageView
+        }
+        return nil
     }
     /*************************
     * View Update Method
@@ -74,6 +79,7 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
             var postionX  = CGFloat.convertFromIntegerLiteral(index)  * scrollViewFrame.size.width
             var imageViewRect = CGRectMake(postionX , 0, scrollViewFrame.size.width, scrollViewFrame.size.height)
             var imageView = FDImageView(frame: imageViewRect)
+            imageView.tag = tagForIndex(index)
             var imageName = self.imageList.objectAtIndex(index) as String
             imageView.image = UIImage(named: imageName)
             galleyScrollView.addSubview(imageView)
@@ -98,7 +104,7 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
         default:
             return
         }
-        
+        self.galleyScrollView.zoomScale = 1.0;
         var scrollViewFrame = self.galleyScrollView.frame
         var postionX  = CGFloat.convertFromIntegerLiteral(self.currentPageIndex)  * scrollViewFrame.size.width
         var newPoint = CGPointMake(postionX, 0);
@@ -112,6 +118,11 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
         rootLayer.masksToBounds = true
         videoCaptureSession.videoPreviewViewLayer.frame = rootLayer.frame
         rootLayer.addSublayer(videoCaptureSession.videoPreviewViewLayer)
+    }
+    
+    func tagForIndex(index:Int)->Int{
+        var startTag = 100
+        return index.advancedBy(startTag)
     }
     /*************************
     * Video Delegate
