@@ -30,6 +30,7 @@
 		03B221D219ADDEE100C6F30C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B221C519ADDEE100C6F30C /* Images.xcassets */; };
 		03B221D519ADDF6A00C6F30C /* FDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B221D419ADDF6A00C6F30C /* FDImageView.swift */; };
 		03B221D719ADE38400C6F30C /* galleryViewImageNameList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03B221D619ADE38400C6F30C /* galleryViewImageNameList.plist */; };
+		03B9311F19B9B05A00B0C7C2 /* FaceEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9311E19B9B05A00B0C7C2 /* FaceEvent.swift */; };
 		03C1AEA619755065005093E1 /* VideoCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1AEA519755065005093E1 /* VideoCaptureSession.swift */; };
 		03C1AEA8197550D3005093E1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C1AEA7197550D3005093E1 /* AVFoundation.framework */; };
 		03C1AEAA1975534B005093E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C1AEA91975534B005093E1 /* UIKit.framework */; };
@@ -76,6 +77,7 @@
 		03B221C519ADDEE100C6F30C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		03B221D419ADDF6A00C6F30C /* FDImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDImageView.swift; sourceTree = "<group>"; };
 		03B221D619ADE38400C6F30C /* galleryViewImageNameList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = galleryViewImageNameList.plist; sourceTree = "<group>"; };
+		03B9311E19B9B05A00B0C7C2 /* FaceEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceEvent.swift; sourceTree = "<group>"; };
 		03C1AEA519755065005093E1 /* VideoCaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCaptureSession.swift; sourceTree = "<group>"; };
 		03C1AEA7197550D3005093E1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		03C1AEA91975534B005093E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -284,6 +286,7 @@
 		03C687A61973F7F7007203F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				03B9311E19B9B05A00B0C7C2 /* FaceEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03B9311F19B9B05A00B0C7C2 /* FaceEvent.swift in Sources */,
 				037A00E719862F93007362AB /* Utility.swift in Sources */,
 				032EE46F19AB56EC006D4852 /* FeatureListViewController.swift in Sources */,
 				03C687AC1973F7F7007203F3 /* FDGalleryViewController.swift in Sources */,

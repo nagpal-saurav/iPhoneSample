@@ -20,6 +20,5 @@ class FDImageView: UIImageView {
         super.init(coder: aDecoder)
     }
     
-    
 
 }

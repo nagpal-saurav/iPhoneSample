@@ -19,10 +19,19 @@ extension FaceDetectionManager{
         if FGDetectionType.toRaw() & FGdetectionTypeEnum.FGdetectionTypeEyesBlink.toRaw() > 0{
             options.setValue("YES", forKey: CIDetectorSmile)
         }
+
         var features  = faceDetector.featuresInImage(faceImage, options: options)
         if(features.count > 0){
             var faceFeature = features[0] as CIFaceFeature
-            self.delegate?.faceDetector!(self, didDetectfeature: faceFeature)
+            if faceFeature.leftEyeClosed{
+                var faceEvent = FaceEvent(detectedType: FGdetectionTypeEnum.FGdetectionTypeEyesBlink)
+                faceEvent.addDetecttionDetail(FGEyeDetectionDetailEnum.FGEyeDetectionLeftEyeBlink.toRaw())
+                self.delegate?.faceDetector!(self, didDetectEvent: faceEvent)
+            }else if faceFeature.leftEyeClosed{
+                var faceEvent = FaceEvent(detectedType: FGdetectionTypeEnum.FGdetectionTypeEyesBlink)
+                faceEvent.addDetecttionDetail(FGEyeDetectionDetailEnum.FGEyeDetectionLeftEyeBlink.toRaw())
+                self.delegate?.faceDetector!(self, didDetectEvent: faceEvent)
+            }
         }
         
     }

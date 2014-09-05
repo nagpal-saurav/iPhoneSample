@@ -14,6 +14,7 @@ import AVFoundation
 @objc protocol FaceDetecting{
     optional func faceDetector(detetor:FaceDetectionManager, didDetectMovment movment:UInt32)
     optional func faceDetector(detetor:FaceDetectionManager, didDetectfeature feature:CIFaceFeature)
+    optional func faceDetector(detetor:FaceDetectionManager, didDetectEvent   event:FaceEvent)
 }
 
 class FaceDetectionManager : NSObject{

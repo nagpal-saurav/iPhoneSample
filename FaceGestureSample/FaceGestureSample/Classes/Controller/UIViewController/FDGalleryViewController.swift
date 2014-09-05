@@ -22,6 +22,9 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.imageList = Utility.listFromPlistFileLocal(fileName: FaceDetectionConstant.galleryImageName)
+        self.galleyScrollView.minimumZoomScale = 1.0;
+        self.galleyScrollView.maximumZoomScale = 15.0;
+        self.galleyScrollView.zoomScale = 1.0;
     }
     
     override func viewWillAppear(animated: Bool){
@@ -34,6 +37,7 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
         if videoCaptureSession == nil {
             videoCaptureSession = VideoCaptureSession(delegate:self);
             videoCaptureSession.addFaceDetectionFeatureWithAvFoundation();
+            videoCaptureSession.addFaceDetectionFeatureWithCoreImage();
             self.addVideoPreviewLayer()
         }
         if faceDetectionManager == nil {
@@ -52,7 +56,12 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
         super.viewDidDisappear(animated)
         videoCaptureSession.stopSession()
     }
-    
+    /*************************
+    * Scroll View Delegate
+    *************************/
+    func viewForZoomingInScrollView(scrollView: UIScrollView!) -> UIView!{
+        
+    }
     /*************************
     * View Update Method
     *************************/
@@ -120,7 +129,7 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
     }
     
     func videoCaptureSession(session:VideoCaptureSession, captureOutputFromSession image:CIImage!){
-        
+        self.faceDetectionManager.detectFeatureFromImage(image)
     }
     
     /*************************
@@ -131,6 +140,24 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting {
         if let faceMovement = faceMovementTypeEnum.fromRaw(movement){
             swipeScrollViewToDirection(faceMovement)
         }
+    }
+    
+    func faceDetector(detetor: FaceDetectionManager, didDetectEvent event: FaceEvent) {
+        var detectedType = event.detectedType
+        switch detectedType{
+        case .FGdetectionTypeEyesBlink:
+            if let eyeBlink = FGEyeDetectionDetailEnum.fromRaw(event.detectedDetail!){
+                switch eyeBlink{
+                case .FGEyeDetectionLeftEyeBlink:
+                     self.galleyScrollView.zoomScale = 1.0 + self.galleyScrollView.zoomScale
+                case .FGEyeDetectionRightEyeBlink:
+                    self.galleyScrollView.zoomScale = self.galleyScrollView.zoomScale - 1.0
+                }
+            }
+        default:
+            return
+        }
+        
     }
 }
 

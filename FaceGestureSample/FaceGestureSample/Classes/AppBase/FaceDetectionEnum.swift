@@ -16,6 +16,11 @@ enum FGdetectionTypeEnum : UInt32{
     case FGdetectionTypeFace = 1, FGdetectionTypeEyesBlink = 2, FGdetectionTypeSmile = 4
 }
 
+enum FGEyeDetectionDetailEnum : UInt32{
+    case FGEyeDetectionLeftEyeBlink = 1, FGEyeDetectionRightEyeBlink
+}
+
+
 enum appErrorCodeEnum: Int{
     case cameraDoesNotExist = 100,frontCameraNotFound, outputDeviceNotFound, inputDeviceNotFound, coreVideooutputNotAdded, AvVideooutputNotAdded
 }
