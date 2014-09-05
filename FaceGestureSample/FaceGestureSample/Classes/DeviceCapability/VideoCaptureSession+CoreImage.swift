@@ -39,7 +39,7 @@ extension VideoCaptureSession {
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
         var imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
         var attachmentMode : UInt32 = UInt32(kCMAttachmentMode_ShouldPropagate)
-        var attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, attachmentMode)
+        var attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, attachmentMode).takeUnretainedValue() as NSDictionary
         var image = CIImage(CVPixelBuffer: imageBuffer, options: attachments)
    
   }

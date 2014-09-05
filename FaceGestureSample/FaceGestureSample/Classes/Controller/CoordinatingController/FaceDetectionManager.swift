@@ -17,13 +17,14 @@ import AVFoundation
 }
 
 class FaceDetectionManager : NSObject{
-    var delegate              : FaceDetecting?
-    var minYawAngleSwipeRight : CGFloat = 45
-    var stillYawAngle         : CGFloat = 0
-    var maxYawAngleSwipeLeft  : CGFloat = 315
-    var lastMovement          : faceMovementTypeEnum = faceMovementTypeEnum.faceMoveTypeNone
-    var FGDetectionType       :FGdetectionTypeEnum!
-    var faceDetector          :CIDetector!
+    var delegate                : FaceDetecting?
+    var minYawAngleSwipeRight   : CGFloat = 45
+    var stillYawAngle           : CGFloat = 0
+    var maxYawAngleInDirection  : CGFloat = 180
+    var minYawAngleSwipeLeft    : CGFloat = 225
+    var lastMovement            : faceMovementTypeEnum = faceMovementTypeEnum.faceMoveTypeNone
+    var FGDetectionType         :FGdetectionTypeEnum!
+    var faceDetector            :CIDetector!
     
 
     

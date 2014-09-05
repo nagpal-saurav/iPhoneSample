@@ -42,6 +42,7 @@ extension VideoCaptureSession{
         for  faceObject:AVMetadataFaceObject in faceObjects{
             var adjustedFaceObject = self.videoPreviewViewLayer.transformedMetadataObjectForMetadataObject(faceObject) as AVMetadataFaceObject
             if(adjustedFaceObject.hasYawAngle){
+                NSLog("face angle\(adjustedFaceObject.yawAngle )")
                 self.delegate?.videoCaptureSession(self, didDetectFaceObject: adjustedFaceObject)
             }
             
