@@ -31,6 +31,8 @@
 		03B221D519ADDF6A00C6F30C /* FDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B221D419ADDF6A00C6F30C /* FDImageView.swift */; };
 		03B221D719ADE38400C6F30C /* galleryViewImageNameList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03B221D619ADE38400C6F30C /* galleryViewImageNameList.plist */; };
 		03B9311F19B9B05A00B0C7C2 /* FaceEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9311E19B9B05A00B0C7C2 /* FaceEvent.swift */; };
+		03BDE9A219BDB45500DA44AF /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BDE9A119BDB45500DA44AF /* opencv2.framework */; };
+		03BDE9A619BDB48700DA44AF /* VideoCaptureSession+OpenCv.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03BDE9A519BDB48700DA44AF /* VideoCaptureSession+OpenCv.mm */; };
 		03C1AEA619755065005093E1 /* VideoCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1AEA519755065005093E1 /* VideoCaptureSession.swift */; };
 		03C1AEA8197550D3005093E1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C1AEA7197550D3005093E1 /* AVFoundation.framework */; };
 		03C1AEAA1975534B005093E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C1AEA91975534B005093E1 /* UIKit.framework */; };
@@ -78,6 +80,10 @@
 		03B221D419ADDF6A00C6F30C /* FDImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDImageView.swift; sourceTree = "<group>"; };
 		03B221D619ADE38400C6F30C /* galleryViewImageNameList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = galleryViewImageNameList.plist; sourceTree = "<group>"; };
 		03B9311E19B9B05A00B0C7C2 /* FaceEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceEvent.swift; sourceTree = "<group>"; };
+		03BDE9A119BDB45500DA44AF /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		03BDE9A319BDB48700DA44AF /* FaceGestureSample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FaceGestureSample-Bridging-Header.h"; path = "Classes/DeviceCapability/FaceGestureSample-Bridging-Header.h"; sourceTree = "<group>"; };
+		03BDE9A419BDB48700DA44AF /* VideoCaptureSession+OpenCv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VideoCaptureSession+OpenCv.h"; sourceTree = "<group>"; };
+		03BDE9A519BDB48700DA44AF /* VideoCaptureSession+OpenCv.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "VideoCaptureSession+OpenCv.mm"; sourceTree = "<group>"; };
 		03C1AEA519755065005093E1 /* VideoCaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCaptureSession.swift; sourceTree = "<group>"; };
 		03C1AEA7197550D3005093E1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		03C1AEA91975534B005093E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -99,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03BDE9A219BDB45500DA44AF /* opencv2.framework in Frameworks */,
 				0344D1811976B09B0035FED3 /* CoreMedia.framework in Frameworks */,
 				03C1AEAA1975534B005093E1 /* UIKit.framework in Frameworks */,
 				03C1AEA8197550D3005093E1 /* AVFoundation.framework in Frameworks */,
@@ -209,6 +216,7 @@
 		03C687801973EB1F007203F3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03BDE9A319BDB48700DA44AF /* FaceGestureSample-Bridging-Header.h */,
 				03C687811973EB1F007203F3 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -294,6 +302,7 @@
 		03C687B31973F9D4007203F3 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				03BDE9A119BDB45500DA44AF /* opencv2.framework */,
 				0344D1801976B09B0035FED3 /* CoreMedia.framework */,
 				03C1AEA91975534B005093E1 /* UIKit.framework */,
 				03C1AEA7197550D3005093E1 /* AVFoundation.framework */,
@@ -306,6 +315,8 @@
 		C108509F19A9E8760077A3C9 /* DeviceCapability */ = {
 			isa = PBXGroup;
 			children = (
+				03BDE9A419BDB48700DA44AF /* VideoCaptureSession+OpenCv.h */,
+				03BDE9A519BDB48700DA44AF /* VideoCaptureSession+OpenCv.mm */,
 				C10850A019A9E8A00077A3C9 /* FaceDetectionManager+AvFoundation.swift */,
 				C116C69719B24FDF008439E2 /* FaceDetectionManager+CoreImage.swift */,
 				031F442719B878F5007A3ECE /* VideoCaptureSession+AvFoundation.swift */,
@@ -435,6 +446,7 @@
 				031F442A19B87921007A3ECE /* VideoCaptureSession+CoreImage.swift in Sources */,
 				03B221D519ADDF6A00C6F30C /* FDImageView.swift in Sources */,
 				0367E58D197D256D000C3F66 /* FaceDetectionEnum.swift in Sources */,
+				03BDE9A619BDB48700DA44AF /* VideoCaptureSession+OpenCv.mm in Sources */,
 				03C1AEA619755065005093E1 /* VideoCaptureSession.swift in Sources */,
 				03ACF19F1979018A00923E08 /* FaceDetectionConstant.swift in Sources */,
 				031F442819B878F5007A3ECE /* VideoCaptureSession+AvFoundation.swift in Sources */,
@@ -558,6 +570,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FaceGestureSample/Library",
+				);
 				INFOPLIST_FILE = FaceGestureSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -570,6 +586,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FaceGestureSample/Library",
+				);
 				INFOPLIST_FILE = FaceGestureSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

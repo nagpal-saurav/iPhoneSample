@@ -41,5 +41,6 @@ extension VideoCaptureSession {
         var attachmentMode : UInt32 = UInt32(kCMAttachmentMode_ShouldPropagate)
         var attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, attachmentMode).takeUnretainedValue() as NSDictionary
         var image = CIImage(CVPixelBuffer: imageBuffer, options: attachments)
+        self.delegate?.videoCaptureSession(self, captureOutputFromSession: image)
   }
 }
