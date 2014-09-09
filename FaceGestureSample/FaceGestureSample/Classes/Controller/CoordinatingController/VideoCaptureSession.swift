@@ -11,13 +11,13 @@ import UIKit
 import AVFoundation
 import CoreMedia
 
-protocol VideoCapturing{
-    func videoCaptureSession(session:VideoCaptureSession, failWithError error:NSError?)
-    func videoCaptureSession(session:VideoCaptureSession, didDetectFaceObject metaObejct:AnyObject!)
-    func videoCaptureSession(session:VideoCaptureSession, captureOutputFromSession image:CIImage!)
+@objc protocol VideoCapturing{
+    optional func videoCaptureSession(session:VideoCaptureSession, failWithError error:NSError?)
+    optional func videoCaptureSession(session:VideoCaptureSession, didDetectFaceObject metaObejct:AnyObject!)
+    optional func videoCaptureSession(session:VideoCaptureSession, captureOutputFromSession image:CIImage!)
 }
 
-class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate, AVCaptureVideoDataOutputSampleBufferDelegate{
+@objc class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate, AVCaptureVideoDataOutputSampleBufferDelegate{
     var delegate                :VideoCapturing?
     var captureSession          :AVCaptureSession!
     var videoPreviewViewLayer   :AVCaptureVideoPreviewLayer!
@@ -39,7 +39,7 @@ class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate, AV
             captureSession.sessionPreset = AVCaptureSessionPresetPhoto
         }else{
             var error = FDError(code: appErrorCodeEnum.cameraDoesNotExist.toRaw());
-            self.delegate?.videoCaptureSession(self, failWithError: error);
+            self.delegate?.videoCaptureSession!(self, failWithError: error);
         }
         self.updateCameraSelection()
     }
@@ -67,7 +67,7 @@ class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate, AV
             self.captureSession.addInput(inputDevice)
         }else{
             var error = FDError(code: appErrorCodeEnum.frontCameraNotFound.toRaw());
-            self.delegate?.videoCaptureSession(self, failWithError: error);
+            self.delegate?.videoCaptureSession!(self, failWithError: error);
         }
         self.captureSession.commitConfiguration()
     }
@@ -84,7 +84,7 @@ class VideoCaptureSession : NSObject, AVCaptureMetadataOutputObjectsDelegate, AV
                     inputDevice = deviceInput
                 }else{
                     var error = FDError(code: appErrorCodeEnum.inputDeviceNotFound.toRaw());
-                    self.delegate?.videoCaptureSession(self, failWithError: error);
+                    self.delegate?.videoCaptureSession!(self, failWithError: error);
                 }
                 break;
             }

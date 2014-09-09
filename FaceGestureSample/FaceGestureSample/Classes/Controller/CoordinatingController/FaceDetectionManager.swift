@@ -24,19 +24,22 @@ class FaceDetectionManager : NSObject{
     var maxYawAngleInDirection  : CGFloat = 180
     var minYawAngleSwipeLeft    : CGFloat = 225
     var lastMovement            : faceMovementTypeEnum = faceMovementTypeEnum.faceMoveTypeNone
-    var FGDetectionType         :FGdetectionTypeEnum!
-    var faceDetector            :CIDetector!
+    var FGDetectionType         : FGdetectionTypeEnum!
+    var faceDetector            : CIDetector!
     
 
     
-    init(directorWithType detectionType:FGdetectionTypeEnum){
+    init(delegate:FaceDetecting, withdetectionType detectionType:FGdetectionTypeEnum){
+        self.delegate = delegate;
         var context = CIContext(options: nil)
         var detectorOpts = [CIDetectorAccuracy : CIDetectorAccuracyHigh]
         faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: detectorOpts)
         FGDetectionType = detectionType
+        
     }
-    init(delegate:FaceDetecting){
-        self.delegate = delegate;
+    
+    convenience init(directorWithType detectionType:FGdetectionTypeEnum){
+        self.init(self, withdetectionType:detectionType)
     }
     
 }

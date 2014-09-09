@@ -49,6 +49,10 @@ class FaceDetectionConstant{
        return "GalleryViewController"
     }
     
+    class var readingViewIdentifier :  String{
+    return "readingViewController"
+    }
+    
     class var galleryImageName : String{
         return "galleryViewImageNameList"
     }

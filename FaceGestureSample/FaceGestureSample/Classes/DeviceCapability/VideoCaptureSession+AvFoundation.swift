@@ -20,7 +20,7 @@ extension VideoCaptureSession{
             if supportedMetaData.containsObject(AVMetadataObjectTypeFace) == false{
                 self.tearDownAVFaceDetection()
                  var error = FDError(code: appErrorCodeEnum.coreVideooutputNotAdded.toRaw());
-                 self.delegate?.videoCaptureSession(self, failWithError: error)
+                 self.delegate?.videoCaptureSession!(self, failWithError: error)
                 return
             }
             self.metaDataOutput.metadataObjectTypes = [AVMetadataObjectTypeFace]
@@ -43,7 +43,7 @@ extension VideoCaptureSession{
             var adjustedFaceObject = self.videoPreviewViewLayer.transformedMetadataObjectForMetadataObject(faceObject) as AVMetadataFaceObject
             if(adjustedFaceObject.hasYawAngle){
                 NSLog("face angle\(adjustedFaceObject.yawAngle )")
-                self.delegate?.videoCaptureSession(self, didDetectFaceObject: adjustedFaceObject)
+                self.delegate?.videoCaptureSession!(self, didDetectFaceObject: adjustedFaceObject)
             }
             
         }

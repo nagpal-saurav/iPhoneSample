@@ -19,7 +19,7 @@ extension VideoCaptureSession {
         if self.captureSession.canAddOutput(self.videoOutput) == false{
             tearDownCoreImageFaceDetection();
             var error = FDError(code: appErrorCodeEnum.coreVideooutputNotAdded.toRaw());
-            self.delegate?.videoCaptureSession(self, failWithError: error)
+            self.delegate?.videoCaptureSession!(self, failWithError: error)
             return
         }
         self.videoOutput.alwaysDiscardsLateVideoFrames = true
@@ -41,6 +41,6 @@ extension VideoCaptureSession {
         var attachmentMode : UInt32 = UInt32(kCMAttachmentMode_ShouldPropagate)
         var attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, attachmentMode).takeUnretainedValue() as NSDictionary
         var image = CIImage(CVPixelBuffer: imageBuffer, options: attachments)
-        self.delegate?.videoCaptureSession(self, captureOutputFromSession: image)
+        self.delegate?.videoCaptureSession!(self, captureOutputFromSession: image)
   }
 }

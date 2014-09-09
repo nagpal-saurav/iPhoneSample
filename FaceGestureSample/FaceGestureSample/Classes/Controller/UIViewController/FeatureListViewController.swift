@@ -49,9 +49,15 @@ class FeatureListViewController: UIViewController {
     ********************************/
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
         var storyboard = UIStoryboard(name: FaceDetectionConstant.storyBoardName, bundle: nil)
-        if(indexPath.row == 0){
-            var featureViewController = storyboard.instantiateViewControllerWithIdentifier(FaceDetectionConstant.galleryViewIdentifier) as UIViewController
-            self.navigationController.pushViewController(featureViewController , animated: true)
+        var featureViewController:UIViewController!
+        switch indexPath.row{
+        case 0:
+            featureViewController = storyboard.instantiateViewControllerWithIdentifier(FaceDetectionConstant.galleryViewIdentifier) as UIViewController
+        case 1:
+            featureViewController = storyboard.instantiateViewControllerWithIdentifier(FaceDetectionConstant.readingViewIdentifier) as UIViewController
+        default:
+            return;
         }
+        self.navigationController.pushViewController(featureViewController , animated: true)
     }
 }
