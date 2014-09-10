@@ -42,7 +42,8 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting, 
             self.addVideoPreviewLayer()
         }
         if faceDetectionManager == nil {
-            faceDetectionManager = FaceDetectionManager(delegate: self, withdetectionType: <#FGdetectionTypeEnum#>)
+            var detectionType = FGdetectionTypeEnum.FGdetectionTypeEyesBlink.toRaw() | FGdetectionTypeEnum.FGdetectionTypeSmile.toRaw()
+            faceDetectionManager = FaceDetectionManager(delegate: self, withdetectionType: detectionType);
         }
         
         videoCaptureSession.startSession();

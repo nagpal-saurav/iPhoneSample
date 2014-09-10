@@ -13,11 +13,11 @@ extension FaceDetectionManager{
     
     func detectFeatureFromImage(faceImage:CIImage){
         var options = NSDictionary()
-        NSLog("%d",FGDetectionType.toRaw())
-        if (FGDetectionType.toRaw() & FGdetectionTypeEnum.FGdetectionTypeEyesBlink.toRaw()) > 0{
+        NSLog("%d",FGDetectionType)
+        if (FGDetectionType & FGdetectionTypeEnum.FGdetectionTypeEyesBlink.toRaw()) > 0{
             options.setValue("YES", forKey: CIDetectorEyeBlink)
         }
-        if (FGDetectionType.toRaw() & FGdetectionTypeEnum.FGdetectionTypeEyesBlink.toRaw()) > 0{
+        if (FGDetectionType & FGdetectionTypeEnum.FGdetectionTypeEyesBlink.toRaw()) > 0{
             options.setValue("YES", forKey: CIDetectorSmile)
         }
 
