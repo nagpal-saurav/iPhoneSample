@@ -8,12 +8,25 @@
 
 import UIKit
 
-class FDImageView: UIImageView {
+class FDImageScrollView: UIScrollView {
+    
+    var imageView : UIImageView!
+    var image : UIImage! {
+        willSet(newImage) {
+            self.imageView.image = newImage
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.contentMode = UIViewContentMode.ScaleAspectFit
-        
+        self.minimumZoomScale = 1.0
+        self.maximumZoomScale = 9.0
+        self.zoomScale = 1.0
+        self.contentSize = imageView.bounds.size
+        self.showsHorizontalScrollIndicator = false
+        self.showsVerticalScrollIndicator = false
+        self.imageView = UIImageView()
     }
 
     required init(coder aDecoder: NSCoder) {

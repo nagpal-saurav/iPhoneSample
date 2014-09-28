@@ -23,9 +23,6 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting, 
         // Do any additional setup after loading the view, typically from a nib.
         self.imageList = Utility.listFromPlistFileLocal(fileName: FaceDetectionConstant.galleryImageName)
         self.galleyScrollView.delegate = self
-        self.galleyScrollView.minimumZoomScale = 1.0;
-        self.galleyScrollView.maximumZoomScale = 15.0;
-        self.galleyScrollView.zoomScale = 1.0;
     }
     
     override func viewWillAppear(animated: Bool){
@@ -37,7 +34,7 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting, 
         loadScrollViewWithDefault()
         if videoCaptureSession == nil {
             videoCaptureSession = VideoCaptureSession(delegate:self);
-            videoCaptureSession.addFaceDetectionFeatureWithAvFoundation();
+            //videoCaptureSession.addFaceDetectionFeatureWithAvFoundation();
             videoCaptureSession.addFaceDetectionFeatureWithCoreImage();
             self.addVideoPreviewLayer()
         }
@@ -62,11 +59,8 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting, 
     * Scroll View Delegate
     *************************/
     func viewForZoomingInScrollView(scrollView: UIScrollView!) -> UIView!{
-        var currentImageViewIndex = tagForIndex(self.currentPageIndex)
-        if let currentImageView = scrollView.viewWithTag(currentImageViewIndex){
-            return currentImageView
-        }
-        return nil
+        var imageScrollView = scrollView as FDImageScrollView
+        return imageScrollView.imageView;
     }
     /*************************
     * View Update Method
@@ -79,11 +73,12 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting, 
         for index:Int in 0...9 {
             var postionX  = CGFloat.convertFromIntegerLiteral(index)  * scrollViewFrame.size.width
             var imageViewRect = CGRectMake(postionX , 0, scrollViewFrame.size.width, scrollViewFrame.size.height)
-            var imageView = FDImageView(frame: imageViewRect)
-            imageView.tag = tagForIndex(index)
+            var imageScrollView = FDImageScrollView(frame: imageViewRect)
             var imageName = self.imageList.objectAtIndex(index) as String
-            imageView.image = UIImage(named: imageName)
-            galleyScrollView.addSubview(imageView)
+            imageScrollView.tag = tagForIndex(index)
+            imageScrollView.delegate = self;
+            imageScrollView.image = UIImage(named: imageName)
+            galleyScrollView.addSubview(imageScrollView)
         }
         self.currentPageIndex = 0
     }
@@ -125,6 +120,14 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting, 
         var startTag = 100
         return index.advancedBy(startTag)
     }
+    
+    func zoomVisibleImageViewToScale(scale:CGFloat){
+        var currentImageViewIndex = tagForIndex(self.currentPageIndex)
+        if let currentView = self.galleyScrollView.viewWithTag(currentImageViewIndex){
+            var scrollView = currentView as UIScrollView
+            scrollView.setZoomScale(scale, animated: true)
+        }
+    }
     /*************************
     * Video Delegate
     *************************/
@@ -161,9 +164,10 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting, 
             if let eyeBlink = FGEyeDetectionDetailEnum.fromRaw(event.detectedDetail!){
                 switch eyeBlink{
                 case .FGEyeDetectionLeftEyeBlink:
-                     self.galleyScrollView.zoomScale = 1.0 + self.galleyScrollView.zoomScale
+                    self.zoomVisibleImageViewToScale(9.0)
                 case .FGEyeDetectionRightEyeBlink:
-                    self.galleyScrollView.zoomScale = self.galleyScrollView.zoomScale - 1.0
+                    self.zoomVisibleImageViewToScale(self.galleyScrollView.zoomScale - 1.0)
+                    
                 }
             }
         default:

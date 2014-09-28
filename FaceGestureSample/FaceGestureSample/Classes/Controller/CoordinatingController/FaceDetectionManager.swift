@@ -26,16 +26,18 @@ class FaceDetectionManager : NSObject{
     var lastMovement            : faceMovementTypeEnum = faceMovementTypeEnum.faceMoveTypeNone
     var FGDetectionType         : UInt32!
     var faceDetector            : CIDetector!
+    var featureDetectorOptions  : NSMutableDictionary!
     
 
     
     required init(delegate:FaceDetecting, withdetectionType detectionType:UInt32){
+        super.init()
         self.delegate = delegate;
         var context = CIContext(options: nil)
         var detectorOpts = [CIDetectorAccuracy : CIDetectorAccuracyHigh]
         faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: detectorOpts)
         FGDetectionType = detectionType
-        
+        self.setFeatureDetectorOptions();
     }
     
 }

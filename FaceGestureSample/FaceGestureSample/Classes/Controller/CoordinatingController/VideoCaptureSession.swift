@@ -79,7 +79,12 @@ import CoreMedia
         for device : AnyObject in devices{
             if device.position == AVCaptureDevicePosition.Front{
                 var error : NSError? = nil
-                var deviceInput:AVCaptureDeviceInput = AVCaptureDeviceInput.deviceInputWithDevice(device as AVCaptureDevice, error:&error) as AVCaptureDeviceInput
+                var actualDevice  = device as AVCaptureDevice
+               /* actualDevice.lockForConfiguration(&error);
+                actualDevice.activeVideoMinFrameDuration = CMTimeMake(1, 1)
+                actualDevice.activeVideoMaxFrameDuration = CMTimeMake(1, 1)
+                actualDevice.unlockForConfiguration()*/
+                var deviceInput:AVCaptureDeviceInput = AVCaptureDeviceInput.deviceInputWithDevice(actualDevice, error:&error) as AVCaptureDeviceInput
                 if error == nil && captureSession.canAddInput(deviceInput) {
                     inputDevice = deviceInput
                 }else{

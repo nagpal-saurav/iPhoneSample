@@ -41,7 +41,7 @@ class FeatureListViewController: UIViewController {
             cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: FaceDetectionConstant.featureCell)
         }
         
-        cell!.textLabel.text = self.appFeatures.objectAtIndex(indexPath.row) as String
+        cell!.textLabel?.text = self.appFeatures.objectAtIndex(indexPath.row) as? String
         return cell;
     }
     /*******************************
@@ -58,6 +58,6 @@ class FeatureListViewController: UIViewController {
         default:
             return;
         }
-        self.navigationController.pushViewController(featureViewController , animated: true)
+        self.navigationController?.pushViewController(featureViewController , animated: true)
     }
 }

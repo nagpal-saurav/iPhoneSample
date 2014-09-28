@@ -24,7 +24,8 @@ extension VideoCaptureSession{
                 return
             }
             self.metaDataOutput.metadataObjectTypes = [AVMetadataObjectTypeFace]
-            self.metaDataOutput.connectionWithMediaType(AVMediaTypeMetadata).enabled = true
+            var connection = self.metaDataOutput.connectionWithMediaType(AVMediaTypeMetadata)
+            connection.enabled = true;
         }else{
             self.tearDownAVFaceDetection()
         }
@@ -42,7 +43,7 @@ extension VideoCaptureSession{
         for  faceObject:AVMetadataFaceObject in faceObjects{
             var adjustedFaceObject = self.videoPreviewViewLayer.transformedMetadataObjectForMetadataObject(faceObject) as AVMetadataFaceObject
             if(adjustedFaceObject.hasYawAngle){
-                NSLog("face angle\(adjustedFaceObject.yawAngle )")
+                NSLog("face angle\(adjustedFaceObject.yawAngle)")
                 self.delegate?.videoCaptureSession!(self, didDetectFaceObject: adjustedFaceObject)
             }
             

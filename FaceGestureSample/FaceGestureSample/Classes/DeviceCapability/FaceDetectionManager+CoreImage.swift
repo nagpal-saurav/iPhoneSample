@@ -11,26 +11,29 @@ import coreImage
 
 extension FaceDetectionManager{
     
-    func detectFeatureFromImage(faceImage:CIImage){
-        var options = NSDictionary()
+    func setFeatureDetectorOptions(){
+        featureDetectorOptions = NSMutableDictionary()
         NSLog("%d",FGDetectionType)
         if (FGDetectionType & FGdetectionTypeEnum.FGdetectionTypeEyesBlink.toRaw()) > 0{
-            options.setValue("YES", forKey: CIDetectorEyeBlink)
+            featureDetectorOptions.setValue(NSNumber(bool: true), forKey: CIDetectorEyeBlink)
         }
         if (FGDetectionType & FGdetectionTypeEnum.FGdetectionTypeEyesBlink.toRaw()) > 0{
-            options.setValue("YES", forKey: CIDetectorSmile)
+            featureDetectorOptions.setValue(NSNumber(bool: true), forKey: CIDetectorSmile)
         }
-
-        var features  = faceDetector.featuresInImage(faceImage, options: options)
+    }
+    
+    func detectFeatureFromImage(faceImage:CIImage){
+        featureDetectorOptions.setValue(NSNumber(int: 6), forKey: CIDetectorImageOrientation)
+        var features  = faceDetector.featuresInImage(faceImage, options: featureDetectorOptions)
         if(features.count > 0){
             var faceFeature = features[0] as CIFaceFeature
             if faceFeature.leftEyeClosed{
                 var faceEvent = FaceEvent(detectedType: FGdetectionTypeEnum.FGdetectionTypeEyesBlink)
                 faceEvent.addDetecttionDetail(FGEyeDetectionDetailEnum.FGEyeDetectionLeftEyeBlink.toRaw())
                 self.delegate?.faceDetector!(self, didDetectEvent: faceEvent)
-            }else if faceFeature.leftEyeClosed{
+            }else if faceFeature.rightEyeClosed{
                 var faceEvent = FaceEvent(detectedType: FGdetectionTypeEnum.FGdetectionTypeEyesBlink)
-                faceEvent.addDetecttionDetail(FGEyeDetectionDetailEnum.FGEyeDetectionLeftEyeBlink.toRaw())
+                faceEvent.addDetecttionDetail(FGEyeDetectionDetailEnum.FGEyeDetectionRightEyeBlink.toRaw())
                 self.delegate?.faceDetector!(self, didDetectEvent: faceEvent)
             }
         }
