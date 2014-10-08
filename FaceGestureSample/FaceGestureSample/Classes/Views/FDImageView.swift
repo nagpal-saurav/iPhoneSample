@@ -8,28 +8,32 @@
 
 import UIKit
 
-class FDImageScrollView: UIScrollView {
+class FDImageScrollView: UIScrollView, UIScrollViewDelegate {
     
     var imageView : UIImageView!
-    var image : UIImage! {
-        willSet(newImage) {
-            self.imageView.image = newImage
-        }
-    }
-    
-    override init(frame: CGRect) {
+    init(frame: CGRect, withImageName imageName:String) {
         super.init(frame: frame)
         self.contentMode = UIViewContentMode.ScaleAspectFit
         self.minimumZoomScale = 1.0
         self.maximumZoomScale = 9.0
         self.zoomScale = 1.0
-        self.contentSize = imageView.bounds.size
         self.showsHorizontalScrollIndicator = false
         self.showsVerticalScrollIndicator = false
-        self.imageView = UIImageView()
+        self.initImageView(imageName)
+        self.contentSize = imageView.bounds.size;
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    func initImageView(imageName:String){
+        var imageFrame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
+        imageView = UIImageView(frame: imageFrame)
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        let newImageName = imageName.stringByReplacingOccurrencesOfString(".jpg", withString: "", options: nil, range:nil)
+        var filePath = NSBundle.mainBundle().pathForResource(newImageName, ofType: ".jpg")
+        imageView.image = UIImage(contentsOfFile: filePath!)
+        self.addSubview(imageView)
     }
 }
