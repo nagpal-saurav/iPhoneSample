@@ -18,6 +18,9 @@
 		C12CA11819E5BA25003BBED0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12CA11719E5BA25003BBED0 /* Foundation.framework */; };
 		C12CA11A19E5BA2D003BBED0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12CA11919E5BA2D003BBED0 /* QuartzCore.framework */; };
 		C12CA11D19E5BDAD003BBED0 /* Sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C12CA11C19E5BDAD003BBED0 /* Sample.pdf */; };
+		C1ACA94819E7057700BC3DF6 /* PDFListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACA94719E7057700BC3DF6 /* PDFListViewController.m */; };
+		C1ACA94A19E7061C00BC3DF6 /* PDFList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1ACA94919E7061C00BC3DF6 /* PDFList.plist */; };
+		C1ACA94E19E707A500BC3DF6 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACA94D19E707A500BC3DF6 /* Utility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,12 @@
 		C12CA11719E5BA25003BBED0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C12CA11919E5BA2D003BBED0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C12CA11C19E5BDAD003BBED0 /* Sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Sample.pdf; sourceTree = "<group>"; };
+		C1ACA94619E7057700BC3DF6 /* PDFListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFListViewController.h; sourceTree = "<group>"; };
+		C1ACA94719E7057700BC3DF6 /* PDFListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFListViewController.m; sourceTree = "<group>"; };
+		C1ACA94919E7061C00BC3DF6 /* PDFList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PDFList.plist; sourceTree = "<group>"; };
+		C1ACA94C19E707A500BC3DF6 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		C1ACA94D19E707A500BC3DF6 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		C1ACA94F19E70BCE00BC3DF6 /* PDFReaderConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFReaderConstant.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +140,7 @@
 			children = (
 				C12CA10219E5B953003BBED0 /* AppBase */,
 				C12CA10519E5B953003BBED0 /* ViewController */,
+				C1ACA94B19E7070500BC3DF6 /* Utility */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -140,6 +150,7 @@
 			children = (
 				C12CA10319E5B953003BBED0 /* AppDelegate.h */,
 				C12CA10419E5B953003BBED0 /* AppDelegate.m */,
+				C1ACA94F19E70BCE00BC3DF6 /* PDFReaderConstant.h */,
 			);
 			path = AppBase;
 			sourceTree = "<group>";
@@ -149,6 +160,8 @@
 			children = (
 				C12CA10619E5B953003BBED0 /* PDFViewController.h */,
 				C12CA10719E5B953003BBED0 /* PDFViewController.m */,
+				C1ACA94619E7057700BC3DF6 /* PDFListViewController.h */,
+				C1ACA94719E7057700BC3DF6 /* PDFListViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -185,9 +198,19 @@
 		C12CA11B19E5BDAD003BBED0 /* AppData */ = {
 			isa = PBXGroup;
 			children = (
+				C1ACA94919E7061C00BC3DF6 /* PDFList.plist */,
 				C12CA11C19E5BDAD003BBED0 /* Sample.pdf */,
 			);
 			path = AppData;
+			sourceTree = "<group>";
+		};
+		C1ACA94B19E7070500BC3DF6 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C1ACA94C19E707A500BC3DF6 /* Utility.h */,
+				C1ACA94D19E707A500BC3DF6 /* Utility.m */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C12CA11D19E5BDAD003BBED0 /* Sample.pdf in Resources */,
+				C1ACA94A19E7061C00BC3DF6 /* PDFList.plist in Resources */,
 				C12CA11419E5B990003BBED0 /* Main.storyboard in Resources */,
 				C12CA11319E5B990003BBED0 /* LaunchScreen.xib in Resources */,
 				C12CA11219E5B990003BBED0 /* Images.xcassets in Resources */,
@@ -293,7 +317,9 @@
 			files = (
 				C12CA10A19E5B953003BBED0 /* PDFViewController.m in Sources */,
 				C12CA10919E5B953003BBED0 /* AppDelegate.m in Sources */,
+				C1ACA94E19E707A500BC3DF6 /* Utility.m in Sources */,
 				C12CA0DE19E5B245003BBED0 /* main.m in Sources */,
+				C1ACA94819E7057700BC3DF6 /* PDFListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +512,7 @@
 				C12CA0FD19E5B245003BBED0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C12CA0FE19E5B245003BBED0 /* Build configuration list for PBXNativeTarget "PDFReadingSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +521,7 @@
 				C12CA10019E5B245003BBED0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,6 +14,8 @@
 
 @implementation PDFViewController
 
+#pragma mark - View Controller Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
