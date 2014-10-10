@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 Saurav Nagpal. All rights reserved.
 //
 
+#import "ReaderViewController.h"
 #import <UIKit/UIKit.h>
 
-@interface PDFViewController : UIViewController
+@interface PDFViewController : ReaderViewController
 
 @property (nonatomic, retain)NSDictionary* selectedPDFDetail;
 

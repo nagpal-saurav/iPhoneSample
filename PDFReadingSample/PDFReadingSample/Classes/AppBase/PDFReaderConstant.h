@@ -13,7 +13,10 @@
 
 #define  PDF_LIST_FILE_NAME         @"PDFList"
 #define  FILE_TYPE_PLIST            @"plist"
-#define  SEGUE_PUSH_PDFVIEWER       @"pdfViewer"
+#define  FILE_TYPE_PDF              @"pdf"
+#define  FILE_NAME_KEY              @"FileName"
+#define  PDFVIEWER_STORYBOARD_ID    @"PDFViewController"
+
 
 #pragma mark - PDF LIST VIEW
 

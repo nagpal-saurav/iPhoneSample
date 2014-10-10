@@ -18,6 +18,31 @@
 		C12CA11819E5BA25003BBED0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12CA11719E5BA25003BBED0 /* Foundation.framework */; };
 		C12CA11A19E5BA2D003BBED0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12CA11919E5BA2D003BBED0 /* QuartzCore.framework */; };
 		C12CA11D19E5BDAD003BBED0 /* Sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C12CA11C19E5BDAD003BBED0 /* Sample.pdf */; };
+		C16E285819E8431600EF4735 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16E285719E8431600EF4735 /* MessageUI.framework */; };
+		C16E285A19E8433A00EF4735 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16E285919E8433A00EF4735 /* ImageIO.framework */; };
+		C16E288C19E8441D00EF4735 /* ReaderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E285E19E8441D00EF4735 /* ReaderAppDelegate.m */; };
+		C16E288D19E8441D00EF4735 /* ReaderBookDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E286019E8441D00EF4735 /* ReaderBookDelegate.m */; };
+		C16E288E19E8441D00EF4735 /* ReaderDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E286219E8441D00EF4735 /* ReaderDemoController.m */; };
+		C16E288F19E8441D00EF4735 /* CGPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E286519E8441D00EF4735 /* CGPDFDocument.m */; };
+		C16E289019E8441D00EF4735 /* ReaderConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E286719E8441D00EF4735 /* ReaderConstants.m */; };
+		C16E289119E8441D00EF4735 /* ReaderContentPage.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E286919E8441D00EF4735 /* ReaderContentPage.m */; };
+		C16E289219E8441D00EF4735 /* ReaderContentTile.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E286B19E8441D00EF4735 /* ReaderContentTile.m */; };
+		C16E289319E8441D00EF4735 /* ReaderContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E286D19E8441D00EF4735 /* ReaderContentView.m */; };
+		C16E289419E8441D00EF4735 /* ReaderDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E286F19E8441D00EF4735 /* ReaderDocument.m */; };
+		C16E289519E8441D00EF4735 /* ReaderDocumentOutline.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E287119E8441D00EF4735 /* ReaderDocumentOutline.m */; };
+		C16E289619E8441D00EF4735 /* ReaderMainPagebar.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E287319E8441D00EF4735 /* ReaderMainPagebar.m */; };
+		C16E289719E8441D00EF4735 /* ReaderMainToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E287519E8441D00EF4735 /* ReaderMainToolbar.m */; };
+		C16E289819E8441D00EF4735 /* ReaderThumbCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E287719E8441D00EF4735 /* ReaderThumbCache.m */; };
+		C16E289919E8441D00EF4735 /* ReaderThumbFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E287919E8441D00EF4735 /* ReaderThumbFetch.m */; };
+		C16E289A19E8441D00EF4735 /* ReaderThumbQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E287B19E8441D00EF4735 /* ReaderThumbQueue.m */; };
+		C16E289B19E8441D00EF4735 /* ReaderThumbRender.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E287D19E8441D00EF4735 /* ReaderThumbRender.m */; };
+		C16E289C19E8441D00EF4735 /* ReaderThumbRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E287F19E8441D00EF4735 /* ReaderThumbRequest.m */; };
+		C16E289D19E8441D00EF4735 /* ReaderThumbsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E288119E8441D00EF4735 /* ReaderThumbsView.m */; };
+		C16E289E19E8441D00EF4735 /* ReaderThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E288319E8441D00EF4735 /* ReaderThumbView.m */; };
+		C16E289F19E8441D00EF4735 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E288519E8441D00EF4735 /* ReaderViewController.m */; };
+		C16E28A019E8441D00EF4735 /* ThumbsMainToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E288719E8441D00EF4735 /* ThumbsMainToolbar.m */; };
+		C16E28A119E8441D00EF4735 /* ThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E288919E8441D00EF4735 /* ThumbsViewController.m */; };
+		C16E28A219E8441D00EF4735 /* UIXToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E288B19E8441D00EF4735 /* UIXToolbarView.m */; };
 		C1ACA94819E7057700BC3DF6 /* PDFListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACA94719E7057700BC3DF6 /* PDFListViewController.m */; };
 		C1ACA94A19E7061C00BC3DF6 /* PDFList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1ACA94919E7061C00BC3DF6 /* PDFList.plist */; };
 		C1ACA94E19E707A500BC3DF6 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACA94D19E707A500BC3DF6 /* Utility.m */; };
@@ -51,6 +76,54 @@
 		C12CA11719E5BA25003BBED0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C12CA11919E5BA2D003BBED0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C12CA11C19E5BDAD003BBED0 /* Sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Sample.pdf; sourceTree = "<group>"; };
+		C16E285719E8431600EF4735 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		C16E285919E8433A00EF4735 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		C16E285D19E8441D00EF4735 /* ReaderAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderAppDelegate.h; sourceTree = "<group>"; };
+		C16E285E19E8441D00EF4735 /* ReaderAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderAppDelegate.m; sourceTree = "<group>"; };
+		C16E285F19E8441D00EF4735 /* ReaderBookDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderBookDelegate.h; sourceTree = "<group>"; };
+		C16E286019E8441D00EF4735 /* ReaderBookDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderBookDelegate.m; sourceTree = "<group>"; };
+		C16E286119E8441D00EF4735 /* ReaderDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderDemoController.h; sourceTree = "<group>"; };
+		C16E286219E8441D00EF4735 /* ReaderDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderDemoController.m; sourceTree = "<group>"; };
+		C16E286419E8441D00EF4735 /* CGPDFDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFDocument.h; sourceTree = "<group>"; };
+		C16E286519E8441D00EF4735 /* CGPDFDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPDFDocument.m; sourceTree = "<group>"; };
+		C16E286619E8441D00EF4735 /* ReaderConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderConstants.h; sourceTree = "<group>"; };
+		C16E286719E8441D00EF4735 /* ReaderConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderConstants.m; sourceTree = "<group>"; };
+		C16E286819E8441D00EF4735 /* ReaderContentPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderContentPage.h; sourceTree = "<group>"; };
+		C16E286919E8441D00EF4735 /* ReaderContentPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderContentPage.m; sourceTree = "<group>"; };
+		C16E286A19E8441D00EF4735 /* ReaderContentTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderContentTile.h; sourceTree = "<group>"; };
+		C16E286B19E8441D00EF4735 /* ReaderContentTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderContentTile.m; sourceTree = "<group>"; };
+		C16E286C19E8441D00EF4735 /* ReaderContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderContentView.h; sourceTree = "<group>"; };
+		C16E286D19E8441D00EF4735 /* ReaderContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderContentView.m; sourceTree = "<group>"; };
+		C16E286E19E8441D00EF4735 /* ReaderDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderDocument.h; sourceTree = "<group>"; };
+		C16E286F19E8441D00EF4735 /* ReaderDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderDocument.m; sourceTree = "<group>"; };
+		C16E287019E8441D00EF4735 /* ReaderDocumentOutline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderDocumentOutline.h; sourceTree = "<group>"; };
+		C16E287119E8441D00EF4735 /* ReaderDocumentOutline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderDocumentOutline.m; sourceTree = "<group>"; };
+		C16E287219E8441D00EF4735 /* ReaderMainPagebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderMainPagebar.h; sourceTree = "<group>"; };
+		C16E287319E8441D00EF4735 /* ReaderMainPagebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderMainPagebar.m; sourceTree = "<group>"; };
+		C16E287419E8441D00EF4735 /* ReaderMainToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderMainToolbar.h; sourceTree = "<group>"; };
+		C16E287519E8441D00EF4735 /* ReaderMainToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderMainToolbar.m; sourceTree = "<group>"; };
+		C16E287619E8441D00EF4735 /* ReaderThumbCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderThumbCache.h; sourceTree = "<group>"; };
+		C16E287719E8441D00EF4735 /* ReaderThumbCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderThumbCache.m; sourceTree = "<group>"; };
+		C16E287819E8441D00EF4735 /* ReaderThumbFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderThumbFetch.h; sourceTree = "<group>"; };
+		C16E287919E8441D00EF4735 /* ReaderThumbFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderThumbFetch.m; sourceTree = "<group>"; };
+		C16E287A19E8441D00EF4735 /* ReaderThumbQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderThumbQueue.h; sourceTree = "<group>"; };
+		C16E287B19E8441D00EF4735 /* ReaderThumbQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderThumbQueue.m; sourceTree = "<group>"; };
+		C16E287C19E8441D00EF4735 /* ReaderThumbRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderThumbRender.h; sourceTree = "<group>"; };
+		C16E287D19E8441D00EF4735 /* ReaderThumbRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderThumbRender.m; sourceTree = "<group>"; };
+		C16E287E19E8441D00EF4735 /* ReaderThumbRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderThumbRequest.h; sourceTree = "<group>"; };
+		C16E287F19E8441D00EF4735 /* ReaderThumbRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderThumbRequest.m; sourceTree = "<group>"; };
+		C16E288019E8441D00EF4735 /* ReaderThumbsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderThumbsView.h; sourceTree = "<group>"; };
+		C16E288119E8441D00EF4735 /* ReaderThumbsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderThumbsView.m; sourceTree = "<group>"; };
+		C16E288219E8441D00EF4735 /* ReaderThumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderThumbView.h; sourceTree = "<group>"; };
+		C16E288319E8441D00EF4735 /* ReaderThumbView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderThumbView.m; sourceTree = "<group>"; };
+		C16E288419E8441D00EF4735 /* ReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderViewController.h; sourceTree = "<group>"; };
+		C16E288519E8441D00EF4735 /* ReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderViewController.m; sourceTree = "<group>"; };
+		C16E288619E8441D00EF4735 /* ThumbsMainToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbsMainToolbar.h; sourceTree = "<group>"; };
+		C16E288719E8441D00EF4735 /* ThumbsMainToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbsMainToolbar.m; sourceTree = "<group>"; };
+		C16E288819E8441D00EF4735 /* ThumbsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbsViewController.h; sourceTree = "<group>"; };
+		C16E288919E8441D00EF4735 /* ThumbsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbsViewController.m; sourceTree = "<group>"; };
+		C16E288A19E8441D00EF4735 /* UIXToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIXToolbarView.h; sourceTree = "<group>"; };
+		C16E288B19E8441D00EF4735 /* UIXToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIXToolbarView.m; sourceTree = "<group>"; };
 		C1ACA94619E7057700BC3DF6 /* PDFListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFListViewController.h; sourceTree = "<group>"; };
 		C1ACA94719E7057700BC3DF6 /* PDFListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFListViewController.m; sourceTree = "<group>"; };
 		C1ACA94919E7061C00BC3DF6 /* PDFList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PDFList.plist; sourceTree = "<group>"; };
@@ -64,6 +137,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C16E285A19E8433A00EF4735 /* ImageIO.framework in Frameworks */,
+				C16E285819E8431600EF4735 /* MessageUI.framework in Frameworks */,
 				C12CA11A19E5BA2D003BBED0 /* QuartzCore.framework in Frameworks */,
 				C12CA11819E5BA25003BBED0 /* Foundation.framework in Frameworks */,
 				C12CA11619E5BA1C003BBED0 /* UIKit.framework in Frameworks */,
@@ -141,6 +216,7 @@
 				C12CA10219E5B953003BBED0 /* AppBase */,
 				C12CA10519E5B953003BBED0 /* ViewController */,
 				C1ACA94B19E7070500BC3DF6 /* Utility */,
+				C16E285B19E8440200EF4735 /* PDFReaderSource */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -169,6 +245,8 @@
 		C12CA10819E5B953003BBED0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C16E285919E8433A00EF4735 /* ImageIO.framework */,
+				C16E285719E8431600EF4735 /* MessageUI.framework */,
 				C12CA11919E5BA2D003BBED0 /* QuartzCore.framework */,
 				C12CA11719E5BA25003BBED0 /* Foundation.framework */,
 				C12CA11519E5BA1C003BBED0 /* UIKit.framework */,
@@ -202,6 +280,75 @@
 				C12CA11C19E5BDAD003BBED0 /* Sample.pdf */,
 			);
 			path = AppData;
+			sourceTree = "<group>";
+		};
+		C16E285B19E8440200EF4735 /* PDFReaderSource */ = {
+			isa = PBXGroup;
+			children = (
+				C16E285C19E8441D00EF4735 /* Classes */,
+				C16E286319E8441D00EF4735 /* Sources */,
+			);
+			path = PDFReaderSource;
+			sourceTree = "<group>";
+		};
+		C16E285C19E8441D00EF4735 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C16E285D19E8441D00EF4735 /* ReaderAppDelegate.h */,
+				C16E285E19E8441D00EF4735 /* ReaderAppDelegate.m */,
+				C16E285F19E8441D00EF4735 /* ReaderBookDelegate.h */,
+				C16E286019E8441D00EF4735 /* ReaderBookDelegate.m */,
+				C16E286119E8441D00EF4735 /* ReaderDemoController.h */,
+				C16E286219E8441D00EF4735 /* ReaderDemoController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C16E286319E8441D00EF4735 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C16E286419E8441D00EF4735 /* CGPDFDocument.h */,
+				C16E286519E8441D00EF4735 /* CGPDFDocument.m */,
+				C16E286619E8441D00EF4735 /* ReaderConstants.h */,
+				C16E286719E8441D00EF4735 /* ReaderConstants.m */,
+				C16E286819E8441D00EF4735 /* ReaderContentPage.h */,
+				C16E286919E8441D00EF4735 /* ReaderContentPage.m */,
+				C16E286A19E8441D00EF4735 /* ReaderContentTile.h */,
+				C16E286B19E8441D00EF4735 /* ReaderContentTile.m */,
+				C16E286C19E8441D00EF4735 /* ReaderContentView.h */,
+				C16E286D19E8441D00EF4735 /* ReaderContentView.m */,
+				C16E286E19E8441D00EF4735 /* ReaderDocument.h */,
+				C16E286F19E8441D00EF4735 /* ReaderDocument.m */,
+				C16E287019E8441D00EF4735 /* ReaderDocumentOutline.h */,
+				C16E287119E8441D00EF4735 /* ReaderDocumentOutline.m */,
+				C16E287219E8441D00EF4735 /* ReaderMainPagebar.h */,
+				C16E287319E8441D00EF4735 /* ReaderMainPagebar.m */,
+				C16E287419E8441D00EF4735 /* ReaderMainToolbar.h */,
+				C16E287519E8441D00EF4735 /* ReaderMainToolbar.m */,
+				C16E287619E8441D00EF4735 /* ReaderThumbCache.h */,
+				C16E287719E8441D00EF4735 /* ReaderThumbCache.m */,
+				C16E287819E8441D00EF4735 /* ReaderThumbFetch.h */,
+				C16E287919E8441D00EF4735 /* ReaderThumbFetch.m */,
+				C16E287A19E8441D00EF4735 /* ReaderThumbQueue.h */,
+				C16E287B19E8441D00EF4735 /* ReaderThumbQueue.m */,
+				C16E287C19E8441D00EF4735 /* ReaderThumbRender.h */,
+				C16E287D19E8441D00EF4735 /* ReaderThumbRender.m */,
+				C16E287E19E8441D00EF4735 /* ReaderThumbRequest.h */,
+				C16E287F19E8441D00EF4735 /* ReaderThumbRequest.m */,
+				C16E288019E8441D00EF4735 /* ReaderThumbsView.h */,
+				C16E288119E8441D00EF4735 /* ReaderThumbsView.m */,
+				C16E288219E8441D00EF4735 /* ReaderThumbView.h */,
+				C16E288319E8441D00EF4735 /* ReaderThumbView.m */,
+				C16E288419E8441D00EF4735 /* ReaderViewController.h */,
+				C16E288519E8441D00EF4735 /* ReaderViewController.m */,
+				C16E288619E8441D00EF4735 /* ThumbsMainToolbar.h */,
+				C16E288719E8441D00EF4735 /* ThumbsMainToolbar.m */,
+				C16E288819E8441D00EF4735 /* ThumbsViewController.h */,
+				C16E288919E8441D00EF4735 /* ThumbsViewController.m */,
+				C16E288A19E8441D00EF4735 /* UIXToolbarView.h */,
+				C16E288B19E8441D00EF4735 /* UIXToolbarView.m */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		C1ACA94B19E7070500BC3DF6 /* Utility */ = {
@@ -315,11 +462,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C16E289819E8441D00EF4735 /* ReaderThumbCache.m in Sources */,
+				C16E289C19E8441D00EF4735 /* ReaderThumbRequest.m in Sources */,
+				C16E289E19E8441D00EF4735 /* ReaderThumbView.m in Sources */,
+				C16E28A019E8441D00EF4735 /* ThumbsMainToolbar.m in Sources */,
+				C16E289519E8441D00EF4735 /* ReaderDocumentOutline.m in Sources */,
+				C16E289F19E8441D00EF4735 /* ReaderViewController.m in Sources */,
 				C12CA10A19E5B953003BBED0 /* PDFViewController.m in Sources */,
+				C16E289719E8441D00EF4735 /* ReaderMainToolbar.m in Sources */,
 				C12CA10919E5B953003BBED0 /* AppDelegate.m in Sources */,
+				C16E289019E8441D00EF4735 /* ReaderConstants.m in Sources */,
+				C16E288D19E8441D00EF4735 /* ReaderBookDelegate.m in Sources */,
+				C16E28A219E8441D00EF4735 /* UIXToolbarView.m in Sources */,
 				C1ACA94E19E707A500BC3DF6 /* Utility.m in Sources */,
+				C16E289419E8441D00EF4735 /* ReaderDocument.m in Sources */,
+				C16E289A19E8441D00EF4735 /* ReaderThumbQueue.m in Sources */,
+				C16E288C19E8441D00EF4735 /* ReaderAppDelegate.m in Sources */,
+				C16E289619E8441D00EF4735 /* ReaderMainPagebar.m in Sources */,
+				C16E289219E8441D00EF4735 /* ReaderContentTile.m in Sources */,
+				C16E289319E8441D00EF4735 /* ReaderContentView.m in Sources */,
+				C16E288E19E8441D00EF4735 /* ReaderDemoController.m in Sources */,
 				C12CA0DE19E5B245003BBED0 /* main.m in Sources */,
+				C16E28A119E8441D00EF4735 /* ThumbsViewController.m in Sources */,
 				C1ACA94819E7057700BC3DF6 /* PDFListViewController.m in Sources */,
+				C16E289919E8441D00EF4735 /* ReaderThumbFetch.m in Sources */,
+				C16E289D19E8441D00EF4735 /* ReaderThumbsView.m in Sources */,
+				C16E289119E8441D00EF4735 /* ReaderContentPage.m in Sources */,
+				C16E289B19E8441D00EF4735 /* ReaderThumbRender.m in Sources */,
+				C16E288F19E8441D00EF4735 /* CGPDFDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +613,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				INFOPLIST_FILE = PDFReadingSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -453,6 +624,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				INFOPLIST_FILE = PDFReadingSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

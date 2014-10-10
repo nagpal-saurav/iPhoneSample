@@ -6,9 +6,13 @@
 //  Copyright (c) 2014 Saurav Nagpal. All rights reserved.
 //
 
+#import "PDFReaderConstant.h"
+#import "ReaderViewController.h"
 #import "PDFViewController.h"
 
-@interface PDFViewController ()
+@interface PDFViewController ()<ReaderViewControllerDelegate>
+
+@property(nonatomic, retain)ReaderDocument* document;
 
 @end
 
@@ -20,7 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {

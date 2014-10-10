@@ -7,6 +7,7 @@
 //
 
 #import "Utility.h"
+#import "ReaderDocument.h"
 #import "PDFReaderConstant.h"
 #import "PDFViewController.h"
 #import "PDFListViewController.h"
@@ -15,6 +16,8 @@
 
 @property (nonatomic, retain) NSArray*   pdfFileList;
 @property (weak, nonatomic) IBOutlet UITableView *PDFListView;
+
+- (void) showPDFViewerWithDetail:(NSDictionary*)pdfDetail;
 
 @end
 
@@ -50,14 +53,22 @@
     return cell;
 }
 
-#pragma mark segue Delegate
+#pragma mark - Table View Delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary* selectedPDFDetail = [self.pdfFileList objectAtIndex:indexPath.row];
+    [self showPDFViewerWithDetail:selectedPDFDetail];
+    
+}
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:SEGUE_PUSH_PDFVIEWER]){
-        PDFViewController* pdfViewC = segue.destinationViewController;
-        NSIndexPath* selectedIndex = self.PDFListView.indexPathForSelectedRow;
-        [pdfViewC setSelectedPDFDetail:[self.pdfFileList objectAtIndex:selectedIndex.row]];        
-    }
+#pragma mark - Utility
+
+- (void) showPDFViewerWithDetail:(NSDictionary*)pdfDetail{
+    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    NSString *fileName = [pdfDetail objectForKey:FILE_NAME_KEY];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:FILE_TYPE_PDF];
+    ReaderDocument* document = [ReaderDocument withDocumentFilePath:filePath password:nil];
+    PDFViewController *pdfViewC =[[storybord instantiateViewControllerWithIdentifier:PDFVIEWER_STORYBOARD_ID] initWithReaderDocument:document];
+    [self.navigationController pushViewController:pdfViewC animated:YES];
 }
 
 @end
