@@ -14,6 +14,8 @@
 
 @implementation PDFViewController
 
+@synthesize selectedPDFDetail;
+
 #pragma mark - View Controller Life Cycle
 
 - (void)viewDidLoad {

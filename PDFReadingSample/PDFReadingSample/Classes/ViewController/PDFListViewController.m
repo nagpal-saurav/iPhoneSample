@@ -8,11 +8,13 @@
 
 #import "Utility.h"
 #import "PDFReaderConstant.h"
+#import "PDFViewController.h"
 #import "PDFListViewController.h"
 
 @interface PDFListViewController ()
 
 @property (nonatomic, retain) NSArray*   pdfFileList;
+@property (weak, nonatomic) IBOutlet UITableView *PDFListView;
 
 @end
 
@@ -43,9 +45,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:PDF_CELL_IDENTIFIER];
-    
+    NSDictionary* cellInfo = [self.pdfFileList objectAtIndex:indexPath.row];
+    cell.textLabel.text = [cellInfo objectForKey:CELL_TEXT];
     return cell;
 }
 
+#pragma mark segue Delegate
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:SEGUE_PUSH_PDFVIEWER]){
+        PDFViewController* pdfViewC = segue.destinationViewController;
+        NSIndexPath* selectedIndex = self.PDFListView.indexPathForSelectedRow;
+        [pdfViewC setSelectedPDFDetail:[self.pdfFileList objectAtIndex:selectedIndex.row]];        
+    }
+}
 
 @end

@@ -10,6 +10,7 @@
 
 @interface PDFViewController : UIViewController
 
+@property (nonatomic, retain)NSDictionary* selectedPDFDetail;
 
 @end
 

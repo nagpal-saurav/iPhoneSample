@@ -13,9 +13,11 @@
 
 #define  PDF_LIST_FILE_NAME         @"PDFList"
 #define  FILE_TYPE_PLIST            @"plist"
+#define  SEGUE_PUSH_PDFVIEWER       @"pdfViewer"
 
 #pragma mark - PDF LIST VIEW
 
 #define  PDF_CELL_IDENTIFIER         @"PDFTitleCell"
+#define  CELL_TEXT                   @"Title"
 
 #endif
