@@ -12,7 +12,7 @@
 #import "PDFViewController.h"
 #import "PDFListViewController.h"
 
-@interface PDFListViewController ()
+@interface PDFListViewController ()<UISearchBarDelegate>
 
 @property (nonatomic, retain) NSArray*   pdfFileList;
 @property (weak, nonatomic) IBOutlet UITableView *PDFListView;
@@ -59,6 +59,13 @@
     [self showPDFViewerWithDetail:selectedPDFDetail];
     
 }
+
+#pragma mark - serach bar delgate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
+}
+
 
 #pragma mark - Utility
 
