@@ -7,9 +7,11 @@
 //
 
 #import "ReaderViewController.h"
+#import "MFDocumentViewController.h"
+#import "MFDocumentViewControllerDelegate.h"
 #import <UIKit/UIKit.h>
 
-@interface PDFViewController : ReaderViewController
+@interface PDFViewController : MFDocumentViewController
 
 @property (nonatomic, retain)NSDictionary* selectedPDFDetail;
 

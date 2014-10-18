@@ -22,5 +22,6 @@
 
 #define  PDF_CELL_IDENTIFIER         @"PDFTitleCell"
 #define  CELL_TEXT                   @"Title"
+#define  CELL_CONTENT                @"FileName"
 
 #endif

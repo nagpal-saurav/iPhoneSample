@@ -7,12 +7,18 @@
 //
 
 #import "PDFReaderConstant.h"
-#import "ReaderViewController.h"
 #import "PDFViewController.h"
 
-@interface PDFViewController ()<ReaderViewControllerDelegate>
+@class BookmarkViewController;
+@class SearchViewController;
+@class TextDisplayViewController;
+@class SearchManager;
+@class MiniSearchView;
+@class MFTextItem;
 
-@property(nonatomic, retain)ReaderDocument* document;
+
+@interface PDFViewController ()
+
 
 @end
 

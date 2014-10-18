@@ -17,7 +17,6 @@
 		C12CA11619E5BA1C003BBED0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12CA11519E5BA1C003BBED0 /* UIKit.framework */; };
 		C12CA11819E5BA25003BBED0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12CA11719E5BA25003BBED0 /* Foundation.framework */; };
 		C12CA11A19E5BA2D003BBED0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12CA11919E5BA2D003BBED0 /* QuartzCore.framework */; };
-		C12CA11D19E5BDAD003BBED0 /* Sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C12CA11C19E5BDAD003BBED0 /* Sample.pdf */; };
 		C13AF37D19EC533400D6292F /* CGPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = C13AF35619EC533400D6292F /* CGPDFDocument.m */; };
 		C13AF37E19EC533400D6292F /* ReaderConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C13AF35819EC533400D6292F /* ReaderConstants.m */; };
 		C13AF37F19EC533400D6292F /* ReaderContentPage.m in Sources */ = {isa = PBXBuildFile; fileRef = C13AF35A19EC533400D6292F /* ReaderContentPage.m */; };
@@ -38,12 +37,43 @@
 		C13AF38E19EC533400D6292F /* ThumbsMainToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C13AF37819EC533400D6292F /* ThumbsMainToolbar.m */; };
 		C13AF38F19EC533400D6292F /* ThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C13AF37A19EC533400D6292F /* ThumbsViewController.m */; };
 		C13AF39019EC533400D6292F /* UIXToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C13AF37C19EC533400D6292F /* UIXToolbarView.m */; };
-		C13AF39419EC535800D6292F /* PDFScannerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C13AF39319EC535800D6292F /* PDFScannerUtil.m */; };
 		C16E285819E8431600EF4735 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16E285719E8431600EF4735 /* MessageUI.framework */; };
 		C16E285A19E8433A00EF4735 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16E285919E8433A00EF4735 /* ImageIO.framework */; };
 		C1ACA94819E7057700BC3DF6 /* PDFListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACA94719E7057700BC3DF6 /* PDFListViewController.m */; };
 		C1ACA94A19E7061C00BC3DF6 /* PDFList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1ACA94919E7061C00BC3DF6 /* PDFList.plist */; };
 		C1ACA94E19E707A500BC3DF6 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACA94D19E707A500BC3DF6 /* Utility.m */; };
+		C1AE513919F24BEC00847E08 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AE511D19F24BEC00847E08 /* libFastPdfKit.a */; };
+		C1AE513A19F24BEC00847E08 /* Courier-Bold.fpkfm in Resources */ = {isa = PBXBuildFile; fileRef = C1AE512C19F24BEC00847E08 /* Courier-Bold.fpkfm */; };
+		C1AE513B19F24BEC00847E08 /* Courier-BoldOblique.fpkfm in Resources */ = {isa = PBXBuildFile; fileRef = C1AE512D19F24BEC00847E08 /* Courier-BoldOblique.fpkfm */; };
+		C1AE513C19F24BEC00847E08 /* Courier-Oblique.fpkfm in Resources */ = {isa = PBXBuildFile; fileRef = C1AE512E19F24BEC00847E08 /* Courier-Oblique.fpkfm */; };
+		C1AE513D19F24BEC00847E08 /* Courier.fpkfm in Resources */ = {isa = PBXBuildFile; fileRef = C1AE512F19F24BEC00847E08 /* Courier.fpkfm */; };
+		C1AE513E19F24BEC00847E08 /* Helvetica-Bold.fpkfm in Resources */ = {isa = PBXBuildFile; fileRef = C1AE513019F24BEC00847E08 /* Helvetica-Bold.fpkfm */; };
+		C1AE513F19F24BEC00847E08 /* Helvetica-BoldOblique.fpkfm in Resources */ = {isa = PBXBuildFile; fileRef = C1AE513119F24BEC00847E08 /* Helvetica-BoldOblique.fpkfm */; };
+		C1AE514019F24BEC00847E08 /* Helvetica-Oblique.fpkfm in Resources */ = {isa = PBXBuildFile; fileRef = C1AE513219F24BEC00847E08 /* Helvetica-Oblique.fpkfm */; };
+		C1AE514119F24BEC00847E08 /* Helvetica.fpkfm in Resources */ = {isa = PBXBuildFile; fileRef = C1AE513319F24BEC00847E08 /* Helvetica.fpkfm */; };
+		C1AE514219F24BEC00847E08 /* Times-Bold.fpkfm in Resources */ = {isa = PBXBuildFile; fileRef = C1AE513419F24BEC00847E08 /* Times-Bold.fpkfm */; };
+		C1AE514319F24BEC00847E08 /* Times-BoldItalic.fpkfm in Resources */ = {isa = PBXBuildFile; fileRef = C1AE513519F24BEC00847E08 /* Times-BoldItalic.fpkfm */; };
+		C1AE514419F24BEC00847E08 /* Times-Italic.fpkfm in Resources */ = {isa = PBXBuildFile; fileRef = C1AE513619F24BEC00847E08 /* Times-Italic.fpkfm */; };
+		C1AE514519F24BEC00847E08 /* Times-Roman.fpkfm in Resources */ = {isa = PBXBuildFile; fileRef = C1AE513719F24BEC00847E08 /* Times-Roman.fpkfm */; };
+		C1AE514719F2534E00847E08 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AE514619F2534E00847E08 /* AudioToolbox.framework */; };
+		C1AE514919F2535500847E08 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AE514819F2535500847E08 /* AVFoundation.framework */; };
+		C1AE514B19F2536600847E08 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AE514A19F2536600847E08 /* MobileCoreServices.framework */; };
+		C1AE514D19F2537700847E08 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AE514C19F2537700847E08 /* SystemConfiguration.framework */; };
+		C1AE514F19F253A200847E08 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AE514E19F253A200847E08 /* MediaPlayer.framework */; };
+		C1AE515319F2572000847E08 /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AE515219F2572000847E08 /* TextSearchOperation.m */; };
+		C1AE515919F2585A00847E08 /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AE515819F2585A00847E08 /* SearchManager.m */; };
+		C1AE515C19F2636000847E08 /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AE515B19F2636000847E08 /* NotificationFactory.m */; };
+		C1C030DE19F1864000D915B6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C030DD19F1864000D915B6 /* libz.dylib */; };
+		C1C030E719F1970300D915B6 /* AFFIDAVIT.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C1C030E219F1970300D915B6 /* AFFIDAVIT.pdf */; };
+		C1C030E819F1970300D915B6 /* blood-donation.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C1C030E319F1970300D915B6 /* blood-donation.pdf */; };
+		C1C030E919F1970300D915B6 /* CoinChange.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C1C030E419F1970300D915B6 /* CoinChange.pdf */; };
+		C1C030EA19F1970300D915B6 /* LinkedListBasics.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C1C030E519F1970300D915B6 /* LinkedListBasics.pdf */; };
+		C1C030EB19F1970300D915B6 /* Pledge-Against-CORRUPTION.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C1C030E619F1970300D915B6 /* Pledge-Against-CORRUPTION.pdf */; };
+		C1C030F119F1970F00D915B6 /* Pledge-Against-Dowry.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C1C030EC19F1970F00D915B6 /* Pledge-Against-Dowry.pdf */; };
+		C1C030F219F1970F00D915B6 /* Pledge-For-Child-Adoption-Ok.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C1C030ED19F1970F00D915B6 /* Pledge-For-Child-Adoption-Ok.pdf */; };
+		C1C030F319F1970F00D915B6 /* Pledge-Quit-Homosexuality.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C1C030EE19F1970F00D915B6 /* Pledge-Quit-Homosexuality.pdf */; };
+		C1C030F419F1970F00D915B6 /* Queue.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C1C030EF19F1970F00D915B6 /* Queue.pdf */; };
+		C1C030F519F1970F00D915B6 /* Reader.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C1C030F019F1970F00D915B6 /* Reader.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +103,6 @@
 		C12CA11519E5BA1C003BBED0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C12CA11719E5BA25003BBED0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C12CA11919E5BA2D003BBED0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		C12CA11C19E5BDAD003BBED0 /* Sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Sample.pdf; sourceTree = "<group>"; };
 		C13AF35519EC533400D6292F /* CGPDFDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFDocument.h; sourceTree = "<group>"; };
 		C13AF35619EC533400D6292F /* CGPDFDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPDFDocument.m; sourceTree = "<group>"; };
 		C13AF35719EC533400D6292F /* ReaderConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderConstants.h; sourceTree = "<group>"; };
@@ -114,8 +143,6 @@
 		C13AF37A19EC533400D6292F /* ThumbsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbsViewController.m; sourceTree = "<group>"; };
 		C13AF37B19EC533400D6292F /* UIXToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIXToolbarView.h; sourceTree = "<group>"; };
 		C13AF37C19EC533400D6292F /* UIXToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIXToolbarView.m; sourceTree = "<group>"; };
-		C13AF39219EC535800D6292F /* PDFScannerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFScannerUtil.h; sourceTree = "<group>"; };
-		C13AF39319EC535800D6292F /* PDFScannerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFScannerUtil.m; sourceTree = "<group>"; };
 		C16E285719E8431600EF4735 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C16E285919E8433A00EF4735 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		C1ACA94619E7057700BC3DF6 /* PDFListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFListViewController.h; sourceTree = "<group>"; };
@@ -124,6 +151,59 @@
 		C1ACA94C19E707A500BC3DF6 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		C1ACA94D19E707A500BC3DF6 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		C1ACA94F19E70BCE00BC3DF6 /* PDFReaderConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFReaderConstant.h; sourceTree = "<group>"; };
+		C1AE511919F24BEC00847E08 /* FPKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKAnnotation.h; sourceTree = "<group>"; };
+		C1AE511A19F24BEC00847E08 /* FPKGlyphBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKGlyphBox.h; sourceTree = "<group>"; };
+		C1AE511B19F24BEC00847E08 /* FPKOverlayViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKOverlayViewDataSource.h; sourceTree = "<group>"; };
+		C1AE511C19F24BEC00847E08 /* FPKURIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKURIAnnotation.h; sourceTree = "<group>"; };
+		C1AE511D19F24BEC00847E08 /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
+		C1AE511E19F24BEC00847E08 /* MFAudioPlayerViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewProtocol.h; sourceTree = "<group>"; };
+		C1AE511F19F24BEC00847E08 /* MFAudioProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioProvider.h; sourceTree = "<group>"; };
+		C1AE512019F24BEC00847E08 /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
+		C1AE512119F24BEC00847E08 /* MFDocumentOverlayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentOverlayDataSource.h; sourceTree = "<group>"; };
+		C1AE512219F24BEC00847E08 /* MFDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewController.h; sourceTree = "<group>"; };
+		C1AE512319F24BEC00847E08 /* MFDocumentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewControllerDelegate.h; sourceTree = "<group>"; };
+		C1AE512419F24BEC00847E08 /* MFFPKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFFPKAnnotation.h; sourceTree = "<group>"; };
+		C1AE512519F24BEC00847E08 /* MFOverlayDrawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFOverlayDrawable.h; sourceTree = "<group>"; };
+		C1AE512619F24BEC00847E08 /* MFOverlayTouchable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFOverlayTouchable.h; sourceTree = "<group>"; };
+		C1AE512719F24BEC00847E08 /* MFPDFOutlineEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPDFOutlineEntry.h; sourceTree = "<group>"; };
+		C1AE512819F24BEC00847E08 /* MFPDFOutlineRemoteEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPDFOutlineRemoteEntry.h; sourceTree = "<group>"; };
+		C1AE512919F24BEC00847E08 /* mfprofile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mfprofile.h; sourceTree = "<group>"; };
+		C1AE512A19F24BEC00847E08 /* MFTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTextItem.h; sourceTree = "<group>"; };
+		C1AE512C19F24BEC00847E08 /* Courier-Bold.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Courier-Bold.fpkfm"; sourceTree = "<group>"; };
+		C1AE512D19F24BEC00847E08 /* Courier-BoldOblique.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Courier-BoldOblique.fpkfm"; sourceTree = "<group>"; };
+		C1AE512E19F24BEC00847E08 /* Courier-Oblique.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Courier-Oblique.fpkfm"; sourceTree = "<group>"; };
+		C1AE512F19F24BEC00847E08 /* Courier.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Courier.fpkfm; sourceTree = "<group>"; };
+		C1AE513019F24BEC00847E08 /* Helvetica-Bold.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Helvetica-Bold.fpkfm"; sourceTree = "<group>"; };
+		C1AE513119F24BEC00847E08 /* Helvetica-BoldOblique.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Helvetica-BoldOblique.fpkfm"; sourceTree = "<group>"; };
+		C1AE513219F24BEC00847E08 /* Helvetica-Oblique.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Helvetica-Oblique.fpkfm"; sourceTree = "<group>"; };
+		C1AE513319F24BEC00847E08 /* Helvetica.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Helvetica.fpkfm; sourceTree = "<group>"; };
+		C1AE513419F24BEC00847E08 /* Times-Bold.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-Bold.fpkfm"; sourceTree = "<group>"; };
+		C1AE513519F24BEC00847E08 /* Times-BoldItalic.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-BoldItalic.fpkfm"; sourceTree = "<group>"; };
+		C1AE513619F24BEC00847E08 /* Times-Italic.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-Italic.fpkfm"; sourceTree = "<group>"; };
+		C1AE513719F24BEC00847E08 /* Times-Roman.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-Roman.fpkfm"; sourceTree = "<group>"; };
+		C1AE513819F24BEC00847E08 /* Stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stuff.h; sourceTree = "<group>"; };
+		C1AE514619F2534E00847E08 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C1AE514819F2535500847E08 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C1AE514A19F2536600847E08 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		C1AE514C19F2537700847E08 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C1AE514E19F253A200847E08 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		C1AE515119F2572000847E08 /* TextSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextSearchOperation.h; sourceTree = "<group>"; };
+		C1AE515219F2572000847E08 /* TextSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextSearchOperation.m; sourceTree = "<group>"; };
+		C1AE515719F2585A00847E08 /* SearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchManager.h; sourceTree = "<group>"; };
+		C1AE515819F2585A00847E08 /* SearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchManager.m; sourceTree = "<group>"; };
+		C1AE515A19F2636000847E08 /* NotificationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationFactory.h; sourceTree = "<group>"; };
+		C1AE515B19F2636000847E08 /* NotificationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationFactory.m; sourceTree = "<group>"; };
+		C1C030DD19F1864000D915B6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		C1C030E219F1970300D915B6 /* AFFIDAVIT.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AFFIDAVIT.pdf; sourceTree = "<group>"; };
+		C1C030E319F1970300D915B6 /* blood-donation.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "blood-donation.pdf"; sourceTree = "<group>"; };
+		C1C030E419F1970300D915B6 /* CoinChange.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CoinChange.pdf; sourceTree = "<group>"; };
+		C1C030E519F1970300D915B6 /* LinkedListBasics.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = LinkedListBasics.pdf; sourceTree = "<group>"; };
+		C1C030E619F1970300D915B6 /* Pledge-Against-CORRUPTION.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Pledge-Against-CORRUPTION.pdf"; sourceTree = "<group>"; };
+		C1C030EC19F1970F00D915B6 /* Pledge-Against-Dowry.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Pledge-Against-Dowry.pdf"; sourceTree = "<group>"; };
+		C1C030ED19F1970F00D915B6 /* Pledge-For-Child-Adoption-Ok.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Pledge-For-Child-Adoption-Ok.pdf"; sourceTree = "<group>"; };
+		C1C030EE19F1970F00D915B6 /* Pledge-Quit-Homosexuality.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Pledge-Quit-Homosexuality.pdf"; sourceTree = "<group>"; };
+		C1C030EF19F1970F00D915B6 /* Queue.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Queue.pdf; sourceTree = "<group>"; };
+		C1C030F019F1970F00D915B6 /* Reader.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Reader.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +211,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1AE514F19F253A200847E08 /* MediaPlayer.framework in Frameworks */,
+				C1AE514D19F2537700847E08 /* SystemConfiguration.framework in Frameworks */,
+				C1AE514B19F2536600847E08 /* MobileCoreServices.framework in Frameworks */,
+				C1AE514919F2535500847E08 /* AVFoundation.framework in Frameworks */,
+				C1AE514719F2534E00847E08 /* AudioToolbox.framework in Frameworks */,
+				C1C030DE19F1864000D915B6 /* libz.dylib in Frameworks */,
+				C1AE513919F24BEC00847E08 /* libFastPdfKit.a in Frameworks */,
 				C16E285A19E8433A00EF4735 /* ImageIO.framework in Frameworks */,
 				C16E285819E8431600EF4735 /* MessageUI.framework in Frameworks */,
 				C12CA11A19E5BA2D003BBED0 /* QuartzCore.framework in Frameworks */,
@@ -207,6 +294,7 @@
 		C12CA10119E5B953003BBED0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C1AE515019F2572000847E08 /* SearchOperation */,
 				C12CA10219E5B953003BBED0 /* AppBase */,
 				C12CA10519E5B953003BBED0 /* ViewController */,
 				C1ACA94B19E7070500BC3DF6 /* Utility */,
@@ -239,6 +327,12 @@
 		C12CA10819E5B953003BBED0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C1AE514E19F253A200847E08 /* MediaPlayer.framework */,
+				C1AE514C19F2537700847E08 /* SystemConfiguration.framework */,
+				C1AE514A19F2536600847E08 /* MobileCoreServices.framework */,
+				C1AE514819F2535500847E08 /* AVFoundation.framework */,
+				C1AE514619F2534E00847E08 /* AudioToolbox.framework */,
+				C1C030DD19F1864000D915B6 /* libz.dylib */,
 				C16E285919E8433A00EF4735 /* ImageIO.framework */,
 				C16E285719E8431600EF4735 /* MessageUI.framework */,
 				C12CA11919E5BA2D003BBED0 /* QuartzCore.framework */,
@@ -270,8 +364,17 @@
 		C12CA11B19E5BDAD003BBED0 /* AppData */ = {
 			isa = PBXGroup;
 			children = (
+				C1C030EC19F1970F00D915B6 /* Pledge-Against-Dowry.pdf */,
+				C1C030ED19F1970F00D915B6 /* Pledge-For-Child-Adoption-Ok.pdf */,
+				C1C030EE19F1970F00D915B6 /* Pledge-Quit-Homosexuality.pdf */,
+				C1C030EF19F1970F00D915B6 /* Queue.pdf */,
+				C1C030F019F1970F00D915B6 /* Reader.pdf */,
+				C1C030E219F1970300D915B6 /* AFFIDAVIT.pdf */,
+				C1C030E319F1970300D915B6 /* blood-donation.pdf */,
+				C1C030E419F1970300D915B6 /* CoinChange.pdf */,
+				C1C030E519F1970300D915B6 /* LinkedListBasics.pdf */,
+				C1C030E619F1970300D915B6 /* Pledge-Against-CORRUPTION.pdf */,
 				C1ACA94919E7061C00BC3DF6 /* PDFList.plist */,
-				C12CA11C19E5BDAD003BBED0 /* Sample.pdf */,
 			);
 			path = AppData;
 			sourceTree = "<group>";
@@ -279,6 +382,7 @@
 		C13AF35319EC533400D6292F /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				C1AE511819F24BEC00847E08 /* FPKCore */,
 				C13AF35419EC533400D6292F /* PDFReader */,
 			);
 			path = ThirdParty;
@@ -331,23 +435,72 @@
 			path = PDFReader;
 			sourceTree = "<group>";
 		};
-		C13AF39119EC533D00D6292F /* PDFUtils */ = {
-			isa = PBXGroup;
-			children = (
-				C13AF39219EC535800D6292F /* PDFScannerUtil.h */,
-				C13AF39319EC535800D6292F /* PDFScannerUtil.m */,
-			);
-			path = PDFUtils;
-			sourceTree = "<group>";
-		};
 		C1ACA94B19E7070500BC3DF6 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				C13AF39119EC533D00D6292F /* PDFUtils */,
 				C1ACA94C19E707A500BC3DF6 /* Utility.h */,
 				C1ACA94D19E707A500BC3DF6 /* Utility.m */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		C1AE511819F24BEC00847E08 /* FPKCore */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE511919F24BEC00847E08 /* FPKAnnotation.h */,
+				C1AE511A19F24BEC00847E08 /* FPKGlyphBox.h */,
+				C1AE511B19F24BEC00847E08 /* FPKOverlayViewDataSource.h */,
+				C1AE511C19F24BEC00847E08 /* FPKURIAnnotation.h */,
+				C1AE511D19F24BEC00847E08 /* libFastPdfKit.a */,
+				C1AE511E19F24BEC00847E08 /* MFAudioPlayerViewProtocol.h */,
+				C1AE511F19F24BEC00847E08 /* MFAudioProvider.h */,
+				C1AE512019F24BEC00847E08 /* MFDocumentManager.h */,
+				C1AE512119F24BEC00847E08 /* MFDocumentOverlayDataSource.h */,
+				C1AE512219F24BEC00847E08 /* MFDocumentViewController.h */,
+				C1AE512319F24BEC00847E08 /* MFDocumentViewControllerDelegate.h */,
+				C1AE512419F24BEC00847E08 /* MFFPKAnnotation.h */,
+				C1AE512519F24BEC00847E08 /* MFOverlayDrawable.h */,
+				C1AE512619F24BEC00847E08 /* MFOverlayTouchable.h */,
+				C1AE512719F24BEC00847E08 /* MFPDFOutlineEntry.h */,
+				C1AE512819F24BEC00847E08 /* MFPDFOutlineRemoteEntry.h */,
+				C1AE512919F24BEC00847E08 /* mfprofile.h */,
+				C1AE512A19F24BEC00847E08 /* MFTextItem.h */,
+				C1AE512B19F24BEC00847E08 /* standard14fonts */,
+				C1AE513819F24BEC00847E08 /* Stuff.h */,
+			);
+			path = FPKCore;
+			sourceTree = "<group>";
+		};
+		C1AE512B19F24BEC00847E08 /* standard14fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE512C19F24BEC00847E08 /* Courier-Bold.fpkfm */,
+				C1AE512D19F24BEC00847E08 /* Courier-BoldOblique.fpkfm */,
+				C1AE512E19F24BEC00847E08 /* Courier-Oblique.fpkfm */,
+				C1AE512F19F24BEC00847E08 /* Courier.fpkfm */,
+				C1AE513019F24BEC00847E08 /* Helvetica-Bold.fpkfm */,
+				C1AE513119F24BEC00847E08 /* Helvetica-BoldOblique.fpkfm */,
+				C1AE513219F24BEC00847E08 /* Helvetica-Oblique.fpkfm */,
+				C1AE513319F24BEC00847E08 /* Helvetica.fpkfm */,
+				C1AE513419F24BEC00847E08 /* Times-Bold.fpkfm */,
+				C1AE513519F24BEC00847E08 /* Times-BoldItalic.fpkfm */,
+				C1AE513619F24BEC00847E08 /* Times-Italic.fpkfm */,
+				C1AE513719F24BEC00847E08 /* Times-Roman.fpkfm */,
+			);
+			path = standard14fonts;
+			sourceTree = "<group>";
+		};
+		C1AE515019F2572000847E08 /* SearchOperation */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE515A19F2636000847E08 /* NotificationFactory.h */,
+				C1AE515B19F2636000847E08 /* NotificationFactory.m */,
+				C1AE515719F2585A00847E08 /* SearchManager.h */,
+				C1AE515819F2585A00847E08 /* SearchManager.m */,
+				C1AE515119F2572000847E08 /* TextSearchOperation.h */,
+				C1AE515219F2572000847E08 /* TextSearchOperation.m */,
+			);
+			path = SearchOperation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,11 +583,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C12CA11D19E5BDAD003BBED0 /* Sample.pdf in Resources */,
+				C1AE513A19F24BEC00847E08 /* Courier-Bold.fpkfm in Resources */,
+				C1AE514519F24BEC00847E08 /* Times-Roman.fpkfm in Resources */,
+				C1AE514019F24BEC00847E08 /* Helvetica-Oblique.fpkfm in Resources */,
 				C1ACA94A19E7061C00BC3DF6 /* PDFList.plist in Resources */,
+				C1C030F219F1970F00D915B6 /* Pledge-For-Child-Adoption-Ok.pdf in Resources */,
+				C1AE513B19F24BEC00847E08 /* Courier-BoldOblique.fpkfm in Resources */,
+				C1C030F419F1970F00D915B6 /* Queue.pdf in Resources */,
+				C1AE514419F24BEC00847E08 /* Times-Italic.fpkfm in Resources */,
+				C1AE514319F24BEC00847E08 /* Times-BoldItalic.fpkfm in Resources */,
+				C1C030F119F1970F00D915B6 /* Pledge-Against-Dowry.pdf in Resources */,
+				C1C030E719F1970300D915B6 /* AFFIDAVIT.pdf in Resources */,
 				C12CA11419E5B990003BBED0 /* Main.storyboard in Resources */,
+				C1C030E819F1970300D915B6 /* blood-donation.pdf in Resources */,
+				C1AE513F19F24BEC00847E08 /* Helvetica-BoldOblique.fpkfm in Resources */,
+				C1AE513E19F24BEC00847E08 /* Helvetica-Bold.fpkfm in Resources */,
+				C1C030F519F1970F00D915B6 /* Reader.pdf in Resources */,
+				C1C030EA19F1970300D915B6 /* LinkedListBasics.pdf in Resources */,
+				C1AE514119F24BEC00847E08 /* Helvetica.fpkfm in Resources */,
 				C12CA11319E5B990003BBED0 /* LaunchScreen.xib in Resources */,
 				C12CA11219E5B990003BBED0 /* Images.xcassets in Resources */,
+				C1AE513C19F24BEC00847E08 /* Courier-Oblique.fpkfm in Resources */,
+				C1AE513D19F24BEC00847E08 /* Courier.fpkfm in Resources */,
+				C1AE514219F24BEC00847E08 /* Times-Bold.fpkfm in Resources */,
+				C1C030E919F1970300D915B6 /* CoinChange.pdf in Resources */,
+				C1C030F319F1970F00D915B6 /* Pledge-Quit-Homosexuality.pdf in Resources */,
+				C1C030EB19F1970300D915B6 /* Pledge-Against-CORRUPTION.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,17 +637,19 @@
 				C13AF38019EC533400D6292F /* ReaderContentTile.m in Sources */,
 				C13AF38819EC533400D6292F /* ReaderThumbQueue.m in Sources */,
 				C12CA10919E5B953003BBED0 /* AppDelegate.m in Sources */,
-				C13AF39419EC535800D6292F /* PDFScannerUtil.m in Sources */,
 				C1ACA94E19E707A500BC3DF6 /* Utility.m in Sources */,
+				C1AE515319F2572000847E08 /* TextSearchOperation.m in Sources */,
 				C13AF38F19EC533400D6292F /* ThumbsViewController.m in Sources */,
 				C13AF38E19EC533400D6292F /* ThumbsMainToolbar.m in Sources */,
 				C13AF38A19EC533400D6292F /* ReaderThumbRequest.m in Sources */,
+				C1AE515919F2585A00847E08 /* SearchManager.m in Sources */,
 				C13AF38719EC533400D6292F /* ReaderThumbFetch.m in Sources */,
 				C13AF38D19EC533400D6292F /* ReaderViewController.m in Sources */,
 				C13AF38219EC533400D6292F /* ReaderDocument.m in Sources */,
 				C13AF38C19EC533400D6292F /* ReaderThumbView.m in Sources */,
 				C13AF38919EC533400D6292F /* ReaderThumbRender.m in Sources */,
 				C12CA0DE19E5B245003BBED0 /* main.m in Sources */,
+				C1AE515C19F2636000847E08 /* NotificationFactory.m in Sources */,
 				C1ACA94819E7057700BC3DF6 /* PDFListViewController.m in Sources */,
 				C13AF37D19EC533400D6292F /* CGPDFDocument.m in Sources */,
 				C13AF38B19EC533400D6292F /* ReaderThumbsView.m in Sources */,
@@ -604,6 +780,10 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				INFOPLIST_FILE = PDFReadingSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PDFReadingSample/Classes/ThirdParty/FPKCore",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -615,6 +795,10 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				INFOPLIST_FILE = PDFReadingSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PDFReadingSample/Classes/ThirdParty/FPKCore",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

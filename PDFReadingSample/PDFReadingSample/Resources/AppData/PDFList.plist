@@ -4,51 +4,63 @@
 <array>
 	<dict>
 		<key>Title</key>
-		<string>Sample1</string>
+		<string>Queue</string>
 		<key>FileName</key>
-		<string>Sample</string>
+		<string>Queue.pdf</string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Sample2</string>
+		<string>Reader</string>
 		<key>FileName</key>
-		<string>Sample</string>
+		<string>Reader.pdf</string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Sample3</string>
+		<string>AFFIDAVIT</string>
 		<key>FileName</key>
-		<string>Sample</string>
+		<string>AFFIDAVIT.pdf</string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Sample4</string>
+		<string>blood-donation</string>
 		<key>FileName</key>
-		<string>Sample.pdf</string>
+		<string>blood-donation.pdf</string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Sample5</string>
+		<string>CoinChange</string>
 		<key>FileName</key>
-		<string>Sample.pdf</string>
+		<string>CoinChange.pdf</string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Sample6</string>
+		<string>LinkedListBasics</string>
 		<key>FileName</key>
-		<string>Sample.pdf</string>
+		<string>LinkedListBasics.pdf</string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Sample7</string>
+		<string>Pledge-Against-CORRUPTION</string>
 		<key>FileName</key>
-		<string>Sample.pdf</string>
+		<string>Pledge-Against-CORRUPTION.pdf</string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Sample8</string>
+		<string>Pledge-Against-Dowry</string>
 		<key>FileName</key>
-		<string>Sample.pdf</string>
+		<string>Pledge-Against-Dowry.pdf</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Pledge-For-Child-Adoption-Ok</string>
+		<key>FileName</key>
+		<string>Pledge-For-Child-Adoption-Ok.pdf</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Pledge-Quit-Homosexuality</string>
+		<key>FileName</key>
+		<string>Pledge-Quit-Homosexuality.pdf</string>
 	</dict>
 </array>
 </plist>
