@@ -31,6 +31,9 @@
 #define     DEFAULT_LIGHT_MODE      false
 #define     MANUAL_MODE_BLOCK       @"Don't worry, we will take care automatically!!!"
 
+#define     SENSOR_MODE                 @"mode"
+#define     POST_NOTIFICATION_TRANSMIT  @"transmit"
+#define     POST_NOTIFICATION_RECEIVE   @"receive"
 
 #define     USER_ADMIN              @"admin"
 #define     USER_ROHIT              @"rohit"

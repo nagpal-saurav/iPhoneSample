@@ -22,6 +22,8 @@
 @interface ACHttpConnection : NSObject
 
 @property (weak, nonatomic) id<HTTPConnecting> delegate;
+@property (retain, nonatomic) NSString         *urlString;
+
 - (id) initWithDelegate:(id<HTTPConnecting>)delegate;
 - (void) startAsynRequestForUrlString:(NSString*)urlString withMethod:(NSString*)method;
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ACConstant.h"
+#import "ACAppDelegate.h"
 #import "ACAuthorizationViewController.h"
 #import "ACUtility.h"
 #import "ACBeaconReceiver.h"
@@ -24,6 +25,9 @@
     NSString*                _activateLightID;
     
 }
+@property (weak, nonatomic) IBOutlet UIButton *transmitterButton;
+@property (weak, nonatomic) IBOutlet UIButton *receiverButton;
+@property (weak, nonatomic) IBOutlet UILabel *navTitle;
 
 - (IBAction)StartTransmit:(id)sender;
 - (IBAction)StartReceive:(id)sender;
@@ -43,9 +47,11 @@
     _isAllLightsOn = NO;
     _currentDistanceStatus  = CLProximityUnknown;
     
-    [self.view.layer setContents:(id)[UIImage imageNamed:@"bg5.jpg"].CGImage];
+    //[self.view.layer setContents:(id)[UIImage imageNamed:@"bg5.jpg"].CGImage];
     [[UIApplication sharedApplication] setStatusBarStyle: UIStatusBarStyleLightContent];
 	// Do any additional setup after loading the view, typically from a nib.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(StartTransmit:) name:POST_NOTIFICATION_TRANSMIT object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(StartReceive:) name:POST_NOTIFICATION_RECEIVE object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -94,6 +100,14 @@
         self.lbl3.hidden = false;
         _activateLightID = @"all";
     }
+    
+    NSNumber* light_status = [[NSUserDefaults standardUserDefaults] valueForKey:LIGHT_MODE_AUTO];
+    BOOL isModeAuto = [light_status boolValue];
+    if(isModeAuto){
+        self.navTitle.text = @"Lights Off (A)";
+    }else{
+        self.navTitle.text = @"Lights Off (M)";
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -130,12 +144,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:POST_NOTIFICATION_TRANSMIT object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:POST_NOTIFICATION_RECEIVE object:nil];
+}
+
 #pragma mark - IBACTION 
 - (IBAction)StartTransmit:(id)sender {
+    [self.transmitterButton setTitleColor:[UIColor colorWithRed:0.96 green:0.50 blue:0.50 alpha:1.0] forState:UIControlStateNormal];
+    [self.receiverButton setTitleColor:[UIColor colorWithRed:.196 green:0.3098 blue:0.52 alpha:1.0] forState:UIControlStateNormal];
     [_transmitter StartTransmitting];
 }
 
 - (IBAction)StartReceive:(id)sender {
+    [self.transmitterButton setTitleColor:[UIColor colorWithRed:.196 green:0.3098 blue:0.52 alpha:1.0] forState:UIControlStateNormal];
+    [self.receiverButton setTitleColor:[UIColor colorWithRed:0.96 green:0.50 blue:0.50 alpha:1.0] forState:UIControlStateNormal];
     [_receiver startMonitoring];
 }
 
@@ -234,7 +257,10 @@
 #pragma mark - HTTP Connection Delegate
 
 - (void) connection:(ACHttpConnection*)httpConnection didFailWithError:(NSError *)error{
-    [ACUtility showAlertWithTitle:@"Error!!" withMessage:[error localizedDescription]];
+    NSString* urlString = [httpConnection urlString];
+    if([urlString rangeOfString:GET_STATUS_CALL].location != NSNotFound){
+        [ACUtility showAlertWithTitle:@"Error!!" withMessage:[error localizedDescription]];
+    }
 }
 
 - (void) connection:(ACHttpConnection*)httpConnection didFinishLoadingWithLoadinData:(NSData*)data{
@@ -274,12 +300,15 @@
 
 #pragma mark - UTILITY METHOD
 - (void) startHttpConnectionWithLightStatus:(NSUInteger)status forTheBulb:(NSString*)bulbValue{
-    NSString* urlString = [NSString stringWithFormat:@"%@/%@/%@/%lu", SERVER_URL,SEND_STATUS_CALL, bulbValue,(unsigned long)status];
-    [_connection startAsynRequestForUrlString:urlString withMethod:HTTP_METHOD];
+    ACAppDelegate* appDelegate = (ACAppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSString* urlString = [NSString stringWithFormat:@"%@/%@/%@/%lu", appDelegate.serverAddress,SEND_STATUS_CALL, bulbValue,(unsigned long)status];
+    ACHttpConnection* connection = [[ACHttpConnection alloc] initWithDelegate:self];
+    [connection startAsynRequestForUrlString:urlString withMethod:HTTP_METHOD];
 }
 
 - (void) startHttpConnectionForStatus{
-    NSString* urlString = [NSString stringWithFormat:@"%@/%@", SERVER_URL, GET_STATUS_CALL];
+     ACAppDelegate* appDelegate = (ACAppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSString* urlString = [NSString stringWithFormat:@"%@/%@", appDelegate.serverAddress, GET_STATUS_CALL];
     [_connection startAsynRequestForUrlString:urlString withMethod:HTTP_METHOD];
 }
 

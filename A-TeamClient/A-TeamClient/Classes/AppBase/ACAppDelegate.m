@@ -21,6 +21,12 @@
         NSNumber* modeStatus = [NSNumber numberWithBool:DEFAULT_LIGHT_MODE];
         [[NSUserDefaults standardUserDefaults] setValue:modeStatus forKey:LIGHT_MODE_AUTO];
     }
+    NSString* serverIP = [self fetchServerIP];
+    if(serverIP == nil){
+        [self saveServerIP:SERVER_URL];
+    }else{
+        self.serverAddress = serverIP;
+    }
     return YES;
 }
 							
@@ -59,6 +65,17 @@
     }else{
         [ACUtility showAlertWithTitle:@"Info!!" withMessage:@"Are you forgetting something? We will take care!!!"];
     }
+}
+
+- (void) saveServerIP:(NSString*)serverIP{
+    self.serverAddress = serverIP;
+    [[NSUserDefaults standardUserDefaults] setObject:serverIP forKey:@"serverIP"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSString*) fetchServerIP{
+    NSString *serverIP = [[NSUserDefaults standardUserDefaults] stringForKey:@"serverIP"];
+    return serverIP;
 }
 
 

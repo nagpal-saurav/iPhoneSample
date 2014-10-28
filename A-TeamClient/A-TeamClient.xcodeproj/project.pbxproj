@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03BC76A619F4E1B9005BDC81 /* ACServerConfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BC76A519F4E1B9005BDC81 /* ACServerConfViewController.m */; };
 		C3168A52198367A8009515AB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C3168A51198367A8009515AB /* Default.png */; };
 		C3168A5419836C8A009515AB /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = C3168A5319836C8A009515AB /* Background.png */; };
 		C3168A581983860D009515AB /* Login.png in Resources */ = {isa = PBXBuildFile; fileRef = C3168A571983860D009515AB /* Login.png */; };
@@ -60,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03BC76A419F4E1B9005BDC81 /* ACServerConfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACServerConfViewController.h; sourceTree = "<group>"; };
+		03BC76A519F4E1B9005BDC81 /* ACServerConfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACServerConfViewController.m; sourceTree = "<group>"; };
 		C3168A51198367A8009515AB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C3168A5319836C8A009515AB /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		C3168A571983860D009515AB /* Login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login.png; sourceTree = "<group>"; };
@@ -267,6 +270,8 @@
 				C3168A5E1983A2F3009515AB /* ACConsumptionChartViewController.m */,
 				C3168A601983A313009515AB /* ACTeamViewController.h */,
 				C3168A611983A313009515AB /* ACTeamViewController.m */,
+				03BC76A419F4E1B9005BDC81 /* ACServerConfViewController.h */,
+				03BC76A519F4E1B9005BDC81 /* ACServerConfViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 				C3168A5F1983A2F3009515AB /* ACConsumptionChartViewController.m in Sources */,
 				EF62EDEB19827484004730A3 /* ACBeaconTransmitter.m in Sources */,
 				EFF3A9321982F578001B5DA7 /* ACSettingsViewController.m in Sources */,
+				03BC76A619F4E1B9005BDC81 /* ACServerConfViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +592,7 @@
 				GCC_PREFIX_HEADER = "A-TeamClient/A-TeamClient-Prefix.pch";
 				INFOPLIST_FILE = "A-TeamClient/A-TeamClient-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "68A01B23-447C-4414-ABD4-47A45BE35B52";
+				PROVISIONING_PROFILE = "B7F7ED9A-4CB7-4151-A210-F19751A98B5E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -601,7 +607,7 @@
 				GCC_PREFIX_HEADER = "A-TeamClient/A-TeamClient-Prefix.pch";
 				INFOPLIST_FILE = "A-TeamClient/A-TeamClient-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "68A01B23-447C-4414-ABD4-47A45BE35B52";
+				PROVISIONING_PROFILE = "B7F7ED9A-4CB7-4151-A210-F19751A98B5E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

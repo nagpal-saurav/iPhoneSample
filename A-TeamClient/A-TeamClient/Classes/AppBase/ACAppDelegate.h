@@ -11,5 +11,8 @@
 @interface ACAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) NSString *serverAddress;
+
+- (void) saveServerIP:(NSString*)serverIP;
 
 @end

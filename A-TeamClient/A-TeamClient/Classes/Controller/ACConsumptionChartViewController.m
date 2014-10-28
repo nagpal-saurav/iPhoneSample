@@ -7,6 +7,7 @@
 //
 
 #import "ACConstant.h"
+#import "ACAppDelegate.h"
 #import "ACConsumptionChartViewController.h"
 
 @interface ACConsumptionChartViewController ()
@@ -28,8 +29,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self.chartWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:WEB_VIEW_URL]]];
+    ACAppDelegate* appDelegate = (ACAppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSString* webViewUrl = [NSString stringWithFormat:@"%@/getusagedata",appDelegate.serverAddress];
+    [self.chartWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:webViewUrl]]];
 }
 
 - (void)didReceiveMemoryWarning

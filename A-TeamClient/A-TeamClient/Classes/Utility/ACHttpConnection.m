@@ -34,6 +34,7 @@
 
 - (void) startAsynRequestForUrlString:(NSString*)urlString withMethod:(NSString*)method{
     // Create the request.
+    self.urlString = urlString;
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     
     // Create url connection and fire request

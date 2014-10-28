@@ -11,6 +11,9 @@
 #import "ACSettingsViewController.h"
 
 @interface ACSettingsViewController ()
+@property (weak, nonatomic) IBOutlet UITableViewCell *transmitterCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *receiverCell;
+
 
 @end
 
@@ -74,6 +77,7 @@
     }else if (indexPath.section == 2){
         NSNumber* modeStatus = [NSNumber numberWithBool:self.lightModeSwitch.isOn];
         [[NSUserDefaults standardUserDefaults] setValue:modeStatus forKey:LIGHT_MODE_AUTO];
+        [self.tableView reloadData];
     }
     
 }
@@ -87,4 +91,6 @@
     NSNumber* modeStatus = [NSNumber numberWithBool:self.lightModeSwitch.isOn];
     [[NSUserDefaults standardUserDefaults] setValue:modeStatus forKey:LIGHT_MODE_AUTO];
 }
+
+
 @end
