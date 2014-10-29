@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0319D2E41A01047100BE410B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0319D2E31A01047100BE410B /* main.c */; };
+		0319D2EF1A0104BE00BE410B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0319D2EE1A0104BE00BE410B /* Foundation.framework */; };
+		0319D2F21A0106E400BE410B /* SampleOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0319D2F11A0106E400BE410B /* SampleOperation.m */; };
+		0319D2F51A01070100BE410B /* HttpConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0319D2F41A01070100BE410B /* HttpConnection.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0319D2DE1A01047100BE410B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0319D2E01A01047100BE410B /* NSOperationQueueAsynRequest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NSOperationQueueAsynRequest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0319D2E31A01047100BE410B /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		0319D2EE1A0104BE00BE410B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0319D2F01A0106E400BE410B /* SampleOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleOperation.h; sourceTree = "<group>"; };
+		0319D2F11A0106E400BE410B /* SampleOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleOperation.m; sourceTree = "<group>"; };
+		0319D2F31A01070100BE410B /* HttpConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpConnection.h; sourceTree = "<group>"; };
+		0319D2F41A01070100BE410B /* HttpConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpConnection.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0319D2DD1A01047100BE410B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0319D2EF1A0104BE00BE410B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0319D2D71A01047100BE410B = {
+			isa = PBXGroup;
+			children = (
+				0319D2E21A01047100BE410B /* NSOperationQueueAsynRequest */,
+				0319D2E11A01047100BE410B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0319D2E11A01047100BE410B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0319D2E01A01047100BE410B /* NSOperationQueueAsynRequest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0319D2E21A01047100BE410B /* NSOperationQueueAsynRequest */ = {
+			isa = PBXGroup;
+			children = (
+				0319D2EA1A0104A900BE410B /* Classes */,
+				0319D2ED1A0104A900BE410B /* Frameworks */,
+				0319D2E31A01047100BE410B /* main.c */,
+			);
+			path = NSOperationQueueAsynRequest;
+			sourceTree = "<group>";
+		};
+		0319D2EA1A0104A900BE410B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0319D2EB1A0104A900BE410B /* NSOpertionQueue */,
+				0319D2EC1A0104A900BE410B /* Utility */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0319D2EB1A0104A900BE410B /* NSOpertionQueue */ = {
+			isa = PBXGroup;
+			children = (
+				0319D2F01A0106E400BE410B /* SampleOperation.h */,
+				0319D2F11A0106E400BE410B /* SampleOperation.m */,
+			);
+			path = NSOpertionQueue;
+			sourceTree = "<group>";
+		};
+		0319D2EC1A0104A900BE410B /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				0319D2F31A01070100BE410B /* HttpConnection.h */,
+				0319D2F41A01070100BE410B /* HttpConnection.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		0319D2ED1A0104A900BE410B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0319D2EE1A0104BE00BE410B /* Foundation.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0319D2DF1A01047100BE410B /* NSOperationQueueAsynRequest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0319D2E71A01047100BE410B /* Build configuration list for PBXNativeTarget "NSOperationQueueAsynRequest" */;
+			buildPhases = (
+				0319D2DC1A01047100BE410B /* Sources */,
+				0319D2DD1A01047100BE410B /* Frameworks */,
+				0319D2DE1A01047100BE410B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NSOperationQueueAsynRequest;
+			productName = NSOperationQueueAsynRequest;
+			productReference = 0319D2E01A01047100BE410B /* NSOperationQueueAsynRequest */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0319D2D81A01047100BE410B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Saurav Nagpal";
+				TargetAttributes = {
+					0319D2DF1A01047100BE410B = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
+			};
+			buildConfigurationList = 0319D2DB1A01047100BE410B /* Build configuration list for PBXProject "NSOperationQueueAsynRequest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0319D2D71A01047100BE410B;
+			productRefGroup = 0319D2E11A01047100BE410B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0319D2DF1A01047100BE410B /* NSOperationQueueAsynRequest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0319D2DC1A01047100BE410B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0319D2F51A01070100BE410B /* HttpConnection.m in Sources */,
+				0319D2E41A01047100BE410B /* main.c in Sources */,
+				0319D2F21A0106E400BE410B /* SampleOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0319D2E51A01047100BE410B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0319D2E61A01047100BE410B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0319D2E81A01047100BE410B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0319D2E91A01047100BE410B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0319D2DB1A01047100BE410B /* Build configuration list for PBXProject "NSOperationQueueAsynRequest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0319D2E51A01047100BE410B /* Debug */,
+				0319D2E61A01047100BE410B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0319D2E71A01047100BE410B /* Build configuration list for PBXNativeTarget "NSOperationQueueAsynRequest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0319D2E81A01047100BE410B /* Debug */,
+				0319D2E91A01047100BE410B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0319D2D81A01047100BE410B /* Project object */;
+}
