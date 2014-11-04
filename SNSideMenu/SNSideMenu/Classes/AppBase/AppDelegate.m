@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Saurav Nagpal. All rights reserved.
 //
 
+#import "SampleViewController1.h"
+#import "SampleViewController2.h"
+#import "SSRevealViewController.h"
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
@@ -17,6 +20,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
+    SampleViewController1* viewCtrl1 = [[SampleViewController1 alloc] init];
+    SampleViewController2* viewCtrl2 = [[SampleViewController2 alloc] init];
+    NSArray* viewCtrls = @[viewCtrl1, viewCtrl2];
+    NSArray* viewTitles = @[@"Red", @"Blue"];
+    SSRevealViewController* revealViewCtrl  =[[SSRevealViewController alloc] initWithViewControllers:viewCtrls andMenuTitles:viewTitles];
+    revealViewCtrl.view.frame = self.window.frame;
+    self.window.rootViewController = revealViewCtrl;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
