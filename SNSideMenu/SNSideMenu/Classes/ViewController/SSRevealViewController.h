@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface SSRevealViewController : UIViewController
 
+
+- (id)initWithViewControllers:(NSArray *)viewControllers andMenuTitles:(NSArray *)titles;
 
 @end
 

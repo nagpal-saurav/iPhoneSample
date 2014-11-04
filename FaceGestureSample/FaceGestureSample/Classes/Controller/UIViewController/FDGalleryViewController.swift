@@ -33,7 +33,7 @@ class FDGalleryViewController: UIViewController, VideoCapturing, FaceDetecting, 
         loadScrollViewWithDefault()
         if videoCaptureSession == nil {
             videoCaptureSession = VideoCaptureSession(delegate:self);
-            //videoCaptureSession.addFaceDetectionFeatureWithAvFoundation();
+            videoCaptureSession.addFaceDetectionFeatureWithAvFoundation();
             videoCaptureSession.addFaceDetectionFeatureWithCoreImage();
             self.addVideoPreviewLayer()
         }

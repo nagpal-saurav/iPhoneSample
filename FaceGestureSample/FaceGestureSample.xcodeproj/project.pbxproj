@@ -584,8 +584,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Praveen Jha (L4CKQNLR55)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Praveen Jha (L4CKQNLR55)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: GlobalLogic Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: GlobalLogic Inc";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceGestureSample/Library",
@@ -593,7 +593,7 @@
 				INFOPLIST_FILE = FaceGestureSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E81ACCCD-5615-40BE-AADB-23217740CC5F";
+				PROVISIONING_PROFILE = "B7F7ED9A-4CB7-4151-A210-F19751A98B5E";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "FaceGestureSample/Classes/DeviceCapability/FaceGestureSample-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "FaceGestureSample/Classes/DeviceCapability/FaceGestureSample-Bridging-Header.h";
@@ -605,8 +605,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jakir Hussain (BX5K3SVAMF)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Praveen Jha (L4CKQNLR55)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: GlobalLogic Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: GlobalLogic Inc";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceGestureSample/Library",
@@ -614,7 +614,7 @@
 				INFOPLIST_FILE = FaceGestureSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E81ACCCD-5615-40BE-AADB-23217740CC5F";
+				PROVISIONING_PROFILE = "B7F7ED9A-4CB7-4151-A210-F19751A98B5E";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "FaceGestureSample/Classes/DeviceCapability/FaceGestureSample-Bridging-Header.h";
 			};
