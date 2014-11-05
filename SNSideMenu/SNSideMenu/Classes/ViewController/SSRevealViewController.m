@@ -132,25 +132,27 @@
      if (index == self.indexOfVisibleController) return;
     UIViewController *newViewController = self.viewControllers[index];
     UIViewController *currentViewController = self.viewControllers[self.indexOfVisibleController];
-    CGRect visibleFrame = currentViewController.view.frame;
     
+    CGRect visibleFrame = self.view.bounds;
     [currentViewController willMoveToParentViewController:nil];
     [self addChildViewController:newViewController];
+    newViewController.view.frame = [self offScreenFrame];
+    [newViewController beginAppearanceTransition:YES animated:NO];
+    
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     [self transitionFromViewController:currentViewController toViewController:newViewController
-                              duration:0.5 options:0
+                              duration:0.5 options:UIViewAnimationOptionTransitionNone
                             animations:^{
-                                currentViewController.view.frame = [self offScreenFrame];
-                            } completion:^(BOOL finished){
-                                [currentViewController.view removeFromSuperview];
-                                [self.view addSubview:newViewController.view];
                                 [newViewController.view setFrame:visibleFrame];
+                            } completion:^(BOOL finished){
+                                [self didMoveToParentViewController:newViewController];
+                                [currentViewController removeFromParentViewController];
+                                self.isMenuVisible = NO;
+                                self.indexOfVisibleController = index;
                                 [[UIApplication sharedApplication] endIgnoringInteractionEvents];
                             }];
-    [self didMoveToParentViewController:newViewController];
-    [currentViewController removeFromParentViewController];
-    self.isMenuVisible = NO;
-    self.indexOfVisibleController = index;
+    
+    
     
 }
 
