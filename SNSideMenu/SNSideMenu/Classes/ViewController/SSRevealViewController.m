@@ -137,11 +137,12 @@
     [currentViewController willMoveToParentViewController:nil];
     [self addChildViewController:newViewController];
     newViewController.view.frame = [self offScreenFrame];
-    [newViewController beginAppearanceTransition:YES animated:NO];
-    
+
+    NSLog(@"Frame:%@",NSStringFromCGRect(newViewController.view.frame));
+    [[(UINavigationController*)newViewController view] layoutIfNeeded];
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     [self transitionFromViewController:currentViewController toViewController:newViewController
-                              duration:0.5 options:UIViewAnimationOptionTransitionNone
+                              duration:3.5 options:UIViewAnimationOptionTransitionNone
                             animations:^{
                                 [newViewController.view setFrame:visibleFrame];
                             } completion:^(BOOL finished){
