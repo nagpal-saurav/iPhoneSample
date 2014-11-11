@@ -16,7 +16,7 @@ int main(int argc, const char * argv[]) {
         SampleOperation* opertion = [[SampleOperation alloc] init];
         [opertionQueue addOperation:opertion];
         while(true){
-            
+            sleep(10);
         }
     }
     return 0;

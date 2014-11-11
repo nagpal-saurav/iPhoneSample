@@ -29,6 +29,9 @@
         while(1){
             [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
             sleep(2);
+            if(self.isComplete){
+                break;
+            }
         }
     }
 }
@@ -39,11 +42,11 @@
 }
 
 - (void) httpConnection :(HttpConnection*)connection didFinishCompleteWithData:(NSData*)data{
-    
+    self.isComplete = true;
 }
 
 - (void) httpConnection :(HttpConnection*)connection didFailWithError:(NSError*)error{
-    
+    self.isComplete = true;
 }
 
 @end

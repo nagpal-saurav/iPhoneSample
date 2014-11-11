@@ -12,5 +12,6 @@
 
 @interface SampleOperation : NSOperation
 
+@property (nonatomic, assign)BOOL isComplete ;
 
 @end
