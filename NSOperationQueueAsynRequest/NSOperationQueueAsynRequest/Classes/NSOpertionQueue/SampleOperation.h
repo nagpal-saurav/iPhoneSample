@@ -8,6 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
+#define URLString       @"http://www.google.com"
+
 @interface SampleOperation : NSOperation
+
 
 @end
