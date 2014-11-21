@@ -54,6 +54,8 @@ class FeatureListViewController: UIViewController {
         case 0:
             featureViewController = storyboard.instantiateViewControllerWithIdentifier(FaceDetectionConstant.galleryViewIdentifier) as UIViewController
         case 1:
+            featureViewController = storyboard.instantiateViewControllerWithIdentifier(FaceDetectionConstant.callViewIdentifier) as UIViewController
+        case 2:
             featureViewController = storyboard.instantiateViewControllerWithIdentifier(FaceDetectionConstant.readingViewIdentifier) as UIViewController
         default:
             return;

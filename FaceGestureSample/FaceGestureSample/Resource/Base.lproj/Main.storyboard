@@ -175,5 +175,36 @@
             </objects>
             <point key="canvasLocation" x="1002" y="537"/>
         </scene>
+        <!--Call View Controller-->
+        <scene sceneID="fEA-ir-Qjl">
+            <objects>
+                <viewController storyboardIdentifier="CallViewController" id="haj-3J-wnd" customClass="FDCallViewController" customModule="FaceGestureSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L1y-zl-KvO"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Be-LQ-1kO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sl9-IA-TTI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vOn-BF-A4u">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="haj-3J-wnd" id="HGM-97-F8A"/>
+                                    <outlet property="delegate" destination="haj-3J-wnd" id="klR-0K-YTD"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="vOn-BF-A4u" id="3Xx-Ja-Ahv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="APB-Uq-OAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1002" y="1231"/>
+        </scene>
     </scenes>
 </document>

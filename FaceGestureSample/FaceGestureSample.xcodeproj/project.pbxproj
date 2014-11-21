@@ -46,6 +46,7 @@
 		03D34EF719BEF9FD004DC0B1 /* FDReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D34EF619BEF9FD004DC0B1 /* FDReadingViewController.swift */; };
 		C10850A119A9E8A00077A3C9 /* FaceDetectionManager+AvFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10850A019A9E8A00077A3C9 /* FaceDetectionManager+AvFoundation.swift */; };
 		C116C69819B24FDF008439E2 /* FaceDetectionManager+CoreImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C116C69719B24FDF008439E2 /* FaceDetectionManager+CoreImage.swift */; };
+		C19D66FB1A1EFE51002BEDE3 /* FDCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19D66FA1A1EFE51002BEDE3 /* FDCallViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		03D34EF619BEF9FD004DC0B1 /* FDReadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDReadingViewController.swift; sourceTree = "<group>"; };
 		C10850A019A9E8A00077A3C9 /* FaceDetectionManager+AvFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FaceDetectionManager+AvFoundation.swift"; sourceTree = "<group>"; };
 		C116C69719B24FDF008439E2 /* FaceDetectionManager+CoreImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FaceDetectionManager+CoreImage.swift"; sourceTree = "<group>"; };
+		C19D66FA1A1EFE51002BEDE3 /* FDCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDCallViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +298,7 @@
 				03C687A51973F7F7007203F3 /* FDGalleryViewController.swift */,
 				032EE46E19AB56EC006D4852 /* FeatureListViewController.swift */,
 				03D34EF619BEF9FD004DC0B1 /* FDReadingViewController.swift */,
+				C19D66FA1A1EFE51002BEDE3 /* FDCallViewController.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				03B378E219BF004700D0EE82 /* ExtensionFaceDetectionOpenCv.mm in Sources */,
 				03C687B01973F941007203F3 /* FaceDetectionManager.swift in Sources */,
 				037A00E919865163007362AB /* FDError.swift in Sources */,
+				C19D66FB1A1EFE51002BEDE3 /* FDCallViewController.swift in Sources */,
 				031F442A19B87921007A3ECE /* VideoCaptureSession+CoreImage.swift in Sources */,
 				03B221D519ADDF6A00C6F30C /* FDImageView.swift in Sources */,
 				0367E58D197D256D000C3F66 /* FaceDetectionEnum.swift in Sources */,
