@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HL0-YV-FU0">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Test Detail-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="TestDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pUv-IQ-d4y">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="196"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="319" id="Ok6-Os-lXp"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZC-er-KfK">
+                                <rect key="frame" x="16" y="310" width="195" height="30"/>
+                                <color key="backgroundColor" red="0.38067855579999998" green="0.64065149809999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Reatin Cycle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="leakArrayRetainCycle:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="y82-lW-bO2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6x0-Z5-HYO">
+                                <rect key="frame" x="16" y="252" width="195" height="30"/>
+                                <color key="backgroundColor" red="0.38067855579999998" green="0.64065149809999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Test Me">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testMePressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ieH-4D-XK9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHL-3L-Txi">
+                                <rect key="frame" x="16" y="362" width="195" height="30"/>
+                                <color key="backgroundColor" red="0.38067855579999998" green="0.64065149809999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="BridgeTest">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="leakArrayCFBridge:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qYz-4A-Ikc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pUv-IQ-d4y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="CDZ-HV-TUs"/>
+                            <constraint firstItem="pUv-IQ-d4y" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="YqE-VH-Aac"/>
+                            <constraint firstAttribute="trailing" secondItem="pUv-IQ-d4y" secondAttribute="trailing" id="ohE-K3-fAF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Test Detail" id="mWo-8t-eEq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="595" y="655"/>
+        </scene>
+        <!--Test View List-->
+        <scene sceneID="yfW-tU-ZEb">
+            <objects>
+                <tableViewController id="CI2-OM-P1d" customClass="TestListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="EtH-J5-heX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TestCell" id="AxR-1t-2j8">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AxR-1t-2j8" id="i9k-8V-mfY">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="e4u-q7-Hcq"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CI2-OM-P1d" id="4Mt-lf-cxJ"/>
+                            <outlet property="delegate" destination="CI2-OM-P1d" id="kID-dA-ALF"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Test View List" id="EfA-jJ-d5k"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zLX-LR-PNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-151" y="660"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="D2l-Rf-ZxS">
+            <objects>
+                <navigationController id="HL0-YV-FU0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jpo-ru-vSI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CI2-OM-P1d" kind="relationship" relationship="rootViewController" id="hmZ-Nk-b4X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dLf-tF-05t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-850" y="660"/>
+        </scene>
+    </scenes>
+</document>

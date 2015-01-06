@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C10CDBD81A5AF23100788156 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C10CDBD71A5AF23100788156 /* main.m */; };
+		C10CDBDB1A5AF23100788156 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C10CDBDA1A5AF23100788156 /* AppDelegate.m */; };
+		C10CDBDE1A5AF23100788156 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10CDBDD1A5AF23100788156 /* ViewController.m */; };
+		C10CDBE11A5AF23100788156 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C10CDBDF1A5AF23100788156 /* Main.storyboard */; };
+		C10CDBE31A5AF23100788156 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C10CDBE21A5AF23100788156 /* Images.xcassets */; };
+		C10CDBE61A5AF23100788156 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10CDBE41A5AF23100788156 /* LaunchScreen.xib */; };
+		C10CDBF21A5AF23100788156 /* iOSTextFieldValidationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C10CDBF11A5AF23100788156 /* iOSTextFieldValidationTests.m */; };
+		C10CDBFE1A5AF39800788156 /* UIValidatorTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C10CDBFD1A5AF39800788156 /* UIValidatorTextField.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C10CDBEC1A5AF23100788156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C10CDBCA1A5AF23000788156 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C10CDBD11A5AF23000788156;
+			remoteInfo = iOSTextFieldValidation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C10CDBD21A5AF23000788156 /* iOSTextFieldValidation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTextFieldValidation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C10CDBD61A5AF23100788156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C10CDBD71A5AF23100788156 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C10CDBD91A5AF23100788156 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C10CDBDA1A5AF23100788156 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C10CDBDC1A5AF23100788156 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C10CDBDD1A5AF23100788156 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C10CDBE01A5AF23100788156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C10CDBE21A5AF23100788156 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C10CDBE51A5AF23100788156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		C10CDBEB1A5AF23100788156 /* iOSTextFieldValidationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTextFieldValidationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C10CDBF01A5AF23100788156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C10CDBF11A5AF23100788156 /* iOSTextFieldValidationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSTextFieldValidationTests.m; sourceTree = "<group>"; };
+		C10CDBFC1A5AF39800788156 /* UIValidatorTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIValidatorTextField.h; sourceTree = "<group>"; };
+		C10CDBFD1A5AF39800788156 /* UIValidatorTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIValidatorTextField.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C10CDBCF1A5AF23000788156 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C10CDBE81A5AF23100788156 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C10CDBC91A5AF23000788156 = {
+			isa = PBXGroup;
+			children = (
+				C10CDBD41A5AF23000788156 /* iOSTextFieldValidation */,
+				C10CDBEE1A5AF23100788156 /* iOSTextFieldValidationTests */,
+				C10CDBD31A5AF23000788156 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C10CDBD31A5AF23000788156 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C10CDBD21A5AF23000788156 /* iOSTextFieldValidation.app */,
+				C10CDBEB1A5AF23100788156 /* iOSTextFieldValidationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C10CDBD41A5AF23000788156 /* iOSTextFieldValidation */ = {
+			isa = PBXGroup;
+			children = (
+				C10CDBFB1A5AF26400788156 /* ValidationField */,
+				C10CDBD91A5AF23100788156 /* AppDelegate.h */,
+				C10CDBDA1A5AF23100788156 /* AppDelegate.m */,
+				C10CDBDC1A5AF23100788156 /* ViewController.h */,
+				C10CDBDD1A5AF23100788156 /* ViewController.m */,
+				C10CDBDF1A5AF23100788156 /* Main.storyboard */,
+				C10CDBE21A5AF23100788156 /* Images.xcassets */,
+				C10CDBE41A5AF23100788156 /* LaunchScreen.xib */,
+				C10CDBD51A5AF23000788156 /* Supporting Files */,
+			);
+			path = iOSTextFieldValidation;
+			sourceTree = "<group>";
+		};
+		C10CDBD51A5AF23000788156 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C10CDBD61A5AF23100788156 /* Info.plist */,
+				C10CDBD71A5AF23100788156 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C10CDBEE1A5AF23100788156 /* iOSTextFieldValidationTests */ = {
+			isa = PBXGroup;
+			children = (
+				C10CDBF11A5AF23100788156 /* iOSTextFieldValidationTests.m */,
+				C10CDBEF1A5AF23100788156 /* Supporting Files */,
+			);
+			path = iOSTextFieldValidationTests;
+			sourceTree = "<group>";
+		};
+		C10CDBEF1A5AF23100788156 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C10CDBF01A5AF23100788156 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C10CDBFB1A5AF26400788156 /* ValidationField */ = {
+			isa = PBXGroup;
+			children = (
+				C10CDBFC1A5AF39800788156 /* UIValidatorTextField.h */,
+				C10CDBFD1A5AF39800788156 /* UIValidatorTextField.m */,
+			);
+			path = ValidationField;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C10CDBD11A5AF23000788156 /* iOSTextFieldValidation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C10CDBF51A5AF23100788156 /* Build configuration list for PBXNativeTarget "iOSTextFieldValidation" */;
+			buildPhases = (
+				C10CDBCE1A5AF23000788156 /* Sources */,
+				C10CDBCF1A5AF23000788156 /* Frameworks */,
+				C10CDBD01A5AF23000788156 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSTextFieldValidation;
+			productName = iOSTextFieldValidation;
+			productReference = C10CDBD21A5AF23000788156 /* iOSTextFieldValidation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C10CDBEA1A5AF23100788156 /* iOSTextFieldValidationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C10CDBF81A5AF23100788156 /* Build configuration list for PBXNativeTarget "iOSTextFieldValidationTests" */;
+			buildPhases = (
+				C10CDBE71A5AF23100788156 /* Sources */,
+				C10CDBE81A5AF23100788156 /* Frameworks */,
+				C10CDBE91A5AF23100788156 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C10CDBED1A5AF23100788156 /* PBXTargetDependency */,
+			);
+			name = iOSTextFieldValidationTests;
+			productName = iOSTextFieldValidationTests;
+			productReference = C10CDBEB1A5AF23100788156 /* iOSTextFieldValidationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C10CDBCA1A5AF23000788156 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Saurav Nagpal";
+				TargetAttributes = {
+					C10CDBD11A5AF23000788156 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					C10CDBEA1A5AF23100788156 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = C10CDBD11A5AF23000788156;
+					};
+				};
+			};
+			buildConfigurationList = C10CDBCD1A5AF23000788156 /* Build configuration list for PBXProject "iOSTextFieldValidation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C10CDBC91A5AF23000788156;
+			productRefGroup = C10CDBD31A5AF23000788156 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C10CDBD11A5AF23000788156 /* iOSTextFieldValidation */,
+				C10CDBEA1A5AF23100788156 /* iOSTextFieldValidationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C10CDBD01A5AF23000788156 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C10CDBE11A5AF23100788156 /* Main.storyboard in Resources */,
+				C10CDBE61A5AF23100788156 /* LaunchScreen.xib in Resources */,
+				C10CDBE31A5AF23100788156 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C10CDBE91A5AF23100788156 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C10CDBCE1A5AF23000788156 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C10CDBDE1A5AF23100788156 /* ViewController.m in Sources */,
+				C10CDBDB1A5AF23100788156 /* AppDelegate.m in Sources */,
+				C10CDBFE1A5AF39800788156 /* UIValidatorTextField.m in Sources */,
+				C10CDBD81A5AF23100788156 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C10CDBE71A5AF23100788156 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C10CDBF21A5AF23100788156 /* iOSTextFieldValidationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C10CDBED1A5AF23100788156 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C10CDBD11A5AF23000788156 /* iOSTextFieldValidation */;
+			targetProxy = C10CDBEC1A5AF23100788156 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C10CDBDF1A5AF23100788156 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C10CDBE01A5AF23100788156 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C10CDBE41A5AF23100788156 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C10CDBE51A5AF23100788156 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C10CDBF31A5AF23100788156 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C10CDBF41A5AF23100788156 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C10CDBF61A5AF23100788156 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iOSTextFieldValidation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C10CDBF71A5AF23100788156 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iOSTextFieldValidation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C10CDBF91A5AF23100788156 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iOSTextFieldValidationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSTextFieldValidation.app/iOSTextFieldValidation";
+			};
+			name = Debug;
+		};
+		C10CDBFA1A5AF23100788156 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iOSTextFieldValidationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSTextFieldValidation.app/iOSTextFieldValidation";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C10CDBCD1A5AF23000788156 /* Build configuration list for PBXProject "iOSTextFieldValidation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C10CDBF31A5AF23100788156 /* Debug */,
+				C10CDBF41A5AF23100788156 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C10CDBF51A5AF23100788156 /* Build configuration list for PBXNativeTarget "iOSTextFieldValidation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C10CDBF61A5AF23100788156 /* Debug */,
+				C10CDBF71A5AF23100788156 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C10CDBF81A5AF23100788156 /* Build configuration list for PBXNativeTarget "iOSTextFieldValidationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C10CDBF91A5AF23100788156 /* Debug */,
+				C10CDBFA1A5AF23100788156 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C10CDBCA1A5AF23000788156 /* Project object */;
+}
