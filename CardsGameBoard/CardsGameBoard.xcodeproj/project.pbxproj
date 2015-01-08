@@ -10,7 +10,7 @@
 		C124515F1A5C57E500F5AB5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C124515E1A5C57E500F5AB5F /* main.m */; };
 		C12451791A5C57E500F5AB5F /* CardsGameBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C12451781A5C57E500F5AB5F /* CardsGameBoardTests.m */; };
 		C124518D1A5C585F00F5AB5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C12451841A5C585F00F5AB5F /* AppDelegate.m */; };
-		C124518E1A5C585F00F5AB5F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12451861A5C585F00F5AB5F /* ViewController.m */; };
+		C124518E1A5C585F00F5AB5F /* GameCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12451861A5C585F00F5AB5F /* GameCardViewController.m */; };
 		C124518F1A5C585F00F5AB5F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C12451881A5C585F00F5AB5F /* LaunchScreen.xib */; };
 		C12451901A5C585F00F5AB5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C124518A1A5C585F00F5AB5F /* Main.storyboard */; };
 		C12451911A5C585F00F5AB5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C124518C1A5C585F00F5AB5F /* Images.xcassets */; };
@@ -35,11 +35,12 @@
 		C12451781A5C57E500F5AB5F /* CardsGameBoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardsGameBoardTests.m; sourceTree = "<group>"; };
 		C12451831A5C585F00F5AB5F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C12451841A5C585F00F5AB5F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C12451851A5C585F00F5AB5F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C12451861A5C585F00F5AB5F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C12451851A5C585F00F5AB5F /* GameCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCardViewController.h; sourceTree = "<group>"; };
+		C12451861A5C585F00F5AB5F /* GameCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCardViewController.m; sourceTree = "<group>"; };
 		C12451891A5C585F00F5AB5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C124518B1A5C585F00F5AB5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C124518C1A5C585F00F5AB5F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C19F35AD1A5EE7BB00E2858C /* GameCardConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameCardConstant.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +120,9 @@
 			children = (
 				C12451831A5C585F00F5AB5F /* AppDelegate.h */,
 				C12451841A5C585F00F5AB5F /* AppDelegate.m */,
-				C12451851A5C585F00F5AB5F /* ViewController.h */,
-				C12451861A5C585F00F5AB5F /* ViewController.m */,
+				C12451851A5C585F00F5AB5F /* GameCardViewController.h */,
+				C12451861A5C585F00F5AB5F /* GameCardViewController.m */,
+				C19F35AD1A5EE7BB00E2858C /* GameCardConstant.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -235,7 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C124518E1A5C585F00F5AB5F /* ViewController.m in Sources */,
+				C124518E1A5C585F00F5AB5F /* GameCardViewController.m in Sources */,
 				C124518D1A5C585F00F5AB5F /* AppDelegate.m in Sources */,
 				C124515F1A5C57E500F5AB5F /* main.m in Sources */,
 			);
@@ -428,6 +430,7 @@
 				C124517E1A5C57E500F5AB5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C124517F1A5C57E500F5AB5F /* Build configuration list for PBXNativeTarget "CardsGameBoardTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +439,7 @@
 				C12451811A5C57E500F5AB5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
